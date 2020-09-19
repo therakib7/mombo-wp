@@ -7,14 +7,11 @@
 if ( ! function_exists( 'mombo_preloader' ) ) :
     function mombo_preloader() {  
         if( mombo_get_options('preloader') ) { ?>
-        <div class="preloader">
-            <div class="preloader-inner">
-                <div class="preloader-icon">
-                    <span></span>
-                    <span></span>
-                </div><!-- /preloader-icon -->
-            </div><!-- /preloader-inner -->
-        </div><!-- /preloader -->
+        <!-- page loading -->
+        <div id="loading">
+            <div class="load-circle"><span class="one"></span></div>
+        </div>
+        <!-- end page loading -->
         <?php }
     }
 endif;

@@ -13,30 +13,94 @@
  */
 if(get_post_meta(get_the_ID(), 'mombo_mb_footer_part') == 'hide') return; ?>
 
-<!-- Footer
-================================================== -->
-<footer class="site-footer bg-blue-violet bd-t-white-20 pd-t-45 pd-b-30">
-    <div class="footer-copyright text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                	<?php 
-                	    $footer_social_url_field = mombo_get_options('footer_social_url');
-                	    $footer_item_json_decode = json_decode($footer_social_url_field);
-                	    if( !empty($footer_social_url_field) ) : ?>
-		                	<ul class="social-profile">
-	                	    <?php foreach ($footer_item_json_decode as $key ) { ?>
-	                	    	<?php if($key->title !=="" ) : ?>
-			                    <li><a href="<?php echo esc_url($key->link); ?>"><?php echo esc_html($key->title); ?></a></li>
-			                	<?php endif; ?>
-	                	    <?php } ?>
-		                    </ul>  
-                	    <?php endif;
-                	?>
-                    <p class="copyright-text"><?php echo wp_kses( mombo_get_options( array('footer_copyright_info', __('Copyright &copy; 2018 Mombo All rights Reserved. Developed By - <a href="#">TechCandle</a>','mombo') ) ), Mombo_Static::html_allow() ); ?></p> 
-                </div><!--  /.col-md-6 -->
-
-            </div><!--  /.row -->
-        </div><!--  /.container -->
-    </div><!--  /.footer-copyright -->
-</footer><!--  /.site-footer -->
+<!-- Footer-->
+<footer class="dark-bg footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-12 m-15px-tb mr-auto">
+					<div class="m-20px-b">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-light.svg" title="" alt="">
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 m-15px-tb">
+					<h6 class="white-color">
+						Useful
+					</h6>
+					<ul class="list-unstyled links-white footer-link-1">
+						<li>
+							<a href="#">Web Design</a>
+						</li>
+						<li>
+							<a href="#">Development</a>
+						</li>
+						<li>
+							<a href="#">Wordpress</a>
+						</li>
+						<li>
+							<a href="#">Online Marketing</a>
+						</li>
+						<li>
+							<a href="#">SEO Marketing</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-sm-6 m-15px-tb">
+					<h6 class="white-color">
+						About Us
+					</h6>
+					<ul class="list-unstyled links-white footer-link-1">
+						<li>
+							<a href="#">Support Center</a>
+						</li>
+						<li>
+							<a href="#">Customer Support</a>
+						</li>
+						<li>
+							<a href="#">About Us</a>
+						</li>
+						<li>
+							<a href="#">Copyright</a>
+						</li>
+						<li>
+							<a href="#">Popular Campaign</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-sm-6 m-15px-tb">
+					<h6 class="white-color">
+						Information
+					</h6>
+					<address>
+						<p class="white-color-light m-5px-b">301 The Greenhouse London,<br> E2 8DY UK</p>
+						<p class="m-5px-b"><a class="theme2nd-color border-bottom-1 border-color-theme2nd" href="mailto:support@domain.com">support@domain.com</a></p>
+						<p class="m-5px-b"><a class="theme2nd-color border-bottom-1 border-color-theme2nd" href="tel:820-885-3321">820-885-3321</a></p>
+					</address>
+					<div class="social-icon si-30 theme2nd nav">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-linkedin-in"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom footer-border-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-right">
+					<ul class="nav justify-content-center justify-content-md-start m-5px-tb links-white font-small footer-link-1">
+						<li><a href="#">Privace &amp; Policy</a></li>
+						<li><a href="#">Faq's</a></li>
+						<li><a href="#">Get a Quote</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 text-center text-md-right">
+					<p class="m-0px font-small white-color-light">© 2019 copyright all right reserved</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- footer End -->

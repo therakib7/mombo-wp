@@ -681,5 +681,5 @@ if ( ! function_exists( 'mombofonts_inline_style' ) ) {
 
 		wp_add_inline_style( 'mombo-main-style', $custom_css );
 	}
-	add_action( 'wp_enqueue_scripts', 'sh_all_typo_header_scripts_css', 300 );
+	// add_action( 'wp_enqueue_scripts', 'sh_all_typo_header_scripts_css', 300 ); // custom comment
 }
