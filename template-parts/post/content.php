@@ -22,7 +22,7 @@
             <h5 class="m-10px-b font-w-600"><a class="dark-color" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
             <p><?php the_excerpt(); ?></p>
             <div class="nav font-small border-top-1 border-color-dark-gray p-15px-t">
-                <a class="m-15px-r body-color font-w-500" href="<?php the_permalink(); ?>"><i class="fas fa-calendar-alt "></i> <?php the_time('j M, Y'); ?></a>
+                <a class="m-15px-r body-color font-w-500" href="<?php the_permalink(); ?>"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?></a>
                 <a class="body-color font-w-500" href="<?php the_permalink(); ?>"><i class="fas fa-comments"></i> <?php echo get_comments_number(); ?></a>
                 <a class="body-color font-w-500 ml-auto" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'mombo' )?> <i class="fas fa-chevron-right"></i></a>
             </div>
