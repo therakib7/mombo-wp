@@ -535,7 +535,7 @@ function mombo_customize_register( $wp_customize ) {
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'absint',
         'type'      =>  'theme_mod',
-        'default' => 25,
+        'default' => 15,
         'transport'   => 'postMessage',
     ));
 

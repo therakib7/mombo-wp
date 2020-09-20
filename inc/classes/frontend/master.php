@@ -106,7 +106,7 @@ if( ! class_exists( 'Mombo_Master' ) ) :
          * @return int         Hardcoded value of the excerpt length
          */
         public function excerpt_length( $length ) {
-            $length = mombo_get_options(array('excerpt_length','25'));
+            $length = mombo_get_options(array('excerpt_length','15'));
             return $length;
         }
 
@@ -116,7 +116,7 @@ if( ! class_exists( 'Mombo_Master' ) ) :
          * @return string       Link for the post.
          */
         public function excerpt_more( $more ) { 
-            return '<a href="' . get_permalink() . '" class="more-link bg-blue-violet color-white">' . esc_html__( 'Read More', 'mombo' ) . ' <i class="gra-arrow-right"></i></a>';
+            return '';
         }
 
         /**
