@@ -67,9 +67,9 @@ require get_parent_theme_file_path( '/inc/functions/jetpack.php' );
 require get_parent_theme_file_path( '/inc/libs/tgm-plugin-activation/tgm-admin-config.php' );
 
 /**
- * WordPress comment seciton override 
+ * WordPress comment seciton modify 
  */
-require get_parent_theme_file_path( '/inc/functions/wp-comment-section-override.php' );
+require get_parent_theme_file_path( '/inc/functions/wp-comment-section-modify.php' );
 
 /**
  * Query function to get post

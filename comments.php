@@ -66,5 +66,8 @@ if ( post_password_required() ) {
 	</div><!-- /.comments-main-content -->
 </div><!-- #comments -->
 <?php endif; ?>
-
-<?php comment_form(); ?>
+<div class="card gray-bg">
+	<div class="card-body">
+		<?php comment_form(); ?>
+	</div>
+</div>

@@ -13,23 +13,37 @@ function mombo_comment_form($args) {
 
 	$args['fields'] = array(
       'author' =>
-        '<div class="col-md-6 form-group"><label>'. esc_html__( 'Your Name', 'mombo' ) . ( $req ? '*' : '' ) .'</label><input id="name" class="form-control" name="author" required="required" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+        '<div class="col-md-6 form-group"><label class="form-control-label">'. esc_html__( 'Your Name', 'mombo' ) . ( $req ? '*' : '' ) .'</label><input id="name" class="form-control" name="author" required="required" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
         '" size="30"' . ( $req ? " aria-required='true'" : '' ) . ' /></div>',
 
       'email' =>
-        '<div class="col-md-6 form-group"><label>'. esc_html__( 'Your Email', 'mombo' ) . ( $req ? '*' : '' ) .'</label><input id="email" class="form-control" name="email" required="required" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
+        '<div class="col-md-6 form-group"><label class="form-control-label">'. esc_html__( 'Your Email', 'mombo' ) . ( $req ? '*' : '' ) .'</label><input id="email" class="form-control" name="email" required="required" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
         '" size="30"' . ( $req ? " aria-required='true'" : '' ) . ' /></div>',
 
       'url' =>
-        '<div class="col-md-12 form-group"><label>'. esc_html__( 'Got a Website?', 'mombo' ) .'</label><input id="url" class="form-control" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+        '<div class="col-md-12 form-group"><label class="form-control-label">'. esc_html__( 'Got a Website?', 'mombo' ) .'</label><input id="url" class="form-control" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
         '" size="30"/></div>'
       );
 	$args['id_form'] = "comment_form";
-	$args['class_form'] = "row contactform card gray-bg";
+	$args['class_form'] = "row";
 	$args['id_submit'] = "submit";
-	$args['class_submit'] = "btn btn-dark";
+	$args['class_submit'] = "m-btn m-btn-radius m-btn-theme";
+	$args['submit_field'] = '<div class="col-md-12"><p class="form-submit">%1$s %2$s</p></div>';
+	$args['logged_in_as'] = sprintf(
+		'<div class="col-md-12"><p class="logged-in-as">%s</p></div>',
+		sprintf(
+			/* translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4: Logout URL. */
+			wp_kses( __( 'Logged in as <a href="%1$s" aria-label="%2$s">%3$s</a>. <a class="log-out-link" href="%4$s">Log out?</a>', 'mombo' ), Mombo_Static::html_allow() ),
+			get_edit_user_link(),
+			/* translators: %s: User name. */
+			esc_attr( sprintf( wp_kses( __( 'Logged in as %s. Edit your profile.', 'mombo' ), Mombo_Static::html_allow() ), get_the_author_meta('display_name') ) ),
+			get_the_author_meta('display_name'),
+			/** This filter is documented in wp-includes/link-template.php */
+			wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ), get_the_ID() ) )
+		)
+	);
 	$args['name_submit'] = "submit";
-	$args['title_reply'] = wp_kses( __( '<span>Leave a Reply</span>', 'mombo' ), Mombo_Static::html_allow() );
+	$args['title_reply'] = wp_kses( __( '<h4 class="m-30px-b">Leave a Reply</h4>', 'mombo' ), Mombo_Static::html_allow() );
 
 	/* translators: %s: Extra words for comment title */
 	$args['title_reply_to'] = wp_kses( __( 'Leave a Reply to %s', 'mombo' ), Mombo_Static::html_allow() );
@@ -37,7 +51,7 @@ function mombo_comment_form($args) {
 	$args['comment_notes_before'] = "";
 	$args['comment_notes_after'] = "";
 	$args['label_submit'] = esc_html__( 'Post Comment', 'mombo' );
-	$args['comment_field'] = '<div class="col-md-12 form-group"><label>'. esc_html__( 'Your Comments', 'mombo' ) .'</label><textarea id="message" class="form-control" name="comment" aria-required="true" rows="8" cols="45"></textarea></div>';
+	$args['comment_field'] = '<div class="col-md-12 form-group"><label class="form-control-label">'. esc_html__( 'Your Comments', 'mombo' ) .'</label><textarea id="message" class="form-control" name="comment" aria-required="true" rows="6" cols="45"></textarea></div>';
 	return $args;
 }
 
