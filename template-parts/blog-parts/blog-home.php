@@ -13,12 +13,18 @@
         <div class="mask theme-bg opacity-9"></div>
         <div class="container">
             <div class="row justify-content-center p-50px-t">
-                <div class="col-lg-8 text-center">
-                    <h2 class="white-color h1 m-20px-b">Blog Sidedar</h2>
-                    <ol class="breadcrumb white justify-content-center">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Blog Sidedar</li>
-                    </ol>
+                <div class="col-lg-8 text-center"> 
+                    <?php if ( is_archive() ) {
+                        mombo_archive_title( '<h2 class="white-color h1 m-20px-b">', '</h2>' ); 
+                    } elseif ( is_search() ) { ?>
+                        <h2 class="white-color h1 m-20px-b"><span><?php esc_html_e( 'Search Results for : ', 'mombo' ) ?></span><?php echo get_search_query(); ?></h2>
+                    <?php } else { ?>
+                        <h2 class="white-color h1 m-20px-b">Latest Articles</h2>
+                        <ol class="breadcrumb white justify-content-center">
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
+                            <li class="active">Latest Articles</li>
+                        </ol>
+                    <?php } ?>
                 </div>
             </div>
         </div>

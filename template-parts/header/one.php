@@ -19,8 +19,8 @@ mombo_preloader();
  * Header Part show/hide condition
  * @package Mombo
  * @since 1.0
- */
-if(get_post_meta(get_the_ID(), 'mombo_mb_header_part') == 'hide') return; ?>
+ */ 
+if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) return; ?>
 
 <!-- Header -->
 <header class="header-nav header-white">
@@ -28,7 +28,7 @@ if(get_post_meta(get_the_ID(), 'mombo_mb_header_part') == 'hide') return; ?>
         <div class="container container-large">
             <div class="navbar navbar-default navbar-expand-lg main-navbar">
                 <div class="navbar-brand">
-                    <a href="index.html" title="Mombo" class="logo">
+                    <a href="<?php echo esc_url( home_url('/') ); ?>" title="Mombo" class="logo">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-light.svg" class="light-logo" alt="Mombo" title="">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" class="dark-logo" alt="Mombo" title="">
                     </a>

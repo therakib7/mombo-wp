@@ -7,15 +7,23 @@
  */
 get_header(); ?> 
 
-<!-- Error  Block
-================================================== -->
-<section class="error-page-block pd-t-220 pd-b-135">
-    <div class="container error-content">
-        <div class="text-center">
-            <h2 class="error-title"><?php esc_html_e('Opps Page Not Found!!!!!', 'mombo'); ?></h2><!-- /.error-title -->
-            <h2 class="error-main color-blue-violet"><?php esc_html_e('404', 'mombo'); ?></h2><!-- /.error-main -->
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="error-home-btn btn-md bg-blue-violet color-white rd-30"><?php esc_html_e('Go Home', 'mombo'); ?></a>
+<!-- 404 block -->
+<section class="dark-bg">
+    <div class="container">
+        <div class="row justify-content-center full-screen align-items-center">
+            <div class="col-lg-8 text-center">
+                <h1 class="display-3 white-color m-15px-b"><?php esc_html_e('404 - Page Not Found..', 'mombo'); ?></h1>
+                <p class="h4"><?php esc_html_e('Whoops, it looks like the page you request wasn\'t found.', 'mombo'); ?></p>
+                <div class="m-30px-tb">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/effect/404-page.svg" title="" alt="">
+                </div>
+                <div>
+                    <a class="m-btn m-btn-t-white m-btn-radius" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Back to Home', 'mombo'); ?></a>
+                </div>
+            </div>
         </div>
-    </div><!-- /.container -->
-</section><!-- /.blog-block -->
+    </div>
+</section>
+<!-- end 404 block -->
+
 <?php get_footer(); ?>

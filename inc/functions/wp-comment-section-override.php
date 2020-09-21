@@ -25,7 +25,7 @@ function mombo_comment_form($args) {
         '" size="30"/></div>'
       );
 	$args['id_form'] = "comment_form";
-	$args['class_form'] = "row contactform";
+	$args['class_form'] = "row contactform card gray-bg";
 	$args['id_submit'] = "submit";
 	$args['class_submit'] = "btn btn-dark";
 	$args['name_submit'] = "submit";

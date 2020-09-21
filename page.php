@@ -14,51 +14,59 @@ $elemetor = get_post_meta( get_the_ID(), '_elementor_edit_mode');
 if( $elemetor ) : 
     if ( have_posts() ) : 
         while ( have_posts() ) : the_post(); ?> 
-        <div class="mombo-page-builder-content clearfix">
+        <div class="mombo-page-builder clearfix">
             <?php the_content(); ?>
         </div>
         <?php 
         endwhile; 
     endif; 
 else: ?>
-    <!-- Blog Block
-    ================================================== -->
-    <section class="blog-page-block pd-t-195 pd-b-135">
-        <div class="container blog-container">
-            <div class="row">
-                <?php while ( have_posts() ) : the_post(); ?>
-                <div class="col-md-10 full-content">
-                    <div class="blog-page-content blog-single-page site-single-post">
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(' post '); ?> >
-                            <?php if ( has_post_thumbnail() ) { ?>
-                                <figure class="entry-thumb">          
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php mombo_post_featured_image(655, 420); ?>             
-                                    </a> 
-                                </figure><!-- /.entry-thumb -->
-                            <?php } ?>
+    <!-- Main -->
+    <main>
+        <!-- Page Title -->
+        <section class="section bg-center bg-cover bg-fixed effect-section" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/banner-bg-5.jpg);">
+            <div class="mask theme-bg opacity-9"></div>
+            <div class="container">
+                <div class="row justify-content-center p-50px-t">
+                    <div class="col-lg-8 text-center"> 
+                        <?php the_title( '<h2 class="white-color h1 m-20px-b">', '</h2>' ); ?> 
+                        <ol class="breadcrumb white justify-content-center">
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
+                            <li class="active"><?php the_title(); ?></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Page Title -->
 
-                            <div class="entry-content"> 
-                                <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?> 
+        <!-- Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <?php while ( have_posts() ) : the_post(); ?>
+                        <div class="card">
+                            <div class="card-body"> 
                                 <?php 
                                     the_content(); 
                                     mombo_wp_link_pages(); 
                                 ?>
-                            </div><!-- /.entry-content -->
-                        </article><!-- /.post -->
-
-                    </div><!-- /.blog-page-content -->
-                    
-                    <?php
-                        // If comments are open or we have at least one comment, load up the comment template
-                        if ( comments_open() || get_comments_number() ) :
-                          comments_template();
-                        endif;
-                    ?>
-                </div><!-- /.col-md-9 full-content -->
-                <?php endwhile; ?>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.blog-block -->
+                            </div>
+                            <?php 
+                                // If comments are open or we have at least one comment, load up the comment template.
+                                if ( comments_open() || get_comments_number() ) :
+                                    comments_template();
+                                endif;
+                            ?> 
+                        </div>
+                            <?php endwhile; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+    </main>
+    <!-- End Main -->
 <?php endif; ?>
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@ get_header(); ?>
 <main>
     <?php while ( have_posts() ) : the_post(); ?>
     <!-- Page Title -->
-    <section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url(<?php  echo get_template_directory_uri(); ?>/assets/img/bg-1.jpg);">
+    <section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/bg-1.jpg);">
         <div class="mask dark-g-bg opacity-7"></div>
         <div class="container">
             <div class="row screen-65 justify-content-center align-items-center p-100px-tb">
@@ -21,12 +21,14 @@ get_header(); ?>
                     <div class="d-flex align-items-center m-25px-t justify-content-center text-left">
                         <div>
                             <div class="avatar-50 border-radius-50">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatra-2.jpg" title="" alt="">
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
                             </div>
                         </div>
                         <div class="p-15px-l">
                             <p class="h6 white-color m-0px"><?php the_author_meta('display_name'); ?></p>
-                            <small class="white-color-light">Co-Founder</small>
+                            <?php if ( $author_pos = get_user_meta(get_the_author_meta( 'ID' ), 'author_position', true) ) { ?>
+                            <small class="white-color-light"><?php echo esc_html( $author_pos ); ?></small>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -63,128 +65,26 @@ get_header(); ?>
                         <?php the_tags(' ', ' ', ' '); ?> 
                     </div>
                     <?php endif; ?>
-                    <div class="p-25px-tb m-35px-tb border-top-1 border-bottom-1 border-color-gray">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h5 class="m-0px">Share Post</h5>
-                            </div>
-                            <div>
-                                <div class="nav justify-content-center justify-content-md-end social-icon si-30 gray">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php if ( function_exists( 'mombo_social_share_link' ) ) {
+                        mombo_social_share_link( esc_html__('Share Post', 'mombo') ); 
+                    } ?> 
+
                     <div class="media gray-bg p-20px">
                         <div class="avatar-80 border-radius-50">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatra-2.jpg" title="" alt="">
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
                         </div>
                         <div class="media-body p-20px-l">
-                            <h5 class="m-10px-b">Nancy Bayers</h5>
-                            <p class="m-0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h5 class="m-10px-b"><?php the_author_meta('display_name'); ?></h5>
+                            <p class="m-0px"><?php the_author_meta('description'); ?></p>
                         </div>
                     </div>
-                    <div class="comments-area m-40px-t m-50px-b">
-                        <div class="border-bottom-1 border-color-gray p-10px-b m-25px-b">
-                            <h4 class="m-0px">3 Comments</h4>
-                        </div>
-                        <ul class="comment-list">
-                            <li class="comment">
-                                <article class="comment-body">
-                                    <div class="comment-meta d-flex align-items-center">
-                                        <div class="comment-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatra-2.jpg" title="" alt=""></div>
-                                        <div class="comment-metadata">
-                                            <div class="c-name">Nancy Bayer</div>
-                                            <span class="c-date">May 15, 2019 at 5:50 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="comment-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
-                                    <div class="comment-reply">
-                                        <a class="m-btn m-btn-t-theme m-btn-radius m-btn-sm" href="#">Reply</a>
-                                    </div>
-                                </article>
-                                <ul class="children">
-                                    <li class="comment">
-                                        <article class="comment-body">
-                                            <div class="comment-meta d-flex align-items-center">
-                                                <div class="comment-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatra-2.jpg" title="" alt=""></div>
-                                                <div class="comment-metadata">
-                                                    <div class="c-name">Nancy Bayer</div>
-                                                    <span class="c-date">May 15, 2019 at 5:50 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                            </div>
-                                            <div class="comment-reply">
-                                                <a class="m-btn m-btn-t-theme m-btn-radius m-btn-sm" href="#">Reply</a>
-                                            </div>
-                                        </article>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="comment">
-                                <article class="comment-body">
-                                    <div class="comment-meta d-flex align-items-center">
-                                        <div class="comment-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatra-2.jpg" title="" alt=""></div>
-                                        <div class="comment-metadata">
-                                            <div class="c-name">Nancy Bayer</div>
-                                            <span class="c-date">May 15, 2019 at 5:50 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="comment-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
-                                    <div class="comment-reply">
-                                        <a class="m-btn m-btn-t-theme m-btn-radius m-btn-sm" href="#">Reply</a>
-                                    </div>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card gray-bg">
-                        <div class="card-body">
-                            <h4 class="m-30px-b">Leave a Reply</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Full Name</label>
-                                            <input type="text" class="form-control" placeholder="Martin Luthar">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Your Email</label>
-                                            <input type="text" class="form-control" placeholder="info@domain.com">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Your Comment?</label>
-                                            <textarea class="form-control" rows="6" name="answer" placeholder="Hello, There! " aria-label="How'd you hear about Front?" required="" data-msg="Please enter an answer." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox mb-3">
-                                                <input type="checkbox" class="custom-control-input" id="check-terms">
-                                                <label class="custom-control-label" for="check-terms">Save my name, email, and website in this browser for the next time I comment.</a></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button class="m-btn m-btn-radius m-btn-theme">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <?php 
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    ?> 
                 </div> 
                 <?php get_sidebar(); ?>
             </div>
