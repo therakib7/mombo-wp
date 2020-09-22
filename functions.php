@@ -100,3 +100,8 @@ require get_parent_theme_file_path( '/inc/functions/ajax-functions.php' );
  * Include the Aqua-Resizer-master
  */
 require get_parent_theme_file_path( '/inc/libs/aqua-resizer-master/aq_resizer.php' );
+
+/**
+ * Include WooCommmerce
+ */
+require get_parent_theme_file_path( '/woocommerce/woo-functions.php' );
