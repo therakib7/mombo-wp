@@ -247,6 +247,20 @@
     * Masonry
     ----------------------*/
     THE.masonry = function () {
+      // blog masonry
+      jQuery(function($) {
+        // init Masonry
+        var $grid = $('.masonry-post').masonry({
+            // options
+            itemSelector: '.post',
+            // columnWidth: 400
+        });
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress( function() {
+            $grid.masonry('layout');
+        });
+      });
+
     	var portfolioWork = $('.portfolio-content');
     	if ($(".portfolio-content").exists()){
     		loadScript(plugin_track + 'isotope/isotope.pkgd.min.js', function() {
