@@ -16,9 +16,16 @@ Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
 Choose elementor template in mega menu
 
+Remove butter bean without post type so that remove elementor error
+
 
 Reza Note:
 Fix all unit test issues
 Match woocommerce
 
 masonry support in blog page = done
+
+Future Update
+=================
+Create all block with gutenburg
+
