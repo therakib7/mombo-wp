@@ -21,6 +21,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 get_header( 'shop' ); ?>
 
+<!-- Page Title -->
+<section class="section bg-center bg-cover bg-fixed effect-section" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/banner-bg-5.jpg);">
+	<div class="mask theme-bg opacity-9"></div>
+	<div class="container">
+		<div class="row justify-content-center p-50px-t">
+			<div class="col-lg-8 text-center"> 
+				<h2 class="white-color h1 m-20px-b"><?php esc_html_e( 'Product Details', 'mombo' ); ?></h2>
+				<ol class="breadcrumb white justify-content-center">
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
+					<li class="active"><?php the_title(); ?></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+	<!-- En Page Title -->
+	
 <!-- Product Single Page
 ================================================== -->
 <div class="container section">
