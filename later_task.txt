@@ -16,6 +16,7 @@ WordPress > Creative
 Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
 Choose elementor template in mega menu
+255*306 crop size error
 
 Remove butter bean without post type so that remove elementor error
 
