@@ -7,6 +7,11 @@
  * @package Mombo
  */
 
+add_filter('next_posts_link_attributes', 'mombo_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'mombo_posts_link_attributes'); 
+function mombo_posts_link_attributes() {
+    return 'class="page-link"';
+}
 
 if ( ! function_exists( 'mombo_posts_pagination_nav' ) ) :
 /**
@@ -45,43 +50,43 @@ function mombo_posts_pagination_nav($wp_query = '', $custom_class = '', $page_ur
         $links[] = $paged + 1;
     }
     $div_class = ($custom_class != "") ? $custom_class : "";
-    echo '<div class="pagination-block '. esc_attr( $div_class ) .' "><ul class="pagination">' . "\n";
+    echo '<div class="col-12 p-30px-t '. esc_attr( $div_class ) .' "><ul class="pagination justify-content-center">' . "\n";
 
     /** Previous Post Link */
     if ( get_previous_posts_link() ) {
-        printf( '<li class="nav-previous">%s</li>' . "\n", wp_kses_post( get_previous_posts_link('<i class="fa fa-angle-left"></i>' ) ) );
+        printf( '<li class="page-item nav-previous">%s</li>' . "\n", wp_kses_post( get_previous_posts_link('<i class="fas fa-chevron-left"></i>' ) ) );
     } 
     
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
-        $class = 1 == $paged ? ' class="active"' : '';
+        $class = 1 == $paged ? ' class="page-item active"' : ' class="page-item"';
 
-        printf( '<li%s><a class="page-numbers" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( 1 ) ), '1' );
+        printf( '<li%s><a class="page-link page-numbers" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( 1 ) ), '1' );
 
         if ( ! in_array( 2, $links ) )
-            echo '<li><span class="page-numbers dots">&hellip;</span></li>';
+            echo '<li class="page-item"><span class="page-numbers dots">&hellip;</span></li>';
     }
 
     /** Link to current page, plus 2 pages in either direction if necessary */
     sort( $links );
     foreach ( (array) $links as $link ) {
-        $class = $paged == $link ? ' class="active"' : '';
-        printf( '<li%s><a class="page-numbers" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( $link ) ), wp_kses_post( $link ) );
+        $class = $paged == $link ? ' class="page-item active"' : ' class="page-item"';
+        printf( '<li%s><a class="page-link page-numbers" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( $link ) ), wp_kses_post( $link ) );
     }
 
     /** Link to last page, plus ellipses if necessary */
     if ( ! in_array( $max, $links ) ) {
         if ( ! in_array( $max - 1, $links ) )
-            echo '<li><span class="page-numbers dots">&hellip;</span></li>' . "\n";
+            echo '<li class="page-item"><span class="page-numbers dots">&hellip;</span></li>' . "\n";
 
-        $class = $paged == $max ? ' class="active"' : '';
-        printf( '<li%s><a class="page-numbers curent" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( $max ) ), wp_kses_post( $max ) );
+        $class = $paged == $max ? ' class="page-item active"' : ' class="page-item"';
+        printf( '<li%s><a class="page-link page-numbers curent" href="%s">%s</a></li>' . "\n", wp_kses_post( $class ), esc_url( get_pagenum_link( $max ) ), wp_kses_post( $max ) );
     }
 
 
     /** Next Post Link */
     if ( get_next_posts_link() ) {
-        printf( '<li class="nav-next">%s</li>' . "\n", wp_kses_post( get_next_posts_link( '<i class="fa fa-angle-right"></i>') ) );
+        printf( '<li class="page-item nav-next">%s</li>' . "\n", wp_kses_post( get_next_posts_link( '<i class="fas fa-chevron-right"></i>') ) );
     } 
     echo '</ul></div>' . "\n";
 }
