@@ -5,6 +5,7 @@ https://elementor.github.io/elementor-icons/
 condition elementor
 https://github.com/elementor/elementor/issues/4187
 
+Single post and other edit with elementor condition
 
 Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
