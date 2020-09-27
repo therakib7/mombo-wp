@@ -15,10 +15,319 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /* Temporary Css */
-.widget {
-    margin-bottom: 35px;
+img {
+	height: auto;
+}
+.widget_pages ul li:hover,
+.widget_archive ul li:hover,
+.widget_meta ul li:hover,
+.widget_categories ul li:hover {
+	background: #f8f9fa;
+}
+.widget_nav_menu ul > li > a,
+.widget_pages ul > li > a,
+.widget_archive ul > li > a,
+.widget_meta ul > li > a,
+.widget_categories ul > li > a {
+	padding: 10px 20px;
+    display: inline-block;
+    color: #718096;
+    font-size: 15px;
+    text-transform: capitalize;
 }
 
-.calander {
-	
+.widget {
+    margin-bottom: 30px;
+}
+.widget .h5, h5 {
+    font-size: 18px;
+    color: #171347;
+}
+.widget ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.widget ul ul {
+	margin: 0;
+	list-style: none;
+	padding-left: 20px;
+	border-top: 1px solid #eaedf2;
+
+}
+.widget ul li {
+	border-bottom: 1px solid #eaedf2;
+}
+.widget ul li:last-child {
+	border-bottom: none;
+}
+
+/* ==== Widget Tagcloud ==== */
+.tagcloud {
+	padding: 15px 20px;
+}
+.tagcloud a {
+	padding: 5px 16px;
+    border: 1px solid #eee;
+    background: #eee;
+    color: #171347;
+    display: inline-block;
+    margin: 0 4px 6px 0px;
+    border-radius: 40px;
+    font-size: 13px !important;
+    text-transform: capitalize;
+    transition: all 0.2s linear 0s;
+}
+.tagcloud a:hover {
+    background: #03c;
+    border-color: #03c;
+    color: #ffffff;
+}
+/* ==== Widget Archive and Widget Categories ==== */
+.widget_archive ul li {
+	position: relative;
+}
+
+.widget_categories ul li .count,
+.widget_archive ul li .count {
+	position: absolute;
+	right: 0px;
+	padding: 10px 20px;
+}
+
+.widget_archive label, .widget_categories label {
+	padding: 10px 20px;
+}
+select {
+	width: 100%;
+	color: #718096;
+	padding: 10px 15px;
+	border: 1px solid #eaedf2;
+}
+/* ==== Widget Calinder ==== */
+.widget_calendar thead tr {
+	border-bottom: 1px solid #eaedf2
+}
+.widget_calendar thead tr th {
+    padding: 5px 10px;
+    width: 50px;
+    text-align: center;
+}
+.widget_calendar tr td {
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+.widget_calendar tr td:hover {
+    background: #e9ecef;
+}
+.widget_calendar caption {
+	text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #eaedf2;
+    border-bottom: 1px solid #eaedf2;
+}
+.widget_calendar nav {
+	text-align: center;
+    padding: 10px;
+}
+.widget_calendar nav a {
+	font-size: 14px;
+	color: #718096;
+}
+.widget_calendar nav c-date {
+	font-size: 13px;
+}
+/* ==== Widget Rss ==== */
+.widget_rss .h5 a {
+	color: #171347;
+}
+.widget_rss .h5 a img {
+	position: relative;
+	top: -2px;
+}
+.widget_rss ul .rsswidget {
+	font-weight: 700;
+	display: block;
+	font-size: 17px;
+	color: #171347;
+	line-height: 25px;
+}
+.widget_rss ul .rss-date {
+	font-size: 14px;
+	color: #a4a5a7;
+}
+/* ==== Text widget ==== */
+.textwidget {
+	padding: 0px 20px;
+}
+.textwidget p {
+	margin-bottom: 0;
+}
+.textwidget strong {
+	display: inline-block;
+    padding: 10px 0;
+}
+.textwidget .wp-caption-text {
+	margin-top: 15px;
+    font-size: 15px;
+}
+/* ==== Widget Recent Comments ==== */
+.widget_recent_comments ul a {
+	font-size: 15px;
+	color: #718096;
+}
+.widget_recent_comments ul li {
+	padding: 10px 0;
+	font-size: 14px;
+	color: #a4a5a7;
+}
+
+.widget_recent_entries ul li,
+.widget_rss ul li,
+.widget_recent_comments ul li {
+	padding: 10px 20px !important;
+}
+.widget_recent_entries ul li a {
+	color: #718096;
+}
+.widget_rss ul li cite {
+	color: #a4a5a7;
+	font-size: 14px;
+}
+/* ==== Widget Recent Comments ==== */
+.comment-respond .comment-reply-title {
+	margin-bottom: 15px;
+}
+.comment-respond label {
+	font-size: 15px;
+}
+.comment-respond .logged-in-as a {
+	color: #a4a5a7;
+}
+
+/* ==== Comments ==== */
+.comment-body .comment-metadata .c-name a {
+	color: #171347;
+}
+.comment-body .comment-reply-link {
+	color: #171347;
+	border: 1px solid #eaedf2;
+}
+
+
+/* ==== Product ==== */
+.woocommerce-result-count {
+	font-weight: 600;
+    color: #171347;
+    padding: 7px 0;
+}
+.product .onsale {
+	width: 45px;
+    height: 45px;
+    line-height: 40px !important;
+    right: 15px !important;
+    top: 15px !important;
+}
+.product .price {
+	margin-bottom: 0 !important;
+}
+.product .woocommerce-Price-amount bdi, 
+.product .woocommerce-Price-amount ins {
+	font-size: 16px;
+    line-height: 40px !important;
+    right: 15px !important;
+    top: 15px !important;
+}
+.product .added_to_cart {
+	padding: 5px 15px;
+    background: #171347;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.quantity .qty {
+    padding: 3px;
+    border: 1px solid #eaedf2;
+    border-radius: 3px;
+}
+.single_add_to_cart_button {
+	background-color: #000 !important;
+	margin-left: 30px !important;
+}
+.variations .label {
+	padding-top: 7px;
+}
+.variations select {
+	margin-bottom: 15px;
+}
+.posted_in a {
+	color: #a4a5a7;
+}
+.product .flex-control-thumbs li {
+	width: 33.33% !important;
+}
+/* ==== Woocommerce Tab ==== */
+.woocommerce-tabs .tabs {
+	padding: 0 !important;
+	border-left: 1px solid #d3ced2;
+	border-radius: 5px;
+}
+/* ==== Widget Product Search==== */
+.widget_product_search .woocommerce-product-search {
+	padding: 15px;
+}
+.widget_product_search .woocommerce-product-search button {
+	border: none;
+	padding: 6px 9px;
+	border-radius: 3px;
+}
+.widget_product_search .search-field {
+	width: 78%;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #eaedf2;
+}
+/* ==== Widget ==== */
+.woocommerce-widget-layered-nav ul li a,
+.widget_product_categories ul li a {
+	padding: 10px 20px !important;
+    display: inline-block;
+    color: #718096;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.woocommerce-widget-layered-nav ul li .count {
+	position: absolute;
+	right: 0px;
+	padding: 10px 20px !important;
+}
+/* ==== Widget Filter ==== */
+.widget_price_filter .price_slider_wrapper {
+	padding: 20px;
+}
+.widget_price_filter .ui-slider-range,
+.widget_price_filter .ui-slider-handle {
+	background-color: #dfdcde !important;
+}
+.widget_price_filter .price_slider_wrapper .ui-widget-content {
+	background-color: #77a464 !important;
+}
+.widget_price_filter .price_slider_wrapper button {
+	background: none;
+	border: 1px solid #eaedf2;
+	font-weight: normal;
+	padding: 7px 15px;
+}
+/* ==== Widget Filter ==== */
+.widget_recently_viewed_products li {
+	padding: 10px 20px !important;
+}
+.widget_recently_viewed_products li a {
+	color: #171347;
+}
+.widget_recently_viewed_products li img {
+	width: 60px !important;
 }
