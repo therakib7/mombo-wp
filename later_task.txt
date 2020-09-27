@@ -5,18 +5,6 @@ https://elementor.github.io/elementor-icons/
 condition elementor
 https://github.com/elementor/elementor/issues/4187
 
-pagination
-
-
-Startup Agency, Portfolio And Saas Business WordPress Theme
-Multipurpose Startup Agency, Portfolio And Saas Business WordPress Theme
-Multipurpose Startup Agency, Company And Saas Business WordPress Theme
-Creative Agency, Portfolio And Saas Business WordPress Theme
-Creative Agency, Portfolio And Saas Project WordPress Theme
-Digital Agency, Portfolio And Saas Project WordPress Theme
-
-Category Themeforest
-WordPress > Creative
 
 Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
