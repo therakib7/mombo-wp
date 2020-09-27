@@ -254,7 +254,7 @@ select {
     border-radius: 3px;
 }
 .single_add_to_cart_button {
-	background-color: #000 !important;
+	background-color: #171347 !important;
 	margin-left: 30px !important;
 }
 .variations .label {
@@ -271,9 +271,12 @@ select {
 }
 /* ==== Woocommerce Tab ==== */
 .woocommerce-tabs .tabs {
-	padding: 0 !important;
-	border-left: 1px solid #d3ced2;
+	padding-left: 5px !important;
 	border-radius: 5px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	background-color: #ebe9eb;
+	margin: 0 -4px;
 }
 /* ==== Widget Product Search==== */
 .widget_product_search .woocommerce-product-search {
