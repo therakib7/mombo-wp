@@ -5,8 +5,19 @@
  * @package Mombo
  * @since 1.0
  */
-get_header(); ?>
+get_header(); 
 
+$elemetor = get_post_meta( get_the_ID(), '_elementor_edit_mode');
+if( $elemetor ) : 
+    if ( have_posts() ) : 
+        while ( have_posts() ) : the_post(); ?> 
+        <div class="mombo-page-builder clearfix">
+            <?php the_content(); ?>
+        </div>
+        <?php 
+        endwhile; 
+    endif; 
+else: ?>
 <!-- Main -->
 <main>
     <?php while ( have_posts() ) : the_post(); ?>
@@ -94,5 +105,5 @@ get_header(); ?>
     <?php endwhile; ?>
 </main>
 <!-- main end -->
-
+<?php endif; ?>
 <?php get_footer(); ?>

@@ -43,8 +43,8 @@ endif;
  * @package Mombo
  * @since 1.0
  */
-if ( ! function_exists( 'mombo_get_image_crop_size' ) ) :
-function mombo_get_image_crop_size($img_id = false, $width = null, $height = null, $crop = false) {
+if ( ! function_exists( 'mombo_get_image_size_by_img_id' ) ) :
+function mombo_get_image_size_by_img_id($img_id = false, $width = null, $height = null, $crop = false) {
     $url = wp_get_attachment_url( $img_id ,'full' );
     if ( wp_is_mobile() ) {
         $crop_image = mombo_aq_resize( $url, 409, 275, false ); 
@@ -54,8 +54,8 @@ function mombo_get_image_crop_size($img_id = false, $width = null, $height = nul
             return $crop_image;
         }
     } else {
-        $crop_image = mombo_aq_resize( $url, $width, $height, $crop ); 
-        if( $crop_image == false ) {
+        $crop_image = mombo_aq_resize( $url, $width, $height, $crop );  
+        if( $crop_image == false ) { 
             return $url;
         } else { 
             return $crop_image;
@@ -114,30 +114,10 @@ endif;
  * @package Mombo
  * @since 1.0
  */
-if(! function_exists('mombo_return_page_title') ) :
-    function mombo_return_page_title() {
+if(! function_exists('mombo_get_page_title') ) :
+    function mombo_get_page_title() {
         $page_ID = get_queried_object_id();
         return get_the_title($page_ID);
     }
 endif;
 
-/**
- *  Mombo Generate Custom Link
- *
- * @package Mombo
- * @since 1.0
- */
-if ( ! function_exists( 'mombo_theme_kc_custom_link' ) ) :
-function mombo_theme_kc_custom_link( $link, $default = array( 'url' => '', 'title' => '', 'target' => '' ) ) {
-    $result = $default;
-    $params_link = explode('|', $link);
-
-    if( !empty($params_link) ){
-        $result['url'] = rawurldecode(isset($params_link[0])?$params_link[0]:'#');
-        $result['title'] = isset($params_link[1])?$params_link[1]:'';
-        $result['target'] = isset($params_link[2])?$params_link[2]:'';
-    }
-
-    return $result;
-}
-endif;

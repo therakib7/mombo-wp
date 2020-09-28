@@ -16,13 +16,12 @@ wp_enqueue_script( 'appear', get_theme_file_uri( '/assets/plugin/appear/jquery.a
 wp_enqueue_script( 'popper', get_theme_file_uri( '/assets/plugin/bootstrap/js/popper.min.js' ), array('jquery'), false, true);
 wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/plugin/bootstrap/js/bootstrap.js' ), array('jquery'), false, true);
 wp_enqueue_script( 'masonry' );
-wp_enqueue_script( 'mombo-custom-js', get_theme_file_uri( '/assets/js/custom.js' ), array('jquery'), false, true); 
- 
-// wp_enqueue_script('mombo-custom-js', get_theme_file_uri( '/assets/custom/custom.js' ), array('jquery'), false, true);
+wp_enqueue_script( 'mombo-custom', get_theme_file_uri( '/assets/js/custom.js' ), array('jquery'), false, true);  
 
-wp_localize_script('mombo-custom-js', 'mombo', array (
-        'ajaxurl' => admin_url( 'admin-ajax.php' ), 
-        'directory_uri' => get_template_directory_uri()
+wp_localize_script('mombo-custom', 'mombo', array (
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),  
+        'directory_uri' => get_template_directory_uri(),
+        'loading_text' => esc_html__( 'Loading...', 'mombo' ),  
     )
 );
 

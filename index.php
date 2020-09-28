@@ -11,6 +11,6 @@
  * @package Mombo
  */
 
-get_header(); 
+get_header();  
     get_template_part( 'template-parts/blog-parts/blog-home' ); 
 get_footer(); 

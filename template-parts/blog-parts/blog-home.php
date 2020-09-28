@@ -51,6 +51,10 @@
                         endif; 
                     ?>  
                     </div>
+                    
+                    <div class="row">
+                        <?php mombo_posts_pagination_nav(); ?>
+                    </div>
                 </div>
                 <?php get_sidebar(); ?>
             </div>

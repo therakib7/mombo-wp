@@ -1,6 +1,6 @@
 /*
 ===========================================================================
-  Template Name   : The9
+  Template Name   : Mombo
 ===========================================================================
 */
  
@@ -476,5 +476,37 @@
 		THE.HeaderHeight();
 	});
 
+
+})(jQuery);
+
+// Custom Js
+
+(function ($) {
+  "use strict"; // use strict to start 
+
+  function job_ajax(form) {
+      var form = $(form);
+      form.submit(function (event) {
+          event.preventDefault();
+          var $self = $(this);
+          var data = form.serialize(); 
+          $.ajax({
+              type: "post",
+              dataType: "html",
+              url: mombo.ajaxurl,
+              data: data,
+              beforeSend: function() { 
+                $('.job-ajax').html(mombo.loading_text);
+              },
+              success: function (resp) {    
+                $('.job-ajax').html(resp);
+              }, 
+          });
+      });  
+  }
+   
+  if ($('#job-list').length) { 
+      job_ajax('#job-list');
+  }
 
 })(jQuery);

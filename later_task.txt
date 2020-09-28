@@ -1,20 +1,16 @@
 
+Icon list
+https://elementor.github.io/elementor-icons/
 
+condition elementor
+https://github.com/elementor/elementor/issues/4187
 
-
-Startup Agency, Portfolio And Saas Business WordPress Theme
-Multipurpose Startup Agency, Portfolio And Saas Business WordPress Theme
-Multipurpose Startup Agency, Company And Saas Business WordPress Theme
-Creative Agency, Portfolio And Saas Business WordPress Theme
-Creative Agency, Portfolio And Saas Project WordPress Theme
-Digital Agency, Portfolio And Saas Project WordPress Theme
-
-Category Themeforest
-WordPress > Creative
+Single post and other edit with elementor condition
 
 Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
 Choose elementor template in mega menu
+255*306 crop size error
 
 Remove butter bean without post type so that remove elementor error
 
