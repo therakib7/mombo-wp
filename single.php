@@ -51,7 +51,7 @@ else: ?>
     <section class="section">
         <div class="container">
             <div class="row"> 
-                <div class="col-lg-8">
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8'); ?>>
                     <div class="nav p-25px-b">
                         <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?></span>
                         <span class="dark-color font-w-600 m-15px-l"><i class="fas fa-folder-open "></i>  

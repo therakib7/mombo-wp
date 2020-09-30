@@ -46,7 +46,7 @@ else: ?>
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <?php while ( have_posts() ) : the_post(); ?>
-                        <div class="card">
+                        <div id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
                             <div class="card-body"> 
                                 <?php 
                                     the_content(); 

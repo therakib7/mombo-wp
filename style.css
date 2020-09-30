@@ -16,17 +16,26 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* Temporary Css */
 body {
-	color: #7f7f7f !important;
+	color: #718096 !important;
 }
+.card-body strong {
+	color: #171347;
+	font-size: 30px;
+	margin-bottom: 0;
+}
+
 img {
 	height: auto;
+}
+figure {
+	width: 100% !important;
 }
 .size-full.wp-image-906.aligncenter,
 .attachment-full.size-full.wp-post-image {
 	width: 100%;
 }
 h2 {
-	font-size: 40px;
+	font-size: 28px;
 }
 .widget_nav_menu ul li a:hover,
 .widget_pages ul li a:hover,
@@ -43,7 +52,7 @@ h2 {
 .widget_categories ul > li > a {
 	padding: 10px 20px;
     display: inline-block;
-    color: #7f7f7f;
+    color: #718096;
     font-size: 15px;
     text-transform: capitalize;
 }
@@ -89,7 +98,6 @@ h2 {
     font-size: 13px !important;
     text-transform: capitalize;
     transition: ease-in-out all 0.2s;
-    font-weight: 600;
 }
 .tagcloud a:hover {
     background: #03c;
@@ -124,6 +132,12 @@ select {
 	border: 1px solid #eaedf2;
 	color: #7f7f7f;
 }
+select:hover {
+	border-color: #03c;
+	border-radius: 3px;
+	transition: ease-in-out all 0.55s;
+}
+
 /* ==== Widget Calinder ==== */
 .widget_calendar thead tr {
 	border-bottom: 1px solid #eaedf2
@@ -224,7 +238,6 @@ select {
 .textwidget select, 
 .widget_categories select {
 	padding: 12px;
-	border-radius: 3px;
 }
 /* ==== Widget Recent Comments ==== */
 .widget_recent_comments ul a {
@@ -248,22 +261,14 @@ select {
 	color: #a4a5a7;
 	font-size: 14px;
 }
-/* ==== Widget Recent Comments ==== */
-.comment-respond .comment-reply-title {
-	margin-bottom: 15px;
-}
-.comment-respond label {
-	font-size: 15px;
-}
-.comment-respond .logged-in-as a {
-	color: #a4a5a7;
-}
+
 /* ==== Product ==== */
 .related.products h2 {
 	margin-bottom: 20px;
 }
 .summary.entry-summary h1 {
 	line-height: 30px;
+	font-size: 28px;
 }
 .summary.entry-summary table td {
 	width: 0;
@@ -425,7 +430,6 @@ select {
 .widget_product_search .search-field {
 	width: 73%;
     padding: 10px;
-    border-radius: 3px;
     border: 1px solid #eaedf2;
 }
 /* ==== Widget ==== */
@@ -484,8 +488,6 @@ select {
 .widget_recently_viewed_products li img {
 	width: 60px !important;
 }
-
-
 .woocommerce-cart-form__contents th {
 	color: #171347;
 }
@@ -501,6 +503,7 @@ select {
 	color: #fff !important;
 	transition: ease-in-out all 0.55s;
 	background: #03c !important;
+	font-weight: 600;
 }
 .woocommerce a.button:after  {
 	vertical-align: inherit !important;
@@ -535,6 +538,16 @@ ul, ol {
 	padding-left: 20px;
 }
 
+/* ==== Comments Respond ==== */
+.comment-respond .comment-reply-title {
+	margin-bottom: 15px;
+}
+.comment-respond label {
+	font-size: 15px;
+}
+.comment-respond .logged-in-as a {
+	color: #a4a5a7;
+}
 /* ==== Comments ==== */
 .comments-area h4 {
 	margin-left: 20px;
