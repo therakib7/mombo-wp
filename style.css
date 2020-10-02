@@ -27,9 +27,9 @@ body {
 img {
 	height: auto;
 }
-figure {
+.page figure {
 	width: 100% !important;
-}
+} 
 .size-full.wp-image-906.aligncenter,
 .attachment-full.size-full.wp-post-image {
 	width: 100%;
@@ -125,13 +125,16 @@ h2 {
 	margin: 20px;
 	width: 89%;
 }
-input {
-	color: #000 !important;
-}
+
 select {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #eaedf2;
+	color: #495057 !important;
+}
+select:focus {
+	outline:  none;
+	border-color: #03c;
 }
 select:hover {
 	border-color: #03c;
@@ -238,7 +241,8 @@ select:hover {
 .widget_archive select,
 .textwidget select, 
 .widget_categories select {
-	padding: 12px;
+	padding: 15px 10px !important;
+	border-radius: 3px;
 }
 /* ==== Widget Recent Comments ==== */
 .widget_recent_comments ul a {
@@ -306,7 +310,7 @@ select:hover {
 .products.columns-4 .onsale {
 	top: 15px !important;
 }
-.woocommerce div.product div.images .flex-control-thumbs li {
+.woocommerce-product-gallery--columns-4 .flex-control-thumbs li {
 	width: 25% !important;
 }
 .product .price {
@@ -341,9 +345,9 @@ select:hover {
 .woocommerce ul.products li.product .button {
 	margin-top: 10px;
 }
-.woocommerce-product-gallery .flex-control-nav li {
+/* .woocommerce-product-gallery--with-images .flex-control-nav li {
 	width: 33.33% !important;
-}
+} */
 .quantity .qty {
     padding: 4px;
     border: 1px solid #eaedf2;
@@ -354,7 +358,6 @@ select:hover {
 }
 .single_add_to_cart_button {
 	background-color: #03c !important;
-	/* margin-left: 30px !important; */
 }
 .variations .label {
 	padding-top: 7px;
@@ -372,7 +375,7 @@ select:hover {
 	border-radius: 5px;
 }
 .woocommerce-tabs ul.tabs li {
-	margin: 0 -3px;
+	margin: 0 -3px !important;
 	border: 1px solid #ebe9eb !important;
 	background: none !important;
 }
@@ -384,7 +387,7 @@ select:hover {
 }
 .woocommerce-tabs ul.tabs li a {
 	color: #171347 !important;
-	padding: 8px 4px !important;
+	padding: 8px 3px !important;
 }
 .woocommerce-product-attributes th {
 	width: 33% !important;
@@ -394,6 +397,9 @@ select:hover {
 }
 
 /* ==== woocommerce pagination ==== */
+.p-30px-t {
+	padding-top: 150px;
+}
 .woocommerce-pagination ul {
 	border: none !important;
 }
@@ -654,7 +660,9 @@ ul, ol {
 }
 .woocommerce-checkout .col-2 {
 	max-width: 40% !important;
-	@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+	.woocommerce-checkout .col-2 {
 		padding: 0 !important;
 	}
 }
@@ -666,7 +674,9 @@ ul, ol {
     border: 1px solid #d3ccd2;
 }
 .row.masonry-post {
-	height: auto !important;
+	height: 1340px !important;
+	height: 1928.8px !important;
+	height: 2060.8px !important;
 }
 .woocommerce form .form-row-first, 
 .woocommerce form .form-row-last, 
