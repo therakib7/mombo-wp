@@ -37,6 +37,9 @@ img {
 h2 {
 	font-size: 28px;
 }
+
+.widget_layered_nav ul li a:hover,
+.widget_product_categories ul li a:hover,
 .widget_nav_menu ul li a:hover,
 .widget_pages ul li a:hover,
 .widget_archive ul li a:hover,
@@ -134,14 +137,30 @@ select {
 }
 select:focus {
 	outline:  none;
-	border-color: #03c;
+	border-color: #80bdff;
 }
 select:hover {
-	border-color: #03c;
+	border-color: #80bdff;
 	border-radius: 3px;
 	transition: ease-in-out all 0.55s;
 }
-
+.woocommerce-Input--text.input-text {
+	padding: 12px;
+	border: 1px solid #eaedf2;
+	border-radius: 3px;
+}
+input:focus {
+	border-color: #80bdff !important;
+}
+.search-field:focus, 
+textarea:focus {
+	border-color: #80bdff !important;
+	outline: none;
+	border-radius: 3px;
+}
+textarea {
+	padding: 10px;
+}
 /* ==== Widget Calinder ==== */
 .widget_calendar thead tr {
 	border-bottom: 1px solid #eaedf2
@@ -241,7 +260,7 @@ select:hover {
 .widget_archive select,
 .textwidget select, 
 .widget_categories select {
-	padding: 15px 10px !important;
+	padding: 13px 10px !important;
 	border-radius: 3px;
 }
 /* ==== Widget Recent Comments ==== */
@@ -383,7 +402,12 @@ select:hover {
 	background-color: #f1f6fd !important;
 }
 .woocommerce-tabs ul.tabs li:before {
-	border: 1px solid #ebe9eb !important;
+	border: none !important;
+	width: 0 !important;
+}
+.woocommerce-tabs ul.tabs li:after {
+	border: none !important;
+	width: 0 !important;
 }
 .woocommerce-tabs ul.tabs li a {
 	color: #171347 !important;
@@ -398,7 +422,7 @@ select:hover {
 
 /* ==== woocommerce pagination ==== */
 .p-30px-t {
-	padding-top: 150px;
+	/* padding-top: 150px; */
 }
 .woocommerce-pagination ul {
 	border: none !important;
@@ -506,6 +530,7 @@ select:hover {
 	color: #171347;
 }
 /* ==== Button ==== */
+.woocommerce button.button,
 .woocommerce-form-login__submit,
 .button.alt,
 .actions button, 
@@ -515,6 +540,14 @@ select:hover {
 	transition: ease-in-out all 0.55s;
 	background: #03c !important;
 	font-weight: 600;
+}
+.comment-reply .m-btn {
+	border: 1px solid #03c !important;
+	background: transparent !important;
+	color: #03c !important;
+}
+.comment-reply .m-btn:hover {
+	color: #fff !important;
 }
 .woocommerce a.button:after  {
 	vertical-align: inherit !important;
@@ -673,11 +706,7 @@ ul, ol {
     padding: 5px 10px;
     border: 1px solid #d3ccd2;
 }
-.row.masonry-post {
-	height: 1340px !important;
-	height: 1928.8px !important;
-	height: 2060.8px !important;
-}
+
 .woocommerce form .form-row-first, 
 .woocommerce form .form-row-last, 
 .woocommerce-page form .form-row-first, 
