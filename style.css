@@ -18,7 +18,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body {
 	color: #718096 !important;
 }
-.card-body strong {
+.card-body strong, .entry-content strong {
 	color: #171347;
 	font-size: 30px;
 	margin-bottom: 0;
@@ -26,6 +26,10 @@ body {
 
 img {
 	height: auto;
+}
+.post_format-post-format-video iframe {
+	width: 100% !important;
+	height: 472px;
 }
 .page figure, .post figure {
 	width: 100% !important;
@@ -287,6 +291,9 @@ textarea {
 }
 
 /* ==== Product ==== */
+.row.masonry-post {
+	height: auto !important;
+}
 .related.products h2 {
 	margin-bottom: 20px;
 }
@@ -421,9 +428,7 @@ textarea {
 }
 
 /* ==== woocommerce pagination ==== */
-.p-30px-t {
-	/* padding-top: 150px; */
-}
+
 .woocommerce-pagination ul {
 	border: none !important;
 }
@@ -752,4 +757,12 @@ ul, ol {
 .dark-color.font-w-600 {
 	max-width: 100%;
 	overflow: hidden;
+}
+.dark-color.font-w-600 a::after {
+	content: ",";
+	margin-right: 10px;
+}
+
+.dark-color.font-w-600 a:hover {
+	text-decoration: underline;
 }
