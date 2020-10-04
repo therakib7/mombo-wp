@@ -262,3 +262,15 @@ function mombo_post_type_search_query( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'mombo_post_type_search_query' );
+
+
+/**
+ * Support body open if not exist
+ * @package Mombo
+ * @since  1.0
+ */
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}

@@ -6,6 +6,7 @@ condition elementor
 https://github.com/elementor/elementor/issues/4187
 
 Single post and other edit with elementor condition
+every custom post single show hide post meta condition
 
 Mombo Template like victim template
 add class Victim_Utility { from template-function in victim
@@ -14,6 +15,8 @@ Choose elementor template in mega menu
 
 Remove butter bean without post type so that remove elementor error
 
+For Mail Chimp See Victim
+https://wordpress.org/plugins/mailchimp-for-wp/
 
 Reza Note:
 Fix all unit test issues
@@ -24,4 +27,4 @@ masonry support in blog page = done
 Future Update
 =================
 Create all block with gutenburg
-
+Welcome registration page

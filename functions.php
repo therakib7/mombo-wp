@@ -92,6 +92,12 @@ require get_parent_theme_file_path( '/inc/frontend/footer.php' );
 require get_parent_theme_file_path( '/inc/functions/wordpress-override.php' );
 
 /**
+ * Include custom nav walker 
+ * To modify default menu structure
+ */
+require get_parent_theme_file_path( '/inc/classes/custom-nav-walker.php' );
+
+/**
  * Include ajax functions
  */
 require get_parent_theme_file_path( '/inc/functions/ajax-functions.php' );

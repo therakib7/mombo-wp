@@ -57,12 +57,12 @@ class Mombo_Font_Selector extends WP_Customize_Control {
 				// Get Standard font options
 				$std_fonts = mombo_get_standard_fonts();
 				if ( ! empty( $std_fonts ) ) { ?>
-					<optgroup label="<?php esc_html_e( 'Standard Fonts', 'mombo' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Standard Fonts', 'mombo' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $std_fonts as $font ) {
 						?>
-							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
+							<option value="<?php echo esc_attr( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php }
@@ -70,11 +70,11 @@ class Mombo_Font_Selector extends WP_Customize_Control {
 				// Google font options
 				$google_fonts = mombo_get_google_fonts_array();
 				if ( ! empty( $google_fonts ) ) { ?>
-					<optgroup label="<?php esc_html_e( 'Google Fonts', 'mombo' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Google Fonts', 'mombo' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $google_fonts as $font ) { ?>
-							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
+							<option value="<?php echo esc_attr( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php } ?>
