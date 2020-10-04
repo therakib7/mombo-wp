@@ -6,6 +6,27 @@
  *
  * @see Walker
  */
+
+/**
+ * Custom Nav Classes
+ * @since 1.0
+*/
+add_filter('nav_menu_css_class' , 'mombo_nav_class' , 10 , 2 );
+function mombo_nav_class ($classes, $item) {
+	// var_dump($item->mtype); //mega
+    if ( in_array('menu-item-has-children', $classes) ) {
+        $classes[] = 'mm-in px-dropdown';
+    }
+    return $classes;
+}
+
+add_filter( 'nav_menu_submenu_css_class', 'mombo_menu_submenu_css_class', 10, 4 );
+function mombo_menu_submenu_css_class( $classes, $args) {
+	// var_dump($args);
+    $classes[] = 'px-dropdown-menu mm-dorp-in';
+    return $classes;
+} 
+
 class Mombo_Custom_Walker extends Walker_Nav_Menu {
 	/**
 	 * What the class handles.
