@@ -38,8 +38,9 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         wp_nav_menu ( array(
                             'menu_class' => 'nav navbar-nav m-auto',
                             'container'=> 'ul',
-                            'theme_location' => 'main-menu', 
-                            // 'walker' => new Mombo_Custom_Walker()  
+                            'theme_location' => 'header-menu', 
+                            'walker' => new Mombo_Custom_Walker() ,
+                            'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
                         )); 
                     ?>
                 </div>

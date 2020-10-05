@@ -561,22 +561,27 @@ function mombo_customize_register( $wp_customize ) {
         'priority'   => 100,   
     ));
 
-    if ( class_exists( 'Mombo_Customizer_Repeater_Control' ) ) { 
-        $wp_customize->add_setting( 'mombo_options[footer_social_url]', array(
-            'sanitize_callback' => 'mombo_customizer_repeater_sanitize',
-            'capability' => 'edit_theme_options',
-            'transport'   => 'postMessage',
-        )); 
-    
-        $wp_customize->add_control( new Mombo_Customizer_Repeater_Control( $wp_customize, 'mombo_options[footer_social_url]', array(
-            'label'   => esc_html__('Social URL','mombo'),
-            'section' => 'mombo_footer',
-            'priority' => 10,
-            'customizer_repeater_title_control' => true,
-            'customizer_repeater_link_control' => true,
-        ) ) );
-    }
+    $wp_customize->add_setting( 'mombo_options[footer_widget_columns]', array(
+        'default'     => 4,
+        'capability' => 'edit_theme_options',
+        'type' =>  'theme_mod',
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'mombo_sanitize_select',
+    ) );
 
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+        'mombo_options[footer_widget_columns]', 
+        array(
+            'label'                 => esc_html__( 'Footer Widget Columns', 'mombo' ),
+            'type'                  => 'select',
+            'section'               => 'mombo_footer', 
+            'choices'               => array( 
+                2 => esc_html__( 'Two', 'mombo' ),
+                3 => esc_html__( 'Three', 'mombo' ),
+                4 => esc_html__( 'Four', 'mombo' ), 
+            ),
+        ) 
+    ) ); 
 
     $wp_customize->add_setting(
         'mombo_options[footer_copyright_info]', array(
@@ -584,15 +589,14 @@ function mombo_customize_register( $wp_customize ) {
             'sanitize_callback' => 'mombo_sanitize_advance_html',
             'type'      =>  'theme_mod',
             'transport' => 'postMessage',
-            'default'   => 'Copyright &copy; 2018 Mombo All rights Reserved. Developed By - <a href="#">TechCandle</a>',
+            'default'   => 'Copyright &copy; 2020 Mombo All rights Reserved. Developed By - <a href="#">TechCandle</a>',
         )
     );
 
     $wp_customize->add_control(
         'mombo_options[footer_copyright_info]', array(
             'label' => esc_html__( 'Footer Copyright Text:', 'mombo' ),
-            'type' => 'text',
-            'priority' => 10,
+            'type' => 'text', 
             'section' => 'mombo_footer',
         )
     );
