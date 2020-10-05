@@ -659,7 +659,7 @@ if ( ! function_exists( 'mombofonts_inline_style' ) ) {
 			$custom_css .= 'body { font-size: ' . esc_attr( mombo_get_options( array('body_font_size', 15 ) ) ) .'px;}';
 			$custom_css .= '.navigation .mainmenu > li > a { font-size: ' . esc_attr( mombo_get_options( array('menu_font_size', 14 ) ) ) . 'px;}';
 			$custom_css .= 'blockquote { font-size: ' . esc_attr( mombo_get_options( array('post_blockquote_content', 18 ) ) ) . 'px;}';
-			$custom_css .= '.post .entry-title { font-size: ' . esc_attr( mombo_get_options( array('post_title_content', 26 ) ) ) . 'px;}';
+			$custom_css .= '.post .entry-title { font-size: ' . esc_attr( s( array('post_title_content', 26 ) ) ) . 'px;}';
 			$custom_css .= 'h1 { font-size: ' . esc_attr( mombo_get_options( array('heading_one_content', 36 ) ) ) . 'px;}';
 			$custom_css .= 'h2 { font-size: ' . esc_attr( mombo_get_options( array('heading_two_content', 30 ) ) ) . 'px;}';
 			$custom_css .= 'h3 { font-size: ' . esc_attr( mombo_get_options( array('heading_three_content', 24 ) ) ) . 'px;}';

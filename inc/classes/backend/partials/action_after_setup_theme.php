@@ -41,7 +41,8 @@ add_theme_support( 'post-thumbnails' );
  */
 register_nav_menus( 
     array(
-        'main-menu' => esc_html__( 'Main Menu', 'mombo' ),
+        'header-menu' => esc_html__( 'Header Menu', 'mombo' ),
+        'footer-menu' => esc_html__( 'Footer Menu', 'mombo' ),
     ) 
 );
 
