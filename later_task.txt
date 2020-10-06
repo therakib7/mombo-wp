@@ -1,5 +1,7 @@
 Todo
 ========
+custom post category not working like faq 
+
 try to create a gallery field from image in butterbean
 buttern bean default value not working in custom post type
 
@@ -33,8 +35,11 @@ https://wordpress.org/plugins/mailchimp-for-wp/
 Reza Note:
 Fix all unit test issues
 Match woocommerce
-
-masonry support in blog page = done
+Nothing found post in faq category
+img bottom margin in single fatured class
+category and date light color 
+404 page responsive and button bg color
+buy now button color has override with woocommerce css, not select default item
 
 Future Update
 =================

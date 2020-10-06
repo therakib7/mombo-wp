@@ -19,10 +19,10 @@
                     } elseif ( is_search() ) { ?>
                         <h2 class="white-color h1 m-20px-b"><span><?php esc_html_e( 'Search Results for : ', 'mombo' ) ?></span><?php echo get_search_query(); ?></h2>
                     <?php } else { ?>
-                        <h2 class="white-color h1 m-20px-b">Latest Articles</h2>
+                        <h2 class="white-color h1 m-20px-b"><?php esc_html_e( 'Latest Articles', 'mombo' ) ?></h2>
                         <ol class="breadcrumb white justify-content-center">
                             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
-                            <li class="active">Latest Articles</li>
+                            <li class="active"><?php esc_html_e( 'Latest Articles', 'mombo' ) ?></li>
                         </ol>
                     <?php } ?>
                 </div>
