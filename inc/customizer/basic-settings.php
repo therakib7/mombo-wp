@@ -414,9 +414,87 @@ function mombo_customize_register( $wp_customize ) {
                 'priority' => 10, 
                 
             ) 
-        ));        
+        ));     
+        
+        $wp_customize->add_setting( 'mombo_options[underconstruction]', array(
+            'default'     => false,
+            'transport'   => 'postMessage', 
+            'sanitize_callback' => 'mombo_sanitize_checkbox',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control( new Mombo_Toggle_Control( $wp_customize, 
+            'mombo_options[underconstruction]', 
+            array(
+                'label'  => esc_html__( 'Underconstruction:', 'mombo' ),
+                'type'   => 'ios',
+                'section'  => 'mombo_general_settings',
+                // 'priority' => 10, 
+                
+            ) 
+        )); 
+
+        $wp_customize->add_setting( 'mombo_options[underconstruction_page_id]', array(
+            'default'     => 0,
+            'capability' => 'edit_theme_options',
+            'type' =>  'theme_mod',
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'mombo_sanitize_select',
+        ) );
+
+      
+        $args = array(
+            'posts_per_page' => -1,  
+            'post_type' => 'page', 
+        );
+        $the_query = new WP_Query( $args ); 
+        $underconstruction_pages = [ 0 => esc_html__( 'Select Page', 'mombo' )];
+        while ( $the_query->have_posts() ) : $the_query->the_post(); 
+            $underconstruction_pages[get_the_ID()] = get_the_title();
+        endwhile; wp_reset_postdata(); 
+    
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+            'mombo_options[underconstruction_page_id]', 
+            array(
+                'label'                 => esc_html__( 'Underconstruction Page:', 'mombo' ),
+                'type'                  => 'select',
+                'section'               => 'mombo_general_settings', 
+                'choices'               => $underconstruction_pages,
+            ) 
+        ) ); 
     }   
-    $wp_customize->add_setting( 'mombo_options[sticky_contact_url]', array(
+
+    $wp_customize->add_setting( 'mombo_options[underconstruction_time_to]', array(
+        'default'     => '2021/10/11',
+        'transport'   => 'postMessage', 
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control(
+        'mombo_options[underconstruction_time_to]', array(
+            'label' => esc_html__( 'Underconstruction Time To:', 'mombo' ),
+            'type' => 'text',
+            'section' => 'mombo_general_settings',
+        )
+    );
+
+    $wp_customize->add_setting( 'mombo_options[menu_right_btn_txt]', array(
+        'default'     => 'Contact',
+        'transport'   => 'postMessage', 
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+        'capability' => 'edit_theme_options',
+    ));
+
+    $wp_customize->add_control(
+        'mombo_options[menu_right_btn_txt]', array(
+            'label' => esc_html__( 'Menu Right Button Text:', 'mombo' ),
+            'type' => 'text',
+            'section' => 'mombo_general_settings',
+        )
+    );
+
+    $wp_customize->add_setting( 'mombo_options[menu_right_btn_url]', array(
         'default'     => '#',
         'transport'   => 'postMessage', 
         'sanitize_callback' => 'mombo_sanitize_url',
@@ -424,8 +502,8 @@ function mombo_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control(
-        'mombo_options[sticky_contact_url]', array(
-            'label' => esc_html__( 'Contact URL:', 'mombo' ),
+        'mombo_options[menu_right_btn_url]', array(
+            'label' => esc_html__( 'Menu Right Button URL:', 'mombo' ),
             'type' => 'text',
             'section' => 'mombo_general_settings',
         )
