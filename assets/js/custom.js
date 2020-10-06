@@ -393,18 +393,18 @@
     /*-----------------------
     * Cookis
     -------------------------*/
-    THE.Cookis = function () {
-      loadScript(plugin_track + 'cookie/herbyCookie.js', function() {
-        $(document).herbyCookie({
-            btnText: "Accept",
-            policyText: "Privacy policy",
-            text: "We use cookies to ensure you get the best experience on our website, if you continue to browse you'll be acconsent with our",
-            scroll: false,
-            expireDays: 30,
-            link: "#"
-        });
-      });
-    }
+    // THE.Cookis = function () {
+    //   loadScript(plugin_track + 'cookie/herbyCookie.js', function() {
+    //     $(document).herbyCookie({
+    //         btnText: "Accept",
+    //         policyText: "Privacy policy",
+    //         text: "We use cookies to ensure you get the best experience on our website, if you continue to browse you'll be acconsent with our",
+    //         scroll: false,
+    //         expireDays: 30,
+    //         link: "#"
+    //     });
+    //   });
+    // }
 
     /*-----------------------
     * Cookis
