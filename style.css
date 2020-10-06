@@ -51,6 +51,14 @@ h2 {
 .widget_categories ul li a:hover {
 	 color: #03c;
 }
+.wp-block-archives.wp-block-archives-list {
+	padding: 0;
+	list-style: none;
+}
+.wp-block-archives.wp-block-archives-list a {
+	padding: 15px 10px 10px 0px !important;
+}
+.wp-block-archives.wp-block-archives-list li a,
 .widget_nav_menu ul > li > a,
 .widget_pages ul > li > a,
 .widget_archive ul > li > a,
@@ -82,6 +90,7 @@ h2 {
 	border-top: 1px solid #eaedf2;
 
 }
+.wp-block-archives.wp-block-archives-list li,
 .widget ul li {
 	border-bottom: 1px solid #eaedf2;
 }
@@ -115,6 +124,7 @@ h2 {
 .widget_archive ul li {
 	position: relative;
 }
+.wp-block-archives.wp-block-archives-list li .count,
 .widget_categories ul li .count,
 .widget_archive ul li .count {
 	position: absolute;
@@ -148,11 +158,12 @@ select:hover {
 	border-radius: 3px;
 	transition: ease-in-out all 0.55s;
 }
-.woocommerce-Input--text.input-text, .wp-block-search__input {
+.woocommerce-Input--text.input-text, .wp-block-search__input, .entry-content input {
 	padding: 12px;
 	border: 1px solid #eaedf2;
 	border-radius: 3px;
 }
+
 input:focus, #author:focus, #email:focus {
 	border-color: #80bdff !important;
 }
@@ -187,6 +198,16 @@ textarea {
     background: #03c;
     color: #fff;
 }
+.wp-calendar-nav a {
+	color: #718096;
+	text-decoration: none;
+}
+.wp-block-calendar table th {
+	color: #171347;
+	font-weight: 600;
+}
+.wp-block-calendar table td,
+.wp-block-calendar table td a,
 .widget_calendar tr td a {
     color: #718096 !important;
     color: #fff;
@@ -305,8 +326,12 @@ textarea {
 	position: relative;
 	top: 10px; 
 }
+.summary.entry-summary table td,
 .summary.entry-summary table tr {
-	border: none;
+	border: none !important;
+}
+.summary.entry-summary .price {
+	font-size: 20px !important;
 }
 .woocommerce-loop-product__title {
 	font-size: 18px !important;
@@ -535,6 +560,10 @@ textarea {
 	border: none;
 	border-radius: 3px;
 }
+.wp-block-button__link {
+	padding: 5px 20px;
+}
+.wp-block-button__link,
 .wp-block-search__button,
 .woocommerce button.button,
 .woocommerce-form-login__submit,
@@ -567,6 +596,7 @@ textarea {
 
 
 /* ==== table ==== */
+.category-classic.category-markup table th,
 .page table th {
 	width: 33.33%;
 	padding: 10px;
@@ -807,6 +837,7 @@ ul, ol {
  .woocommerce-page table.cart td.actions .input-text {
  	width: 130px;
  	padding: 5px 15px !important;
+ 	border: 1px solid #eaedf2 !important;
  }
 .type-page.status-publish .woocommerce-cart-form table thead th {
 	width: 0;
@@ -824,4 +855,30 @@ ul, ol {
 pre {
 	padding: 10px;
     border: 1px solid #ebe9eb;
+}
+/* ==== Blockquote ==== */
+.wp-block-quote {
+	border-left: 4px solid #171347 !important;
+} 
+.wp-block-quote.has-text-align-right {
+	border-left: none !important;
+	border-right: 4px solid #171347 !important;
+}
+.has-very-dark-gray-color {
+	border-left: 4px solid #171347;
+	padding: 10px 15px;
+}
+.has-very-dark-gray-color p {
+	line-height: 30px;
+}
+
+/* ==== Wp-block calendar ==== */
+.wp-block-calendar table th {
+	background: none;
+}
+
+
+
+.woocommerce-checkout-review-order-table th {
+	border: 1px solid #ebe9eb;
 }
