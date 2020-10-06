@@ -22,6 +22,16 @@ register_sidebar(  array(
 ) );
 
 register_sidebar(  array(
+    'name'          => esc_html__( 'Sidebar Faq', 'mombo' ),
+    'description'   => esc_html__( 'This sidebar will show in faq single page', 'mombo' ),
+    'id'            => 'sidebar-faq',
+    'before_widget' => '<aside id="%1$s" class="card widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<div class="card-header bg-transparent"><span class="h5 m-0px font-w-600 dark-color">',
+    'after_title'   => '</span></div>',
+) );
+
+register_sidebar(  array(
     'name'          => esc_html__( 'Sidebar WooCommerce', 'mombo' ),
     'description'   => esc_html__( 'This sidebar will show in WooCommerce page', 'mombo' ),
     'id'            => 'sidebar-woocommerce',

@@ -22,47 +22,45 @@ else: ?>
 <main>
     <?php while ( have_posts() ) : the_post(); ?>
     <!-- Page Title -->
-    <section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/bg-1.jpg);">
-        <div class="mask dark-g-bg opacity-7"></div>
+    <section class="section bg-center bg-cover bg-fixed effect-section" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/banner-bg-5.jpg);">
+        <div class="mask theme-bg opacity-9"></div>
         <div class="container">
-            <div class="row screen-65 justify-content-center align-items-center p-100px-tb">
-                <div class="col-lg-10 text-center m-50px-t">
-                    <h1 class="display-4 white-color m-25px-b"><?php the_title(); ?></h1>
-                    <p class="lead m-0px white-color-light">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
-                    <div class="d-flex align-items-center m-25px-t justify-content-center text-left">
-                        <div>
-                            <div class="avatar-50 border-radius-50">
-                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-                            </div>
-                        </div>
-                        <div class="p-15px-l">
-                            <p class="h6 white-color m-0px"><?php the_author_meta('display_name'); ?></p>
-                            <?php if ( $author_pos = get_user_meta(get_the_author_meta( 'ID' ), 'author_position', true) ) { ?>
-                            <small class="white-color-light"><?php echo esc_html( $author_pos ); ?></small>
-                            <?php } ?>
-                        </div>
-                    </div>
+            <div class="row justify-content-center p-50px-t">
+                <div class="col-lg-8 text-center"> 
+                    <h2 class="white-color h1 m-20px-b"><?php esc_html_e( 'Read the blog story', 'mombo' ) ?></h2>
+                    <ol class="breadcrumb white justify-content-center">
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
+                        <li class="active"><?php the_title(); ?></li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Page Title -->
+    <!-- En Page Title -->
+
     <!-- Section -->
     <section class="section">
         <div class="container">
             <div class="row"> 
                 <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8'); ?>>
+                    <h3 class="h4"><?php the_title(); ?></h3>
                     <div class="nav p-25px-b">
                         <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?></span>
                         <span class="dark-color font-w-600 m-15px-l"><i class="fas fa-folder-open "></i>  
-                        <?php
-                            $categories = get_the_category(); 
+                        <?php 
+                            $categories = ( is_singular('faq') ) ? get_terms( array('taxonomy' => 'faq-category' ) ) : get_the_category(); 
                             foreach( $categories as $category ) {
                                 echo '<a class="dark-color" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
                             } 
                         ?>
                         </span> 
                     </div>
+
+                    <?php if ( has_post_thumbnail() ) { ?>
+                    <div class="featured-img"> 
+                        <?php mombo_post_featured_image(730, 516, true, false); ?>  
+                    </div>
+                    <?php } ?>
 
                     <div class="entry-content"> 
                         <?php 

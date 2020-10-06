@@ -7,8 +7,9 @@
  */
 ?>
 <div class="col-lg-4 md-m-15px-tb">
-    <?php 
-    $sidebar_id = ( is_single() ) ? "sidebar-single": "sidebar-blog"; 
+    <?php  
+    $single_or_faq = ( is_singular('faq') ) ? "sidebar-faq" : "sidebar-single"; 
+    $sidebar_id = ( is_single() ) ? $single_or_faq : "sidebar-blog"; 
     if ( is_active_sidebar( $sidebar_id ) ) :  
         dynamic_sidebar( $sidebar_id ); 
     else :

@@ -1,7 +1,17 @@
 Todo
 ========
-Menu Fallback
+custom post category not working like faq 
 
+try to create a gallery field from image in butterbean
+buttern bean default value not working in custom post type
+
+with support-topic make faq single, page header add as pagination header
+
+https://www.shift8web.ca/2016/12/create-custom-gallery-meta-field-posts-wordpress/
+
+https://github.com/justintadlock/butterbean-example
+
+https://metabox.io/online-generator/
 
 Icon list
 https://elementor.github.io/elementor-icons/
@@ -25,10 +35,19 @@ https://wordpress.org/plugins/mailchimp-for-wp/
 Reza Note:
 Fix all unit test issues
 Match woocommerce
-
-masonry support in blog page = done
+Nothing found post in faq category
+img bottom margin in single fatured class
+category and date light color 
+404 page responsive and button bg color
+buy now button color has override with woocommerce css, not select default item
 
 Future Update
 =================
 Create all block with gutenburg
 Welcome registration page
+
+
+Buttenbean Task
+==============
+Create a gallery field customly
+create repeter field
