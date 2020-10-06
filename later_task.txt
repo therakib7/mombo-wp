@@ -2,6 +2,9 @@ Todo
 ========
 try to create a gallery field from image in butterbean
 buttern bean default value not working in custom post type
+
+with support-topic make faq single, page header add as pagination header
+
 https://www.shift8web.ca/2016/12/create-custom-gallery-meta-field-posts-wordpress/
 
 https://github.com/justintadlock/butterbean-example
