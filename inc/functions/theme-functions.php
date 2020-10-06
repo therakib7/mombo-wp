@@ -3,6 +3,7 @@
 
 /*
  * Template parts functions
+ * @since Mombo 1.0
 */
 if ( ! function_exists( 'mombo_get_template_part' ) ) :
     function mombo_get_template_part($part_name = "") {
@@ -17,28 +18,26 @@ if ( ! function_exists( 'mombo_get_template_part' ) ) :
     }
 endif;
 
-/* Mombo fw post meta */
-if ( ! function_exists( 'mombo_fw_post_meta' ) ) :
-    function mombo_fw_post_meta() {
-        $result = get_post_meta( get_the_ID(), 'fw_options', true); 
-        foreach (func_get_args() as $arg) {
-            if(is_array($arg)) {
-                if (!empty($result[$arg[0]])) {
-                    $result = $result[$arg[0]];
-                } else {  
-                  $result = $arg[1];
-                }
-            } else {
-                if (!empty($result[$arg])) {
-                    $result = $result[$arg];
-                } else { 
-                    $result = null;
-                }
-            }
+/*
+ * Get Meta Field Value
+ * @since Mombo 1.0
+*/
+function mombo_meta_options() {
+    foreach (func_get_args() as $arg) {
+        if (!empty($arg)) {
+            $result = get_post_meta( get_the_ID(), 'mombo_mb_'.$arg, true);
+        } else { 
+            $result = null;
         }
-        return $result;
     }
-endif;
+    return $result;
+}
+
+
+/*
+ * Excerpt Content
+ * @since Mombo 1.0
+*/
 
 function mombo_excerpt_length($limit) {
     $excerpt = explode(' ', get_the_excerpt(), $limit);
