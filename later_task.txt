@@ -1,5 +1,7 @@
 Todo
 ========
+Before adding live demo on localhost image need to be compressed
+
 custom post category not working like faq 
 
 try to create a gallery field from image in butterbean
@@ -35,11 +37,7 @@ https://wordpress.org/plugins/mailchimp-for-wp/
 Reza Note:
 Fix all unit test issues
 Match woocommerce
-Nothing found post in faq category
-img bottom margin in single fatured class
-category and date light color 
-404 page responsive and button bg color
-buy now button color has override with woocommerce css, not select default item
+Nothing found post in faq category 
 
 Future Update
 =================
