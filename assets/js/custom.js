@@ -459,7 +459,7 @@
 		THE.ProgressBar(),
     THE.particles(),
     THE.parallax(),
-    THE.Cookis(),
+    // THE.Cookis(),
     THE.tooltip(),
     THE.typedbox(),
 		THE.Owl();

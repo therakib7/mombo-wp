@@ -33,14 +33,23 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" class="dark-logo" alt="Mombo" title="">
                     </a>
                 </div>
-                <div class="navbar-collapse justify-content-end collapse" id="navbar-collapse-toggle">
+                <!-- <div class="navbar-collapse justify-content-end collapse" id="navbar-collapse-toggle">
+                    <?php 
+                        // wp_nav_menu ( array(
+                        //     'menu_class' => 'nav navbar-nav m-auto',
+                        //     'container'=> 'ul',
+                        //     'theme_location' => 'header-menu', 
+                        //     'walker' => new Mombo_Custom_Walker() ,
+                        //     'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
+                        // )); 
+                    ?>
+                </div> -->
+                <div id="main-menu">
                     <?php 
                         wp_nav_menu ( array(
-                            'menu_class' => 'nav navbar-nav m-auto',
-                            'container'=> 'ul',
-                            'theme_location' => 'header-menu', 
-                            'walker' => new Mombo_Custom_Walker() ,
-                            'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
+                            'container_class' => '',
+                            'container'=> '',
+                            'theme_location' => 'header-menu',  
                         )); 
                     ?>
                 </div>

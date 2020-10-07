@@ -38,7 +38,8 @@ img {
 .attachment-full.size-full.wp-post-image {
 	width: 100%;
 }
-h2 {
+
+.post h3, h2 {
 	font-size: 28px;
 }
 
@@ -362,7 +363,6 @@ textarea {
 .product .price {
 	margin-bottom: 0 !important;
 }
-
 .product .added_to_cart {
 	padding: 6px 15px;
     background: #171347;
@@ -372,11 +372,16 @@ textarea {
     border-radius: 3px;
 }
 .price {
-    color: #718069!important;
+    color: #718096!important;
     display: block;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     margin-bottom: .5em;
     font-size: 16px !important;
+}
+
+
+.price ins {
+	text-decoration: none;
 }
 .products.columns-4 .add_to_cart_button {
 	margin-bottom: 10px;
@@ -410,9 +415,6 @@ textarea {
 }
 .variations select {
 	margin-bottom: 15px;
-}
-.posted_in a {
-	color: #a4a5a7;
 }
 
 /* ==== Woocommerce Tab ==== */
@@ -551,6 +553,13 @@ textarea {
 .woocommerce-cart-form__contents th {
 	color: #171347;
 }
+.woocommerce-cart-form__contents .product-remove a {
+	display: inline-block;
+}
+.woocommerce-cart-form__contents .product-remove, 
+.woocommerce-cart-form__contents .product-thumbnail {
+	text-align: center !important;
+}
 .woocommerce-cart-form__contents td a {
 	color: #171347;
 }
@@ -569,8 +578,7 @@ textarea {
 .woocommerce-form-login__submit,
 .button.alt,
 .actions button, 
-.woocommerce a.button, 
-.m-btn {
+.woocommerce a.button {
 	color: #fff !important;
 	transition: ease-in-out all 0.55s;
 	background: #03c !important;
@@ -589,8 +597,7 @@ textarea {
 	font-size: 14px;
 } 
 .woocommerce-product-search button:hover, 
-.woocommerce a.button:hover, 
-.m-btn:hover {
+.woocommerce a.button:hover {
 	background: #002080 !important;
 }
 
@@ -618,7 +625,10 @@ table.shop_attributes td {
 table th a, 
 table td a {
 	color: #171347;
-	text-decoration: underline;
+}
+table th a:hover, 
+table td a:hover {
+	color: #03c;
 }
 /* ==== Order and Unorder ==== */
 ul, ol {
@@ -632,9 +642,7 @@ ul, ol {
 .comment-respond label {
 	font-size: 15px;
 }
-.comment-respond .logged-in-as a {
-	color: #a4a5a7;
-}
+
 /* ==== Comments ==== */
 .comments-area h4 {
 	margin-left: 20px;
@@ -820,6 +828,9 @@ ul, ol {
 	font-size: 22px;
 }
 
+.dark-color {
+	color: #718096;
+}
 .dark-color.font-w-600 {
 	max-width: 100%;
 	overflow: hidden;
@@ -875,10 +886,67 @@ pre {
 /* ==== Wp-block calendar ==== */
 .wp-block-calendar table th {
 	background: none;
-}
-
-
+} 
 
 .woocommerce-checkout-review-order-table th {
 	border: 1px solid #ebe9eb;
+}
+
+.wp-block-cover.has-background-dim {
+	margin-bottom: 15px;
+}
+.dark-bg .col-lg-8.text-center {
+	padding: 80px 0 30px;
+}
+/* ==== Main menu ==== */
+#main-menu {
+	flex-grow: 1;
+	z-index: 999; 
+	display: flex ;
+}
+#main-menu ul {
+	display: flex;
+	padding: 0;
+	list-style: none;
+	margin: auto;
+}
+#main-menu ul > li > a {
+	color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 24px 12px;
+    display: inline-block;
+}
+/* #main-menu ul > li > a :hover ul {
+	opacity: 1 !important;
+	visibility: visible !important;
+} */
+.px-dropdown:hover > .sub-menu {
+    opacity: 1 !important;
+}
+#main-menu ul ul {
+	position: absolute !important;
+	top: 100%;
+	left: 0;
+	background: #ffffff;
+	box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
+	width: 160px;
+	opacity: 0; 
+	/* pointer-events: none;
+	-moz-transition: ease all 0.55s;
+	-o-transition: ease all 0.55s;
+	-webkit-transition: ease all 0.55s;
+	transition: ease all 0.55s;*/
+}
+#main-menu ul ul li a {
+    color: #718096;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 15px;
+}
+#main-menu ul li ul li ul {
+	position: relative !important;
+	left: 100%;
+	top: -41px;
 }
