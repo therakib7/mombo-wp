@@ -43,8 +43,6 @@ body {
 /* ==== Color ==== */
 .woocommerce-widget-layered-nav ul li a,
 .widget_product_categories ul li a,
-.post .nav .dark-color,
-.format-gallery .dark-color,
 #main-menu ul ul li a,
 .select2-selection--single .select2-selection__rendered,
 .price,
@@ -129,8 +127,36 @@ pre,
 	font-size: 30px;
 	margin-bottom: 0;
 }
+.attachment-full.size-full.wp-post-image {
+	width: auto !important;
+}
+.wp-block-embed__wrapper .instagram-media {
+	max-width: 100% !important;
+}
+.featured-img {
+	margin-bottom: 15px;
+}
+.wp-block-archives.wp-block-archives-dropdown select {
+	border-bottom: none !important;
+}
+.wp-block-calendar {
+	border: 1px solid #eaedf2;
+    border-top: none;
+    margin-bottom: 15px;
+}
+.wp-block-calendar table caption {
+	text-align: center;
+    font-size: 15px;
+}
 img {
 	height: auto;
+}
+.wp-block-cover .wp-block-video video {
+	width: 100%;
+}
+.post .nav .dark-color {
+	color: #495057;
+	font-size: 15px;
 }
 .post_format-post-format-video iframe {
 	width: 100% !important;
@@ -139,9 +165,12 @@ img {
 .page figure, .post figure {
 	width: 100% !important;
 } 
+.post_format-post-format-image img {
+	width: 100% !important;
+} 
 .size-full.wp-image-906.aligncenter,
 .attachment-full.size-full.wp-post-image {
-	width: 100%;
+	width: 100% !important; 
 }
 
 .post h3, h2 {
@@ -329,6 +358,16 @@ textarea {
 .widget_calendar caption {
 	border-top: none;
 }
+
+@media (max-width: 992px) {
+	.widget.widget_calendar .wp-calendar-table {
+		width: 100%;
+	}
+	.widget.widget_calendar .card-header {
+		text-align: center;
+	}
+
+}	
 /* ==== Widget Rss ==== */
 .widget_rss .h5 a img {
 	position: relative;
@@ -373,9 +412,12 @@ textarea {
 .widget_recent_comments ul a {
 	font-size: 15px;
 }
+.widget_recent_comments ul a:hover {
+	color: #03c !important;
+}
 .widget_recent_comments ul li {
 	padding: 10px 0;
-	font-size: 14px;
+	color: #b5b5b5;
 }
 .widget_recent_entries ul li,
 .widget_rss ul li,
@@ -613,6 +655,7 @@ textarea {
 .woocommerce-cart-form__contents .product-thumbnail {
 	text-align: center !important;
 }
+
 /* ==== Button ==== */
 .wp-block-search__button {
 	padding: 0 15px;
@@ -640,6 +683,7 @@ textarea {
 }
 .comment-reply .m-btn:hover {
 	color: #fff !important;
+	background: #03c !important;
 }
 .woocommerce a.button:after  {
 	vertical-align: inherit !important;
@@ -651,6 +695,7 @@ textarea {
 .page table th {
 	width: 33.33%;
 	padding: 10px;
+	border-right: 1px solid #eaedf2;
 }
 table tr, table td  {
 	padding: 10px;
@@ -664,7 +709,7 @@ table.shop_attributes td {
 }
 table th a:hover, 
 table td a:hover {
-	color: #03c;
+	color: #03c !important;
 }
 /* ==== Order and Unorder ==== */
 ul, ol {
@@ -855,6 +900,7 @@ ul, ol {
 }
 .post .dark-color.font-w-600 a:hover {
 	text-decoration: underline;
+	color:  #03c;
 }
  .woocommerce-page table.cart td.actions .input-text {
  	width: 130px;
@@ -890,7 +936,12 @@ pre {
 .has-very-dark-gray-color p {
 	line-height: 30px;
 }
-
+.format-standard.has-post-thumbnail .featured-img {
+	margin-bottom: 15px;
+}
+.category-markup table {
+	margin-bottom: 15px;
+}
 /* ==== Wp-block calendar ==== */
 .wp-block-calendar table th {
 	background: none;
@@ -902,48 +953,128 @@ pre {
 	padding: 80px 0 30px;
 }
 /* ==== Main menu ==== */
-#main-menu {
-	flex-grow: 1;
-	z-index: 999; 
-	display: flex ;
+.header-nav.header-white.fixed-header #main-menu ul > li > a {
+	color: #171347;
 }
-#main-menu ul {
-	display: flex;
-	padding: 0;
-	list-style: none;
-	margin: auto;
+.header-nav.header-white.fixed-header .navbar-toggler {
+	border: 1px solid #171347;
 }
-#main-menu ul > li > a {
-    font-size: 15px;
-    font-weight: 600;
-    padding: 24px 12px;
-    display: inline-block;
+@media (min-width: 992px) {
+	#main-menu {
+		flex-grow: 1;
+		z-index: 999; 
+		display: flex ;
+	}
+	#main-menu ul {
+		display: flex;
+		padding: 0;
+		list-style: none;
+		margin: auto;
+	}
+	#main-menu ul > li > a {
+	    font-size: 15px;
+	    font-weight: 600;
+	    padding: 24px 12px;
+	    display: inline-block;
+	}
+	.px-dropdown:hover > .sub-menu {
+	    opacity: 1 !important;
+	    visibility: visible !important;
+	}
+	#main-menu ul ul {
+		position: absolute !important;
+		top: 100%;
+		left: 0;
+		background: #ffffff;
+		box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
+		width: 160px;
+		opacity: 0; 
+		-moz-transition: ease all 0.55s;
+		-o-transition: ease all 0.55s;
+		-webkit-transition: ease all 0.55s;
+		transition: ease all 0.55s;
+		visibility: hidden;
+	}
+	#main-menu ul ul li a {
+	    display: block;
+	    font-size: 15px;
+	    padding: 8px 15px;
+	}
+	#main-menu ul li ul li ul {
+		position: relative !important;
+		left: 100%;
+		top: -41px;
+	}
 }
-.px-dropdown:hover > .sub-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-#main-menu ul ul {
-	position: absolute !important;
-	top: 100%;
-	left: 0;
-	background: #ffffff;
-	box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
-	width: 160px;
-	opacity: 0; 
-	-moz-transition: ease all 0.55s;
-	-o-transition: ease all 0.55s;
-	-webkit-transition: ease all 0.55s;
-	transition: ease all 0.55s;
-	visibility: hidden;
-}
-#main-menu ul ul li a {
-    display: block;
-    font-size: 15px;
-    padding: 8px 15px;
-}
-#main-menu ul li ul li ul {
-	position: relative !important;
-	left: 100%;
-	top: -41px;
+@media (max-width: 992px) {
+	#main-menu {
+		height: 100%;
+		position: fixed;
+		right: -30%;
+		top: 0;
+		margin: 0;
+		z-index: 10;
+		transition: 0.5s;
+	}
+	#main-menu > ul {
+		padding: 0;
+		list-style: none;
+		background: #fff;
+		width: 200px;
+		border: 1px solid #eaedf2;
+		height: 100%;
+	}
+	#main-menu ul li {
+		border-bottom: 1px solid #eaedf2;
+	}
+	#main-menu ul li:last-child {
+		border-bottom: 0;
+	}
+	#main-menu ul li a {
+		display: block;
+		padding: 7px 15px;
+		color: #718096;
+		font-size: 15px;
+		letter-spacing: 0.3px;
+	}
+	#main-menu ul li a:hover {
+		color: #03c;
+	}
+	.sub-menu {
+		padding-left: 15px;
+		list-style: none;
+		display: none;
+	}
+	.sub-menu li a:last-child {
+		border-bottom: none;
+	}
+	#main-menu  ul ul {
+		    border-top: 1px solid #eaedf2;
+	}
+	.navbar-toggler {
+		border-radius: 5px;
+	}
+	.menu-show {
+		right: 0% !important;
+	}
+	#main-menu .mm-in > a::after {
+	    display: inline-block;
+	    font-family: "Font Awesome 5 Free";
+	    font-size: 65%;
+	    font-weight: 900;
+	    content: "\f107";
+	    margin-left: .5rem;
+	    transition: 0.3s ease;
+	}
+
+
+	/* #main-menu .mm-in > a::before {
+	    display: inline-block;
+	    font-family: "Font Awesome 5 Free";
+	    font-size: 65%;
+	    font-weight: 900;
+	    content: "\f107";
+	    margin-left: .2rem;
+	    transition: 0.3s ease;
+	} */
 }
