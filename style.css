@@ -7,6 +7,8 @@ Description: Mombo is a simple and easy to use, modern and creative, user friend
 Version: 1.0
 Tags: three-columns, right-sidebar, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images,  post-formats, sticky-post, threaded-comments, translation-ready 
 Text Domain: mombo
+Tested up to: 5.0
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -1176,10 +1178,54 @@ font-size: 13px;
     background-color: rgb(0 0 0 / 45%);
     cursor: pointer;
 }
+<<<<<<< HEAD
 .post.type-post .nav { 
 	overflow: hidden;
 	display: block;
 }
 .post.type-post .nav.tag-cloud a {
 	display: inline-block;
+=======
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+	border-radius: 3px;
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 0.8em;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP tool-bar. */
+}
+.gallery-caption {
+	display: block;
+}
+.bypostauthor {
+	display: block;
+}
+.alignleft {
+    float: left; 
+}
+.alignright {
+    float: right; 
+>>>>>>> 1a38b44eaf6ed546dfb91f030c348834b5fd543b
 }

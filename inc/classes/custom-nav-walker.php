@@ -5,27 +5,7 @@
  * @since 1.0
  *
  * @see Walker
- */
-
-/**
- * Custom Nav Classes
- * @since 1.0
-*/
-add_filter('nav_menu_css_class' , 'mombo_nav_class' , 10 , 2 );
-function mombo_nav_class ($classes, $item) {
-	// var_dump($item->mtype); //mega
-    if ( in_array('menu-item-has-children', $classes) ) {
-        $classes[] = 'mm-in px-dropdown';
-    }
-    return $classes;
-}
-
-// add_filter( 'nav_menu_submenu_css_class', 'mombo_menu_submenu_css_class', 10, 4 );
-// function mombo_menu_submenu_css_class( $classes, $args) {
-// 	// var_dump($args);
-//     $classes[] = 'px-dropdown-menu mm-dorp-in';
-//     return $classes;
-// } 
+ */ 
 
 class Mombo_Custom_Walker extends Walker_Nav_Menu {
 	/**
@@ -86,7 +66,7 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
-		$class_names = $class_names ? ' class="px-dropdown-menu mm-dorp-in ' . esc_attr( $class_names ) . '"' : '';
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		$output .= "{$n}{$indent}<ul$class_names>{$n}";
 	}
@@ -279,6 +259,14 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
 		} else {
 			$t = "\t";
 			$n = "\n";
+		}
+		
+		if ( $item->mtype =='mega' && $item->m_page_id ) {  
+			if ( class_exists('\Elementor\Plugin') ) {
+				$output .= '<div class="techcandle-mega-menu">';
+				$output .= $hello = \Elementor\Plugin::$instance->frontend->get_builder_content( $item->m_page_id, true ); 
+				$output .= '</div>';
+			} 
 		}
 		$output .= "</li>{$n}";
 	} 

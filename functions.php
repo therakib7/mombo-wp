@@ -4,12 +4,7 @@
  *
  * @package Mombo
  * @since 1.0
- */
-
-/**
- * Include all conditional tags
- */
-require get_parent_theme_file_path( '/inc/functions/conditional-tags.php' );
+ */ 
 
 /**
  * Include Frontend_Master Class

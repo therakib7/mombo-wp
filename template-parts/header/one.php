@@ -28,9 +28,9 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
         <div class="container container-large">
             <div class="navbar navbar-default navbar-expand-lg main-navbar">
                 <div class="navbar-brand">
-                    <a href="<?php echo esc_url( home_url('/') ); ?>" title="Mombo" class="logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-light.svg" class="light-logo" alt="Mombo" title="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" class="dark-logo" alt="Mombo" title="">
+                    <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>" class="logo">
+                        <img src="<?php echo esc_url(  mombo_get_options( array('logo', get_theme_file_uri('/assets/img/logo-light.svg')) ) ); ?>" class="light-logo" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
+                        <img src="<?php echo esc_url(  mombo_get_options( array('logo_sticky_menu', get_theme_file_uri('/assets/img/logo.svg')) ) ); ?>" class="dark-logo" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
                     </a>
                 </div>
                 <!-- <div class="navbar-collapse justify-content-end collapse" id="navbar-collapse-toggle">
@@ -44,6 +44,7 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         // )); 
                     ?>
                 </div> -->
+<<<<<<< HEAD
                 <div class="overlay">
                     <div id="main-menu">
                         <?php 
@@ -54,6 +55,18 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                             )); 
                         ?> 
                     </div>
+=======
+                <div id="main-menu">
+                    <?php 
+                        wp_nav_menu ( array(
+                            'container_class' => '',
+                            'container'=> '',
+                            'theme_location' => 'header-menu',  
+                            'walker' => new Mombo_Custom_Walker() ,
+                            'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
+                        )); 
+                    ?>
+>>>>>>> 1a38b44eaf6ed546dfb91f030c348834b5fd543b
                 </div>
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">

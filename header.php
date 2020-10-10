@@ -22,4 +22,4 @@
 <body <?php body_class(); ?> data-spy="scroll" data-target="#navbar" data-offset="98">
 <?php wp_body_open(); ?>
 
-<?php mombo_get_template_part('header'); ?>
+<?php mombo_get_template_part('header'); 
