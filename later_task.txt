@@ -1,6 +1,7 @@
 Todo
 ========
 Before adding live demo on localhost image need to be compressed
+remove multiple loading font awesome
 
 custom post category not working like faq 
 
