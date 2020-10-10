@@ -415,6 +415,26 @@
       })
     }
 
+    /*-----------------------
+    * main-menu
+    -------------------------*/
+    THE.main_menu = function () {
+     $(".navbar-toggler").click(function(){
+       $("#main-menu").addClass("menu-show");
+     });
+     function resized() {
+         var $mobileMenu = $(".menu li a"),
+             $menuOpen = $(window).width();
+         if ($menuOpen <= 991) {
+             $mobileMenu.on("click", function() {
+                 $(this).next().toggle();
+             });
+         } 
+     }
+     resized();
+
+    }
+
 	/* ---------------------------------------------- /*
 	 * All Functions
 	/* ---------------------------------------------- */
@@ -461,6 +481,7 @@
     THE.parallax(),
     // THE.Cookis(),
     THE.tooltip(),
+    THE.main_menu(),
     THE.typedbox(),
 		THE.Owl();
 	});
