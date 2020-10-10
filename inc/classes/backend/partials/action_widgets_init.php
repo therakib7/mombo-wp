@@ -42,7 +42,7 @@ register_sidebar(  array(
 ) );
 
 register_sidebars( mombo_get_options( array('footer_widget_columns', 4) ), array(
-    'name'          => esc_html__( 'Sidebar Footer %d', 'ramble' ),
+    'name'          => esc_html__( 'Sidebar Footer %d', 'mombo' ),
     'id'            => 'sidebar-footer',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',

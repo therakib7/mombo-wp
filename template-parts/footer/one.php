@@ -37,7 +37,7 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_footer_part', true) == 'hide' ) retur
 						endif; 
 					?>
 						<div class="footer-sidebar-<?php echo esc_attr($i) ?> <?php echo esc_attr( $col_class ) ?> m-15px-tb">
-							<?php dynamic_sidebar( esc_html__( 'Sidebar Footer ', 'ramble' ) . $i ) ?>
+							<?php dynamic_sidebar( esc_html__( 'Sidebar Footer ', 'mombo' ) . $i ) ?>
 						</div>
 					<?php
 					}

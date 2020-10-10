@@ -5,7 +5,7 @@
  * when users open or close the front page sections section.
  */
 
-(function() {
+(function($) {
 	wp.customize.bind( 'ready', function() {
 		// Only show the color hue control when there's a custom color scheme.
 		wp.customize( 'colorscheme', function( setting ) {
@@ -29,77 +29,6 @@
 				wp.customize.previewer.send( 'section-highlight', { expanded: isExpanding });
 			} );
 		} );
-
-		// Hide and show settings changes for header controls.
-		function hideShowBtnHeader() {
-			var controlBtn = [
-				'mombo_options-header_right_button_title',
-				'mombo_options-header_right_button_url'
-			];
-
-			var controlSocial = [
-				'mombo_options-social_url',
-				'mombo_options-social_profile_target'
-			];
-
-			var bgColorControlId = '#customize-control-mombo_options-header_right_settings';
-			if ( wp.customize.instance( 'mombo_options[header_right_settings]' ).get() === 'button' ) {
-				$.each( controlBtn, function ( i, value ) {	
-					$( '#customize-control-' + value ).show();
-				} );
-				$.each( controlSocial, function ( i, value ) {	
-					$( '#customize-control-' + value ).hide();
-				} );
-			} else if(wp.customize.instance( 'mombo_options[header_right_settings]' ).get() === 'social') { 
-				$.each( controlSocial, function ( i, value ) {	
-					$( '#customize-control-' + value ).show();
-				} );
-				$.each( controlBtn, function ( i, value ) { 
-					$( '#customize-control-' + value ).hide();
-				} );
-			} else {
-				$.each( controlBtn, function ( i, value ) { 
-					$( '#customize-control-' + value ).hide();
-				} );
-				$.each( controlSocial, function ( i, value ) {	
-					$( '#customize-control-' + value ).hide();
-				} );
-			}
-			return hideShowBtnHeader;
-		}
-
-		function hideShowHeader() {
-			var headerSettings = [
-				'mombo_options-header_right_settings',
-				'mombo_options-header_right_button_title',
-				'mombo_options-header_right_button_url',
-				'mombo_options-social_profile_target',
-				'mombo_options-social_url'
-			];
-
-			var headerControlId = '#customize-control-mombo_options-header_layout_dispay';
-
-			if ( wp.customize.instance( 'mombo_options[header_layout_dispay]' ).get() === 'header_one' ) {
-
-				$.each( headerSettings, function ( i, value ) {	
-					$( '#customize-control-' + value ).show();
-				} );
-
-				hideShowBtnHeader();	
-
-				// ... and on radio button change
-				$( '#customize-control-mombo_options-header_right_settings' ).on( 'change', hideShowBtnHeader );
-				
-			} else {
-				$.each( headerSettings, function ( i, value ) {	
-					$( '#customize-control-' + value ).hide();
-				} );
-			}
-		}
-		hideShowHeader();
-
-		$( '#customize-control-mombo_options-header_layout_dispay' ).on( 'change', hideShowHeader );
-
 
 		// Responsive switchers
 		$( '.customize-control .responsive-switchers button' ).on( 'click', function( event ) {

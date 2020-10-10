@@ -28,9 +28,9 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
         <div class="container container-large">
             <div class="navbar navbar-default navbar-expand-lg main-navbar">
                 <div class="navbar-brand">
-                    <a href="<?php echo esc_url( home_url('/') ); ?>" title="Mombo" class="logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-light.svg" class="light-logo" alt="Mombo" title="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" class="dark-logo" alt="Mombo" title="">
+                    <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>" class="logo">
+                        <img src="<?php echo esc_url(  mombo_get_options( array('logo', get_theme_file_uri('/assets/img/logo-light.svg')) ) ); ?>" class="light-logo" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
+                        <img src="<?php echo esc_url(  mombo_get_options( array('logo_sticky_menu', get_theme_file_uri('/assets/img/logo.svg')) ) ); ?>" class="dark-logo" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
                     </a>
                 </div>
                 <!-- <div class="navbar-collapse justify-content-end collapse" id="navbar-collapse-toggle">

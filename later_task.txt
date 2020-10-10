@@ -25,14 +25,14 @@ https://github.com/elementor/elementor/issues/4187
 Single post and other edit with elementor condition
 every custom post single show hide post meta condition
 
-Mombo Template like victim template
-add class Victim_Utility { from template-function in victim
+Mombo Template like mombo template
+add class Mombo_Utility { from template-function in mombo
 Choose elementor template in mega menu
 255*306 crop size error
 
 Remove butter bean without post type so that remove elementor error
 
-For Mail Chimp See Victim
+For Mail Chimp See Mombo
 https://wordpress.org/plugins/mailchimp-for-wp/
 
 Reza Note:

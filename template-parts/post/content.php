@@ -8,8 +8,9 @@
  * @since 1.0
  */
 
-$mombo_col = get_query_var( 'mombo_col' );
-$class = ( $mombo_col ) ? 'col-md-4' : 'col-md-6';
+$mombo_col = get_query_var( 'mombo_col' ); 
+$side_class = ( mombo_get_options('blog_layout') == 'no_side' ) ? 'col-md-4' : 'col-md-6';
+$class = ( $mombo_col ) ? 'col-md-4' : $side_class;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($class .' m-30px-b'); ?>>
     <div class="transition hover-top card box-shadow-only-hover overflow-hidden">
