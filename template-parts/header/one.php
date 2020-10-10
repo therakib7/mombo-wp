@@ -44,6 +44,18 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         // )); 
                     ?>
                 </div> -->
+<<<<<<< HEAD
+                <div class="overlay">
+                    <div id="main-menu">
+                        <?php 
+                            wp_nav_menu ( array(
+                                'container_class' => '',
+                                'container'=> '',
+                                'theme_location' => 'header-menu',  
+                            )); 
+                        ?> 
+                    </div>
+=======
                 <div id="main-menu">
                     <?php 
                         wp_nav_menu ( array(
@@ -54,6 +66,7 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                             'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
                         )); 
                     ?>
+>>>>>>> 1a38b44eaf6ed546dfb91f030c348834b5fd543b
                 </div>
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">
