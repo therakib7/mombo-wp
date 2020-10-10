@@ -50,6 +50,8 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                             'container_class' => '',
                             'container'=> '',
                             'theme_location' => 'header-menu',  
+                            'walker' => new Mombo_Custom_Walker() ,
+                            'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
                         )); 
                     ?>
                 </div>
