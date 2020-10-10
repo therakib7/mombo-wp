@@ -45,7 +45,8 @@ else: ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8'); ?>>
                     <h3 class="h4"><?php the_title(); ?></h3>
                     <div class="nav p-25px-b">
-                        <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?></span>
+                        <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?>
+                        </span>
                         <span class="dark-color font-w-600 m-15px-l"><i class="fas fa-folder-open "></i>  
                         <?php 
                             $categories = ( is_singular('faq') ) ? get_terms( array('taxonomy' => 'faq-category' ) ) : get_the_category(); 

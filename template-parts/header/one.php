@@ -44,14 +44,16 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         // )); 
                     ?>
                 </div> -->
-                <div id="main-menu">
-                    <?php 
-                        wp_nav_menu ( array(
-                            'container_class' => '',
-                            'container'=> '',
-                            'theme_location' => 'header-menu',  
-                        )); 
-                    ?>
+                <div class="overlay">
+                    <div id="main-menu">
+                        <?php 
+                            wp_nav_menu ( array(
+                                'container_class' => '',
+                                'container'=> '',
+                                'theme_location' => 'header-menu',  
+                            )); 
+                        ?> 
+                    </div>
                 </div>
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">
