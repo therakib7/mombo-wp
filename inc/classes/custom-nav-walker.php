@@ -220,7 +220,14 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
 		$item_output  = $args->before;
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $title . $args->link_after;
-		$item_output .= '</a>';
+		$item_output .= '</a>'; 
+		if ( $args->walker->has_children ) {
+			if ( $depth > 0 ) {
+				$item_output .= '<i class="fas fa-angle-right"></i>';
+			}else {
+				$item_output .= '<i class="fas fa-angle-down"></i>';
+			} 
+        }   
 		$item_output .= $args->after;
 
 		/**

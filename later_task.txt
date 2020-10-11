@@ -40,12 +40,9 @@ Reza Note:
 Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
-
-read more post align ment
-social share
-comment padding
-woocommerce shorting background
-browsing cat, cat separation
+woocommerce shorting and archive select background 
+common form field griding
+ 
 
 Future Update
 =================
