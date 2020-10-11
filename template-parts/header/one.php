@@ -44,33 +44,22 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         // )); 
                     ?>
                 </div> -->
-<<<<<<< HEAD
-=======
  
->>>>>>> 07d0797049642cb3c1ee102d761dc6553c26bc52
-                <div class="overlay">
-                    <div id="main-menu">
-                        <?php 
-                            wp_nav_menu ( array(
-                                'container_class' => '',
-                                'container'=> '',
-                                'theme_location' => 'header-menu',  
-                                'walker' => new Mombo_Custom_Walker() ,
-                                'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
-                            )); 
-<<<<<<< HEAD
-                        ?>
-                    </div>
-=======
-                        ?> 
-                    </div> 
->>>>>>> 07d0797049642cb3c1ee102d761dc6553c26bc52
-                </div>
+                <?php 
+                    wp_nav_menu ( array(
+                        'container_class' => 'main-menu',
+                        'container'=> 'div',
+                        'theme_location' => 'header-menu',  
+                        'walker' => new Mombo_Custom_Walker() ,
+                        'fallback_cb'  => 'Mombo_Custom_Walker::fallback_header_menu', 
+                    )); 
+                ?>  
+                
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">
                         <a class="m-btn m-btn-theme2nd m-btn-radius" href="#">Buy Now</a>
                     </div>
-                    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-toggle" aria-expanded="false">
+                    <button type="button" class="tc-toogle-menu">
                         <span class="icon-bar"></span>
                     </button>
                 </div>

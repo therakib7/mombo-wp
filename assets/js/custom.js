@@ -435,7 +435,7 @@
        $(".menu li a").addClass(".menu-open");
      });*/
      function resized() {
-         var $mobileMenu = $(".#main-menu ul li a"),
+         var $mobileMenu = $("#main-menu ul li a"),
              $menuOpen = $(window).width();
          if ($menuOpen <= 991) {
              $mobileMenu.on("click", function() {
