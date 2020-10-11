@@ -41,7 +41,6 @@ body {
 .woocommerce a.button:hover {
 	background: #002080 !important;
 }
-
 /* ==== Color ==== */
 .woocommerce-widget-layered-nav ul li a,
 .widget_product_categories ul li a,
@@ -69,7 +68,6 @@ body {
 .product .added_to_cart,
 .woocommerce-product-search button {
 	color: #fff;
-
 }
 .comment-body .comment-reply-link,
 .comment-body .comment-metadata .c-name a,
@@ -179,11 +177,9 @@ img {
 .has-post-thumbnail img {
 	width: 100% !important;   
 }
-
 .post h3, h2 {
 	font-size: 28px;
 }
-
 .widget_layered_nav ul li a:hover,
 .widget_product_categories ul li a:hover,
 .widget_nav_menu ul li a:hover,
@@ -281,7 +277,6 @@ ul li .count {
 	margin: 20px;
 	width: 89%;
 }
-
 select {
 	width: 100%;
 	padding: 10px;
@@ -331,7 +326,6 @@ textarea {
     transition: ease-in-out all 0.2s;
     width: 0;
 }
-
 .wp-calendar-nav a {
 	text-decoration: none;
 }
@@ -346,7 +340,6 @@ textarea {
 .widget_calendar .card-header {
 	border-bottom:  none;
 }
-
 .widget_calendar tr .pad:hover {
     background: none;
 }
@@ -377,7 +370,6 @@ textarea {
 	.widget.widget_calendar .card-header {
 		text-align: center;
 	}
-
 }	
 /* ==== Widget Rss ==== */
 .widget_rss .h5 a img {
@@ -392,9 +384,8 @@ textarea {
 }
 .widget_rss ul .rss-date {
 	font-size: 14px;
-	color: #bbb;
+	color: #a4a5a7;
 }
-
 /* ==== Text widget ==== */
 .textwidget {
 	padding: 0px 20px;
@@ -439,7 +430,6 @@ textarea {
 	color: #a4a5a7;
 	font-size: 14px;
 }
-
 /* ==== Product ==== */
 .related.products h2 {
 	margin-bottom: 20px;
@@ -486,7 +476,6 @@ textarea {
 .products.columns-4 .onsale {
 	top: 15px !important;
 }
-
 .product .price {
 	margin-bottom: 0 !important;
 }
@@ -671,7 +660,6 @@ textarea {
 .woocommerce-cart-form__contents .product-thumbnail {
 	text-align: center !important;
 }
-
 /* ==== Button ==== */
 .wp-block-search__button {
 	padding: 0 15px;
@@ -708,7 +696,6 @@ textarea {
 	vertical-align: inherit !important;
 	font-size: 14px;
 } 
-
 /* ==== table ==== */
 .category-classic.category-markup table th,
 .page table th {
@@ -730,11 +717,13 @@ table th a:hover,
 table td a:hover {
 	color: #03c !important;
 }
+ins {
+	text-decoration: none;
+}
 /* ==== Order and Unorder ==== */
 ul, ol {
 	padding-left: 20px;
 }
-
 /* ==== Comments Respond ==== */
 .comment-respond .comment-reply-title {
 	margin-bottom: 15px;
@@ -771,7 +760,6 @@ ul, ol {
 .comment-respond .col-md-6.form-group {
 	padding-left: 0px !important;
 }
-
 .woocommerce-form-login input {
 	padding: 10px;
 	border-radius: 3px;
@@ -785,7 +773,6 @@ ul, ol {
 	position: relative;
 	top: 3px;
 }
-
 .woocommerce-LostPassword  {
 	margin-top: 20px;
 }
@@ -858,7 +845,6 @@ ul, ol {
     width: 295px !important;
     padding: 5px 10px;
 }
-
 .woocommerce form .form-row-first, 
 .woocommerce form .form-row-last, 
 .woocommerce-page form .form-row-first, 
@@ -898,7 +884,6 @@ ul, ol {
 .select2-container--open .select2-dropdown {
 	top: 25px;
 }
-
 .shop_table.woocommerce-checkout-review-order-table .product-quantity {
 	position: relative;
 	top: 3px;
@@ -984,8 +969,10 @@ pre {
 .wp-block-cover.has-background-dim {
 	margin-bottom: 15px;
 }
-.dark-bg .col-lg-8.text-center {
-	padding: 105px 0 30px;
+@media (max-width: 992px) {
+	.dark-bg .col-lg-8.text-center {
+		padding: 45px 0 30px !important;
+	}
 }
 /* ==== Main menu ==== */
 .header-nav.header-white.fixed-header #main-menu ul > li > a {
@@ -1037,13 +1024,16 @@ pre {
 		list-style: none;
 		margin: auto;
 	}
+	#main-menu ul li {
+		position: relative;
+	}
 	#main-menu ul > li > a {
 	    font-size: 15px;
 	    font-weight: 600;
 	    padding: 24px 12px;
 	    display: inline-block;
 	}
-	.px-dropdown:hover > .sub-menu {
+	.menu-item a:hover > .sub-menu {
 	    opacity: 1 !important;
 	    visibility: visible !important;
 	}
@@ -1081,12 +1071,6 @@ pre {
 	}
 }
 
-/* .menu li a .menu-open :after {
-	transform: rotate(0deg);
-	font-family: "Font Awesome 5 Free";
-	content: "\f106";
-}
- */
 #main-menu .mm-in > a::after { 
 font-size: 13px;
 }
@@ -1178,15 +1162,13 @@ font-size: 13px;
     background-color: rgb(0 0 0 / 45%);
     cursor: pointer;
 }
-<<<<<<< HEAD
 .post.type-post .nav { 
 	overflow: hidden;
 	display: block;
 }
 .post.type-post .nav.tag-cloud a {
 	display: inline-block;
-=======
-
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1199,7 +1181,9 @@ font-size: 13px;
 	width: 1px;
 	overflow: hidden;
 }
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+.screen-reader-text:hover,
+.screen-reader-text:active, 
+.screen-reader-text:focus {
 	border-radius: 3px;
 	clip: auto !important;
 	color: #21759b;
@@ -1227,5 +1211,4 @@ font-size: 13px;
 }
 .alignright {
     float: right; 
->>>>>>> 1a38b44eaf6ed546dfb91f030c348834b5fd543b
 }

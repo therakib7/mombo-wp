@@ -419,16 +419,16 @@
     * main-menu
     -------------------------*/
     THE.main_menu = function () {
-      $("#menu-blog").append("<span></span>");
-     $(".navbar-toggler").click(function(){
-       $("#main-menu").addClass("menu-show");
-       $(".overlay").addClass("overlaybg");
-     });
+    $("#menu-blog").append("<span></span>");
+    $(".navbar-toggler").click(function(){
+        $("#main-menu").addClass("menu-show");
+        $(".overlay").addClass("overlaybg");
+    });
 
-     $("#main-menu ul span").click(function(){
-       $("#main-menu").removeClass("menu-show");
-       $(".overlay").removeClass("overlaybg");
-     });
+    $("#main-menu ul span").click(function() {
+        $("#main-menu").removeClass("menu-show");
+        $(".overlay").removeClass("overlaybg");
+    });
 
     /* $("#main-menu ul li").click(function() {
        $("#main-menu .sub-menu").toggle();
