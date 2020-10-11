@@ -89,19 +89,21 @@ else: ?>
                             <?php the_content(); ?>
                         </div> 
                     </div>
+                    <?php 
+                        $galleries = mombo_meta_options('gallery');  
+                        if ( $galleries ) {   
+                        $galleries = explode(",", $galleries);
+                    ?>  
                     <div class="col-12 m-30px-t">
                         <div class="owl-carousel" data-center="true" data-items="2" data-nav-dots="true" data-space="30" data-autoplay="true">
+                            <?php foreach ($galleries as $gallery) {   ?>
                             <div class="m-20px-b box-shadow">
-                                <img class="rounded" src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-1.jpg" title="" alt="">
+                                <img class="rounded" src="<?php echo esc_url(mombo_get_image_size_by_img_id($gallery, 540, 360, true)); ?>">
                             </div>
-                            <div class="m-20px-b box-shadow">
-                                <img class="rounded" src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-2.jpg" title="" alt="">
-                            </div>
-                            <div class="m-20px-b box-shadow">
-                                <img class="rounded" src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-3.jpg" title="" alt="">
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </section>

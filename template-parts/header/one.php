@@ -44,6 +44,10 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         // )); 
                     ?>
                 </div> -->
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 07d0797049642cb3c1ee102d761dc6553c26bc52
                 <div class="overlay">
                     <div id="main-menu">
                         <?php 
@@ -54,8 +58,13 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                                 'walker' => new Mombo_Custom_Walker() ,
                                 'fallback_cb'       => 'Mombo_Custom_Walker::fallback_header_menu', 
                             )); 
+<<<<<<< HEAD
                         ?>
                     </div>
+=======
+                        ?> 
+                    </div> 
+>>>>>>> 07d0797049642cb3c1ee102d761dc6553c26bc52
                 </div>
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">
