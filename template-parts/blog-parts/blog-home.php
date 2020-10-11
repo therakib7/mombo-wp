@@ -12,7 +12,7 @@
     <section class="section bg-center bg-cover bg-fixed effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('header_img') ) ); ?>);">
         <div class="mask theme-bg opacity-9"></div>
         <div class="container">
-            <div class="row justify-content-center p-50px-t">
+            <div class="row justify-content-center p-30px-t">
                 <div class="col-lg-8 text-center"> 
                     <?php if ( is_archive() ) {
                         mombo_archive_title( '<h2 class="white-color h1 m-20px-b">', '</h2>' ); 

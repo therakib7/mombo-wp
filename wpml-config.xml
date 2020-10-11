@@ -1,8 +1,16 @@
 <wpml-config>
     <custom-types>
         <custom-type translate="1">portfolio</custom-type>
+        <custom-type translate="1">job</custom-type>
+        <custom-type translate="1">faq</custom-type>
     </custom-types>   
     <taxonomies>
         <taxonomy translate="1">portfolio-category</taxonomy> 
+        <taxonomy translate="1">portfolio-tag</taxonomy> 
+        <taxonomy translate="1">job-category</taxonomy> 
+        <taxonomy translate="1">job-location</taxonomy> 
+        <taxonomy translate="1">job-tag</taxonomy> 
+        <taxonomy translate="1">faq-category</taxonomy> 
+        <taxonomy translate="1">faq-tag</taxonomy> 
     </taxonomies>      
 </wpml-config>
