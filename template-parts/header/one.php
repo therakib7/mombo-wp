@@ -54,13 +54,13 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         'fallback_cb'  => 'Mombo_Custom_Walker::fallback_header_menu', 
                     )); 
                 ?>  
-                
+
                 <div class="extra-menu d-flex align-items-center">
                     <div class="d-none d-md-block h-btn m-35px-l">
                         <a class="m-btn m-btn-theme2nd m-btn-radius" href="#">Buy Now</a>
                     </div>
-                    <button type="button" class="tc-toogle-menu">
-                        <span class="icon-bar"></span>
+                    <button type="button" class="tc-toogle-menu d-lg-none">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>

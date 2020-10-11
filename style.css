@@ -44,7 +44,7 @@ body {
 /* ==== Color ==== */
 .woocommerce-widget-layered-nav ul li a,
 .widget_product_categories ul li a,
-#main-menu ul ul li a,
+.main-menu ul ul li a,
 .select2-selection--single .select2-selection__rendered,
 .price,
 .widget_recent_entries ul li a,
@@ -63,7 +63,7 @@ body {
 	color: #718096 !important;
 }
 .woocommerce-pagination ul li span,
-#main-menu ul > li > a, 
+.main-menu ul > li > a, 
 .widget_price_filter .price_slider_wrapper button,
 .product .added_to_cart,
 .woocommerce-product-search button {
@@ -131,10 +131,10 @@ pre,
 .attachment-full.size-full.wp-post-image {
 	/* width: auto !important; */
 }
-.status-publish .entry-content ul {
+/* .status-publish .entry-content ul {
 	list-style: none;
 	padding: 0;
-}
+} */
 .wp-block-embed__wrapper .instagram-media {
 	max-width: 100% !important;
 }
@@ -174,7 +174,7 @@ img {
 .post_format-post-format-image img {
 	width: 100% !important;
 } 
-.has-post-thumbnail img {
+.has-post-thumbnail .transition img {
 	width: 100% !important;   
 }
 .post h3, h2 {
@@ -968,14 +968,21 @@ pre {
 } 
 .wp-block-cover.has-background-dim {
 	margin-bottom: 15px;
+	margin-right: 15px;	
 }
 @media (max-width: 992px) {
 	.dark-bg .col-lg-8.text-center {
 		padding: 45px 0 30px !important;
 	}
+	.fixed-header .main-menu ul span:before {
+	    color: #171347 !important;
+	} 
 }
 /* ==== Main menu ==== */
-.header-nav.header-white.fixed-header #main-menu ul > li > a {
+.header-nav.header-white.fixed-header .main-menu ul > li > a {
+	color: #171347;
+}
+.header-nav.header-white.fixed-header .main-menu ul .fa-angle-down {
 	color: #171347;
 }
 .header-nav.header-white.fixed-header .navbar-toggler {
@@ -1001,6 +1008,17 @@ pre {
 	margin-left: 30px;
 	width: 255px !important;
 }
+
+
+.justify-content-center h2 span:after {
+	content: ":";
+    margin-right: 10px;
+}
+
+.type-post .media.gray-bg {
+	margin-bottom: 20px;
+	border-right: 3px;
+}
 @media (max-width: 768px) {
 	.woocommerce-form.woocommerce-form-login.login label {
 		width: 100%;
@@ -1013,69 +1031,101 @@ pre {
 	}
 }
 @media (min-width: 992px) {
-	#main-menu {
+	.main-menu {
 		flex-grow: 1;
 		z-index: 999; 
 		display: flex ;
 	}
-	#main-menu ul {
+	.main-menu ul {
 		display: flex;
 		padding: 0;
 		list-style: none;
 		margin: auto;
-	}
-	#main-menu ul li {
 		position: relative;
 	}
-	#main-menu ul > li > a {
+	.main-menu ul .fa-angle-down {
+		color: #fff;
+	}
+	.main-menu ul li {
+		position: relative;
+	}
+	.main-menu ul > li > a {
 	    font-size: 15px;
 	    font-weight: 600;
-	    padding: 24px 12px;
+	    padding: 24px 20px;
 	    display: inline-block;
 	}
-	.menu-item a:hover > .sub-menu {
-	    opacity: 1 !important;
-	    visibility: visible !important;
-	}
-	#main-menu ul ul {
+	.main-menu ul ul {
 		position: absolute !important;
 		top: 100%;
 		left: 0;
-		background: #ffffff;
+		background: #fff;
 		box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
 		width: 180px;
-		opacity: 0; 
 		-moz-transition: ease all 0.55s;
 		-o-transition: ease all 0.55s;
 		-webkit-transition: ease all 0.55s;
 		transition: ease all 0.55s;
+		opacity: 0; 
 		visibility: hidden;
 	}
-	#main-menu ul ul li a {
+	.main-menu li:hover > .sub-menu {
+	    opacity: 1 !important;
+	    visibility: visible !important;
+	}
+	.main-menu ul ul:after {
+
+	}
+	.main-menu ul ul li a {
 	    display: block;
 	    font-size: 15px;
 	    padding: 8px 15px;
 	    color: #171347 !important;
 	    position: relative;
 	}
-	#main-menu ul ul li a:after {
+	.main-menu ul ul li a:after {
 	    position: absolute;
 	    top: 10px;
 	    transform: rotate(-90deg);
 	    right: 15px;
 	}
-	#main-menu ul li ul li ul {
+	.main-menu ul li ul li ul {
 		position: relative !important;
 		left: 100%;
 		top: -41px;
 	}
 }
-
-#main-menu .mm-in > a::after { 
-font-size: 13px;
+.tc-toogle-menu {
+	margin-left: 10px;
+	border-radius: 5px;
+	border: none;
+	background: none;
+}
+.tc-toogle-menu:focus {
+	outline: none !important;
+}
+.tc-toogle-menu i {
+	padding: 10px;
+    display: inline-block;
+    border: 1px solid #eaedf2;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 20px;
+}
+.main-menu ul .fa-angle-down {
+	position: absolute;
+    left: 72px;
+    top: 31px;
+    font-size: 13px;
+}
+.main-menu ul .sub-menu .fa-angle-right {
+	position: absolute;
+	right: 20px;
+	top: 13px;
+	font-size: 13px;
 }
 @media (max-width: 992px) {
-	#main-menu {
+	.main-menu {
 		height: 100%;
 		position: fixed;
 		left: -50%;
@@ -1084,7 +1134,7 @@ font-size: 13px;
 		z-index: 10;
 		transition: 0.5s;
 	}
-	#main-menu > ul {
+	.main-menu > ul {
 		position: relative;
 		padding: 0;
 		list-style: none;
@@ -1093,10 +1143,10 @@ font-size: 13px;
 		border: 1px solid #eaedf2;
 		height: 100%;
 	}
-	#main-menu ul li:last-child {
+	.main-menu ul li:last-child {
 		border-bottom: 0;
 	}
-	#main-menu ul li a {
+	.main-menu ul li a {
 		border-bottom: 1px solid #eaedf2;
 		display: block;
 		padding: 7px 15px;
@@ -1104,47 +1154,46 @@ font-size: 13px;
 		font-size: 15px;
 		letter-spacing: 0.3px;
 	}
-	#main-menu ul li a:hover {
+	.main-menu ul li a:hover {
 		color: #03c !important;
 	}
-	#main-menu .sub-menu a {
+	.main-menu .sub-menu a {
 		padding: 7px 25px;
 	}
 	.sub-menu {
+		position: relative;
 		padding-left: 0px;
 		list-style: none;
-		/* display: none; */
+		display: none;
 	}
 	.sub-menu li a:last-child {
 		border-bottom: none;
 	}
-	.navbar-toggler {
-		border-radius: 5px;
-	}
 	.menu-show {
 		left: 0% !important;
 	}
-	#main-menu .mm-in > a::after {
-	    display: inline-block;
-	    font-family: "Font Awesome 5 Free";
-	    font-weight: 600;
-	    content: "\f107";
-	    margin-left: .5rem;
-	    transition: 0.3s ease;
-	    right: 15px;
-        position: absolute;
-        top: 9px;
-        transform: rotate(-90deg);
+	.main-menu ul > a::after {
+	   
 	}
-
-	#main-menu ul span:before {
+	.main-menu ul span:before {
 		content: "\00d7";
 		position: absolute;
 	    right: -45px;
 	    font-size: 50px;
 	    color: #fff;
 	    top: -20px;
+	    cursor: pointer;
 	} 
+	.main-menu ul .sub-menu .fa-angle-right {
+	    position: absolute;
+	    right: 15px;
+	    top: 11px;
+	}
+	.main-menu ul .fa-angle-down {
+		position: absolute;
+		left: 173px;		
+		top: 10px;
+	}
 }
 
 .overlay {

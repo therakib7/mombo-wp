@@ -39,6 +39,8 @@ Reza Note:
 Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
+woocommerce shorting background
+browsing cat, cat separation
 
 Future Update
 =================

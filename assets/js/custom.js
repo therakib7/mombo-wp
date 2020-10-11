@@ -419,23 +419,25 @@
     * main-menu
     -------------------------*/
     THE.main_menu = function () {
-    $("#menu-blog").append("<span></span>");
-    $(".navbar-toggler").click(function(){
-        $("#main-menu").addClass("menu-show");
+    $("#menu-blog").prepend("<span></span>");
+    $(".menu").prepend("<i class='fas fa-angle-down'></i>");
+    $("#menu-blog .sub-menu").append("<i class='fas fa-angle-right'></i>");
+    $(".tc-toogle-menu").click(function(){
+        $(".main-menu").addClass("menu-show");
         $(".overlay").addClass("overlaybg");
     });
 
-    $("#main-menu ul span").click(function() {
-        $("#main-menu").removeClass("menu-show");
+    $(".main-menu span").click(function() {
+        $(".main-menu").removeClass("menu-show");
         $(".overlay").removeClass("overlaybg");
     });
 
-    /* $("#main-menu ul li").click(function() {
+    /*$(".main-menu ul li").click(function() {
        $("#main-menu .sub-menu").toggle();
        $(".menu li a").addClass(".menu-open");
      });*/
      function resized() {
-         var $mobileMenu = $("#main-menu ul li a"),
+         var $mobileMenu = $(".main-menu ul li a"),
              $menuOpen = $(window).width();
          if ($menuOpen <= 991) {
              $mobileMenu.on("click", function() {
