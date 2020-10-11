@@ -50,7 +50,7 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_header_part', true) == 'hide' ) retur
                         <?php 
                             wp_nav_menu ( array(
                                 'container_class' => '',
-                                'container'=> '',
+                                'container' => '',
                                 'theme_location' => 'header-menu',  
                             )); 
                         ?> 

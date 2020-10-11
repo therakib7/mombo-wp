@@ -2,6 +2,7 @@ Todo
 ========
 Before adding live demo on localhost image need to be compressed
 remove multiple loading font awesome
+share and read more
 
 custom post category not working like faq 
 
@@ -39,6 +40,12 @@ Reza Note:
 Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
+
+read more post align ment
+social share
+comment padding
+woocommerce shorting background
+browsing cat, cat separation
 
 Future Update
 =================
