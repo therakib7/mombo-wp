@@ -974,9 +974,6 @@ pre {
 	.dark-bg .col-lg-8.text-center {
 		padding: 45px 0 30px !important;
 	}
-	.fixed-header .main-menu ul span:before {
-	    color: #171347 !important;
-	} 
 }
 /* ==== Main menu ==== */
 .header-nav.header-white.fixed-header .main-menu ul > li > a {
@@ -1043,9 +1040,7 @@ pre {
 		margin: auto;
 		position: relative;
 	}
-	.main-menu ul .fa-angle-down {
-		color: #fff;
-	}
+
 	.main-menu ul li {
 		position: relative;
 	}
@@ -1056,46 +1051,69 @@ pre {
 	    display: inline-block;
 	    color: rgba(255, 255, 255, 0.8);
 	}
+	/* .main-menu ul > li > a:hover {
+		color: #fff;
+	}
+	.main-menu ul > li :hover {
+		color: #fff;
+	} */
+	 .main-menu ul > li:hover > a {
+    	color: #fff;
+	}
+	 .main-menu > ul > li:hover > li i {
+    	color: #ffffff;
+	}
+	.fixed-header .main-menu ul > li > a:hover {
+	    color: #03c !important;
+	} 
+	.main-menu ul > li > i {
+		position: relative;
+	    left: -5px;
+	    margin-right: 10px;
+	    font-size: 11px;
+	    color: rgba(255, 255, 255, 0.8);
+	}
 	.main-menu ul ul {
-		position: absolute !important;
-		top: 100%;
+		position: absolute;
+		top: 102%;
 		left: 0;
-		background: #fff;
+		background: #ffffff;
 		box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
-		width: 180px;
+		width: 200px;
+		margin: 0;
+		padding: 15px;
+		list-style: none;
 		-moz-transition: ease all 0.55s;
 		-o-transition: ease all 0.55s;
 		-webkit-transition: ease all 0.55s;
 		transition: ease all 0.55s;
+		border-top: 5px solid #03c;
 		opacity: 0; 
-		visibility: hidden;
+		visibility: hidden; 
+	}
+	.main-menu ul li ul li {
+		width: 100%;
+	}
+	.main-menu ul ul li a {
+		padding: 8px 12px;
+		color: #718096;
+		display: block;
+		font-size: 15px;
+		font-weight: 600;
+	}
+	.main-menu ul ul li a:hover {
+		color: #03c !important;
+	}
+	.main-menu ul ul li ul {
+		position: absolute;
+	    left: 109%;
+	    top: 0;
 	}
 	.main-menu li:hover > .sub-menu {
 	    opacity: 1 !important;
 	    visibility: visible !important;
 	}
-	.main-menu ul ul:after {
-
-	}
-	.main-menu ul ul li a {
-	    display: block;
-	    font-size: 15px;
-	    padding: 8px 15px;
-	    color: #171347 !important;
-	    position: relative;
-	}
-	.main-menu ul ul li a:after {
-	    position: absolute;
-	    top: 10px;
-	    transform: rotate(-90deg);
-	    right: 15px;
-	}
-	.main-menu ul li ul li ul {
-		position: relative !important;
-		left: 100%;
-		top: -41px;
-	}
-}
+} 
 .tc-toogle-menu {
 	margin-left: 10px;
 	border-radius: 5px;
@@ -1106,19 +1124,20 @@ pre {
 	outline: none !important;
 }
 .tc-toogle-menu i {
-	padding: 10px;
+	padding: 6px 8px;
     display: inline-block;
     border: 1px solid #eaedf2;
-    border-radius: 3px;
     background: #fff;
-    font-size: 20px;
+    font-size: 25px;
+    color: #171347;
 }
  
 .main-menu ul .sub-menu .fa-angle-right {
 	position: absolute;
-	right: 20px;
-	top: 13px;
+	left: 90%;
+	top: 14px;
 	font-size: 13px;
+	color: #718096;
 }
 @media (max-width: 992px) {
 	.main-menu {
@@ -1154,13 +1173,15 @@ pre {
 		color: #03c !important;
 	}
 	.main-menu .sub-menu a {
-		padding: 7px 25px;
+		padding: 8px 25px;
+	    color: #171347 !important;
+	    font-size: 13px;
 	}
-	.sub-menu {
+	.main-menu ul li ul.sub-menu {
 		position: relative;
 		padding-left: 0px;
 		list-style: none;
-		display: none;
+		display: none; 
 	}
 	.sub-menu li a:last-child {
 		border-bottom: none;
@@ -1168,10 +1189,8 @@ pre {
 	.menu-show {
 		left: 0% !important;
 	}
-	.main-menu ul > a::after {
-	   
-	}
-	.main-menu ul span:before {
+
+	.main-menu span:before {
 		content: "\00d7";
 		position: absolute;
 	    right: -45px;
@@ -1181,30 +1200,27 @@ pre {
 	    cursor: pointer;
 	} 
 	.main-menu ul.sub-menu .fa-angle-right {
-	    position: absolute;
-	    right: 15px;
-	    top: 11px;
+	    left: 88%;
+	    top: 12px;
 	}
 	.main-menu ul .fa-angle-down {
 		position: absolute;
-		left: 173px;		
-		top: 10px;
-	}
+		right: 15px;
+		top: 12px;
+		font-size: 13px;
+		color: #718096 !important;
+	} 
 }
 
-.overlay {
-	flex-grow: 1;
-}
-.overlaybg {
-    right: 0 !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    z-index: 1;
+
+.tc-overlaybg {
+    left: 0;
+    z-index: 100;
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
-    background-color: rgb(0 0 0 / 45%);
+    background-color: rgba(0, 0, 0, 0.45);
     cursor: pointer;
 }
 /* .post.type-post .nav { 
