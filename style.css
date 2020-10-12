@@ -1052,8 +1052,9 @@ pre {
 	.main-menu ul > li > a {
 	    font-size: 15px;
 	    font-weight: 600;
-	    padding: 24px 20px;
+	    padding: 24px 15px;
 	    display: inline-block;
+	    color: rgba(255, 255, 255, 0.8);
 	}
 	.main-menu ul ul {
 		position: absolute !important;
