@@ -283,9 +283,9 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
     */
     public static function fallback_header_menu( $args ) {
         if ( current_user_can( 'manage_options' ) ) {
-			echo '<ul class="nav navbar-nav m-auto">';
+			echo '<div class="main-menu"><ul>';
 			echo '<li class="active"><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html__('Asign a menu', 'mombo') . '</a></li>';
-			echo '</ul>';
+			echo '</ul></div>';
         }
     }
 

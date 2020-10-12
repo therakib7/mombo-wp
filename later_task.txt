@@ -54,3 +54,8 @@ Buttenbean Task
 ==============
 Create a gallery field customly
 create repeter field
+
+
+Demo Ready Task
+=================
+team section mobile img center
