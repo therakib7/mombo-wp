@@ -1113,12 +1113,7 @@ pre {
     background: #fff;
     font-size: 20px;
 }
-.main-menu ul .fa-angle-down {
-	position: absolute;
-    left: 72px;
-    top: 31px;
-    font-size: 13px;
-}
+ 
 .main-menu ul .sub-menu .fa-angle-right {
 	position: absolute;
 	right: 20px;
@@ -1185,7 +1180,7 @@ pre {
 	    top: -20px;
 	    cursor: pointer;
 	} 
-	.main-menu ul .sub-menu .fa-angle-right {
+	.main-menu ul.sub-menu .fa-angle-right {
 	    position: absolute;
 	    right: 15px;
 	    top: 11px;

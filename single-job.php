@@ -25,7 +25,7 @@ else: ?>
         <section class="section bg-center bg-cover effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('header_img') ) ); ?>);">
             <div class="mask theme-bg opacity-8"></div>
             <div class="container">
-                <div class="row justify-content-center p-50px-t">
+                <div class="row justify-content-center p-30px-t">
                     <div class="col-lg-8 text-center">
                         <h1 class="h1 white-color"><?php the_title(); ?></h1>
                         <p class="lead white-color-light">
