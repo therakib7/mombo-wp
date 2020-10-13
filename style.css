@@ -628,6 +628,9 @@ ul li .count {
 .variations select {
 	margin-bottom: 15px;
 }
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	margin-bottom: 0;
+}
 /* ==== Woocommerce Tab ==== */
 .woocommerce-tabs .tabs {
 	padding-left: 5px !important;
@@ -1008,6 +1011,14 @@ ul, ol {
 	padding: 10px;
 }
 /* ==== Comments Respond ==== */
+#comment_form p, .comment-form-rating {
+	width: 100%;
+	padding: 0 15px;
+}
+.comment-form-rating .stars, #comment_form .form-submit {
+	padding: 0 !important;
+}
+/* ==== Comments Respond ==== */
 .comment-respond .comment-reply-title {
 	margin-bottom: 15px;
 }
@@ -1240,9 +1251,11 @@ ul, ol {
 	.main-menu ul .fa-angle-down {
 		position: absolute;
 		right: 15px;
-		top: 12px;
+		top: 20px;
 		font-size: 13px;
 		color: #718096 !important;
+		padding: 0;
+		line-height: 0;
 	} 
 }
 /* ==== Footer menu ==== */
@@ -1260,7 +1273,9 @@ ul#menu-blog-1 li i{
 .post-1152 .nav.tag-cloud.p-25px-t a {
 	display: inline-block;
 } 
-
+#menu-item-61:hover #menu-item-33 a {
+	color: #03c;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
