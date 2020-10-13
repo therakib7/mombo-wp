@@ -437,7 +437,7 @@
 			var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
             $mobileMenu.on("click", function(e) {
 			    e.preventDefault();
-			    $(this).next().next().toggle();
+			    $(this).next().next().slideToggle();
             }); 
         } 
 	}
