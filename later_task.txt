@@ -45,7 +45,7 @@ Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
 woocommerce shorting and archive select background 
-common form field griding
+common form field griding 
 
 menu active color and submenu
 Recent Posts widget hover color
@@ -54,7 +54,27 @@ table content css
 
 curent menu active
 
-menu alignment will be left side
+menu alignment will be left side 
+ 
+http://localhost/wordpress/2018/11/01/blocks-widgets/
+fix block widget in post and pages
+http://localhost/wordpress/2018/11/01/blocks-layout-elements/
+post pagination
+
+http://localhost/wordpress/2013/01/11/markup-html-tags-and-formatting/.
+// remove
+.card-body strong, .entry-content strong {
+    font-size: 30px; 
+    margin-bottom: 0;
+}
+http://localhost/wordpress/2012/01/04/template-password-protected/
+submit color
+http://localhost/wordpress/2010/02/05/post-format-quote/
+quote post style
+http://localhost/wordpress/2009/07/02/edge-case-many-categories/
+catgory right side gap 
+
+https://wordpress.org/plugins/elementor/
 
 Future Update
 =================

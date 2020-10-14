@@ -424,34 +424,32 @@
     /*-----------------------
     * main-menu
     -------------------------*/
-    THE.main_menu = function () {
-		$(".main-menu").prepend("<span></span>"); 
-		$(".tc-toogle-menu").click(function(){
-			$(".main-menu").addClass("menu-show");
-			$/*(".navbar").addClass("tc-overlaybg");*/
-		});
+    THE.main_menu = function () {  
+      function resized() {
+        var $windowWidth = $(window).width();
+        if ( $windowWidth <= 991 ) { 
+          $(".main-menu").prepend("<span></span>"); 
+          $(".tc-toogle-menu").click(function(){
+            $(".main-menu").addClass("menu-show"); 
+          });
 
-		$(".main-menu span").click(function() {
-			$(".main-menu").removeClass("menu-show");
-			/*$(".navbar").removeClass("tc-overlaybg");*/
-		});
+          $(".main-menu span").click(function() {
+            $(".main-menu").removeClass("menu-show"); 
+          });
 
+          var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
+          $mobileMenu.on("click", function(e) {
+            e.preventDefault();
+            $(this).next().next().toggle();
+          }); 
+        } 
+      }
+
+      resized();
+      $(window).resize(function(){ 
+        resized();
+      });  
 		
-		function resized() {
-			var $windowWidth = $(window).width();
-			if ( $windowWidth <= 991 ) { 
-				var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
-				$mobileMenu.on("click", function(e) {
-					e.preventDefault();
-					$(this).next().next().toggle();
-				}); 
-			} 
-		}
-		resized();
-
-		$(window).resize(function(){ 
-			resized();
-		});  
     }
 
 	/* ---------------------------------------------- /*
