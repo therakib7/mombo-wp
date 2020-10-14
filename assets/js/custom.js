@@ -435,12 +435,13 @@
 
           $(".main-menu span").click(function() {
             $(".main-menu").removeClass("menu-show"); 
-          });
-
-          var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
+          }); 
+          
+          var $mobileMenu = $(".main-menu ul li.menu-item-has-children");
           $mobileMenu.on("click", function(e) {
-            e.preventDefault();
-            $(this).next().next().toggle();
+            e.preventDefault();   
+              $(this).find('ul.sub-menu').first().toggle();
+              return false;
           }); 
         } 
       }
