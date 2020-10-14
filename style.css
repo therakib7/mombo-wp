@@ -56,7 +56,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Main menu 
 
 # Forms
-	## comment-respond 
+	## comment Respond 
+	## comment Reviews
 	## Form
     ## Woocommerce Checkout
     ## Woocommerce Edit-account Form
@@ -147,10 +148,10 @@ table th a,
 .woocommerce-form-login,
 table tr, 
 table td,
-.woocommerce-form-login input,
-#comment_form textarea,
 .comment-respond #author, 
 .comment-respond #email,
+.woocommerce-form-login input,
+#comment_form textarea,
 .comment-body .comment-reply-link,
 .widget_product_search .search-field,
 .quantity .qty,
@@ -1010,10 +1011,15 @@ ul, ol {
 	border-radius: 3px;
 	padding: 10px;
 }
-/* ==== Comments Respond ==== */
+/* ==== Comments Reviews ==== */
 #comment_form p, .comment-form-rating {
 	width: 100%;
 	padding: 0 15px;
+}
+.comment-respond textarea:focus,
+.comment-respond #author:focus, 
+.comment-respond #email:focus {
+	outline: 1px solid #80bdff !important;
 }
 .comment-form-rating .stars, #comment_form .form-submit {
 	padding: 0 !important;
@@ -1063,6 +1069,11 @@ ul, ol {
 	.woocommerce-form.woocommerce-form-login.login .input-text {
 		margin-left: 0px;
 	}
+}
+/* ==== Post Password Form ==== */
+.post-password-form input:focus {
+	outline: 1px solid #80bdff !important;
+	border-radius: 3px;
 }
 /* ==== Main menu ==== */
 .header-nav.header-white.fixed-header .main-menu ul > li > a {
@@ -1258,6 +1269,7 @@ ul, ol {
 		line-height: 0;
 	} 
 }
+
 /* ==== Footer menu ==== */
 ul#menu-blog-1 li i{
 	margin: 0px 10px;
