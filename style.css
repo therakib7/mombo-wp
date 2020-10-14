@@ -632,9 +632,7 @@ ul li .count {
 .variations select {
 	margin-bottom: 15px;
 }
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-	margin-bottom: 0;
-}
+
 /* ==== Woocommerce Tab ==== */
 .woocommerce-tabs .tabs {
 	padding-left: 5px !important;
@@ -1054,6 +1052,12 @@ ul, ol {
 #comment_form textarea {
     height: 150px !important;
 }
+#comment_form {
+	padding-left: 15px;
+}
+#comment_form input#submit {
+	margin-left: -15px !important;
+}
 .woocommerce-form-login input {
 	padding: 10px;
 	border-radius: 3px;
@@ -1077,6 +1081,7 @@ ul, ol {
 .woocommerce-Reviews #email {
 	margin-left: 30px;
 }
+
 /* ==== Woocommerce-form-login ==== */
 @media (max-width: 768px) {
 	.woocommerce-form.woocommerce-form-login.login label {
@@ -1205,7 +1210,7 @@ ul, ol {
 	font-size: 13px;
 	color: #718096;
 }
-.main-menu ul li.current_page_item a {
+.main-menu ul li.menu-item-object-page.current_page_item a {
 	color: #fff;
 }
 .fixed-header ul li.current_page_item a {
@@ -1287,12 +1292,19 @@ ul, ol {
 		right: 15px;
 		top: 23px;
 		font-size: 13px;
-		color: #718096 !important;
+		color: #171347 !important;
 		padding: 0;
 		line-height: 0;
+		cursor: pointer;
 	} 
 }
 
+.main-menu ul li ul li.menu-item-object-page.current_page_item > a {
+	color: #03c !important;
+}
+.menu-item-object-page.current-menu-ancestor > a {
+	color: #03c !important;
+}
 /* ==== Footer menu ==== */
 ul#menu-blog-1 li i{
 	margin: 0px 10px;
