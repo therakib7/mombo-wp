@@ -1,8 +1,12 @@
 Todo
 ========
+home two youtube video popup not working for magnifypopup in custom js
 Before adding live demo on localhost image need to be compressed
 remove multiple loading font awesome
 share and read more
+in single without plugin tag match with author
+
+in page conent and comment match together
 
 custom post category not working like faq 
 
@@ -41,7 +45,16 @@ Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
 woocommerce shorting and archive select background 
-common form field griding
+common form field griding 
+
+menu active color and submenu
+Recent Posts widget hover color
+
+table content css
+
+curent menu active
+
+menu alignment will be left side 
  
 http://localhost/wordpress/2018/11/01/blocks-widgets/
 fix block widget in post and pages
@@ -59,7 +72,9 @@ submit color
 http://localhost/wordpress/2010/02/05/post-format-quote/
 quote post style
 http://localhost/wordpress/2009/07/02/edge-case-many-categories/
-catgory right side gap
+catgory right side gap 
+
+https://wordpress.org/plugins/elementor/
 
 Future Update
 =================
