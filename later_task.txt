@@ -1,8 +1,12 @@
 Todo
 ========
+home two youtube video popup not working for magnifypopup in custom js
 Before adding live demo on localhost image need to be compressed
 remove multiple loading font awesome
 share and read more
+in single without plugin tag match with author
+
+in page conent and comment match together
 
 custom post category not working like faq 
 
@@ -42,7 +46,15 @@ Match woocommerce
 Nothing found post in faq category 
 woocommerce shorting and archive select background 
 common form field griding
- 
+
+menu active color and submenu
+Recent Posts widget hover color
+
+table content css
+
+curent menu active
+
+menu alignment will be left side
 
 Future Update
 =================

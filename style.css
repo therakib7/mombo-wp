@@ -17,6 +17,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /* Temporary Css */
+.max-width-auto, .img-max-none img {
+	max-width: none !important;
+}
+.white-color {
+    color: #fff !important;
+}
+.theme-color {
+    color: #03c !important;
+}
+.theme2nd-color {
+    color: #15db95 !important;
+}
 body {
 	color: #718096 !important;
 }

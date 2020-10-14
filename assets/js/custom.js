@@ -5,7 +5,13 @@
 */
  
 (function($){
-	"use strict";
+  "use strict";
+  
+  // this is for background overlay effect with elementor directly tag implement not possible
+  $("#tc-effect-middle").prepend('<div class="effect effect-middle gray-bg"></div>');
+  $("#tc-effect-shape").prepend('<div class="effect-shape"></div>');
+  $("#tc-effect-radius-bg").prepend('<div class="effect-radius-bg"><div class="radius-1"></div><div class="radius-2"></div><div class="radius-3"></div><div class="radius-4"></div><div class="radius-x"></div></div>');
+  
 	var THE = {};
 	var plugin_track = mombo.directory_uri + '/assets/plugin/';
 	$.fn.exists = function () {
@@ -419,54 +425,33 @@
     * main-menu
     -------------------------*/
     THE.main_menu = function () {
-    $(".main-menu").prepend("<span></span>"); 
-    $(".tc-toogle-menu").click(function(){
-        $(".main-menu").addClass("menu-show");
-        $/*(".navbar").addClass("tc-overlaybg");*/
-    });
+		$(".main-menu").prepend("<span></span>"); 
+		$(".tc-toogle-menu").click(function(){
+			$(".main-menu").addClass("menu-show");
+			$/*(".navbar").addClass("tc-overlaybg");*/
+		});
 
-    $(".main-menu span").click(function() {
-        $(".main-menu").removeClass("menu-show");
-        /*$(".navbar").removeClass("tc-overlaybg");*/
-    });
+		$(".main-menu span").click(function() {
+			$(".main-menu").removeClass("menu-show");
+			/*$(".navbar").removeClass("tc-overlaybg");*/
+		});
 
-    
-    function resized() {
-        var $windowWidth = $(window).width();
-        if ( $windowWidth <= 991 ) {
-			var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
-            $mobileMenu.on("click", function(e) {
-			    e.preventDefault();
-			    $(this).next().next().toggle();
-            }); 
-        } 
-	}
-	resized();
-
-	$(window).resize(function(){
+		
+		function resized() {
+			var $windowWidth = $(window).width();
+			if ( $windowWidth <= 991 ) { 
+				var $mobileMenu = $(".main-menu ul li.menu-item-has-children a");
+				$mobileMenu.on("click", function(e) {
+					e.preventDefault();
+					$(this).next().next().toggle();
+				}); 
+			} 
+		}
 		resized();
-	});
-	// $('.main-menu ul li.sub-menu>a').on('click', function(){
-	// 	$(this).removeAttr('href');
-	// 	var element = $(this).parent('li');
-	// 	if (element.hasClass('open')) {
-	// 		element.removeClass('open');
-	// 		element.find('li').removeClass('open');
-	// 		element.find('ul').slideUp();
-	// 	} else {
-	// 		element.addClass('open');
-	// 		element.children('ul').slideDown();
-	// 		element.siblings('li').children('ul').slideUp();
-	// 		element.siblings('li').removeClass('open');
-	// 		element.siblings('li').find('li').removeClass('open');
-	// 		element.siblings('li').find('ul').slideUp();
-	// 	}
-	// });
 
-	// $('.main-menu>ul>li.sub-menu>a').append('<span class="holder"></span>');
- 
-       
-
+		$(window).resize(function(){ 
+			resized();
+		});  
     }
 
 	/* ---------------------------------------------- /*
@@ -537,7 +522,7 @@
 // Custom Js
 
 (function ($) {
-  "use strict"; // use strict to start 
+  "use strict"; // use strict to start  
 
   function job_ajax(form) {
       var form = $(form);
