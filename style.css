@@ -38,7 +38,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Widget Recent Comments   
 # Product  
 # Woocommerce Tab   
-# woocommerce pagination    
+# Pagination    
+# woocommerce Pagination    
 # Widget Shoping Cart    
 # Widget Product Search     
 # Widget Filter     
@@ -71,6 +72,7 @@ body {
 	color: #718096 !important;
 }
 /* ==== Background ==== */
+.post-password-form [type=submit],
 .form-submit input,
 .woocommerce-product-search button,
 .woocommerce-pagination ul li span ,
@@ -85,6 +87,7 @@ body {
 	color: #fff !important;
 }
 /* ==== Background hover ==== */
+.post-password-form [type=submit]:hover,
 .form-submit input:hover,
 .widget_price_filter .price_slider_wrapper button:hover,
 .woocommerce-product-search button:hover, 
@@ -197,7 +200,7 @@ pre {
 }
 .card-body strong, 
 .entry-content strong {
-	font-size: 30px;
+	/* font-size: 30px; */
 	margin-bottom: 0;
 }
 .wp-block-embed__wrapper .instagram-media {
@@ -661,6 +664,23 @@ ul li .count {
 .woocommerce-tabs ul.tabs::before {
 	border-bottom: 1px solid #ebe9eb !important;
 }
+/* ==== Pagination ==== */
+.page-links {
+	margin-top: 15px;
+}
+.page-links .post-page-numbers span {
+	border: 1px solid #ccc;
+    box-shadow: none;
+    border-radius: 5px;
+    color: #171347;
+    margin: 0 5px;
+    padding: .5rem .75rem;
+}
+.post-page-numbers.current span {
+	background: #03c;
+    border-color: #03c;
+    color: #ffffff;
+}
 /* ==== woocommerce pagination ==== */
 .woocommerce-pagination ul {
 	border: none !important;
@@ -801,7 +821,6 @@ ul li .count {
 }
 table tr, table td  {
 	padding: 10px;
-
 }
 .entry-content table td {
 	width: 0%;
@@ -1014,7 +1033,7 @@ ul, ol {
 /* ==== Comments Reviews ==== */
 #comment_form p, .comment-form-rating {
 	width: 100%;
-	padding: 0 15px;
+	/* padding: 0 15px; */
 }
 .comment-respond textarea:focus,
 .comment-respond #author:focus, 
@@ -1073,7 +1092,10 @@ ul, ol {
 /* ==== Post Password Form ==== */
 .post-password-form input:focus {
 	outline: 1px solid #80bdff !important;
-	border-radius: 3px;
+	outline: none !important;
+}
+.post-password-form input {
+	padding: 10px;
 }
 /* ==== Main menu ==== */
 .header-nav.header-white.fixed-header .main-menu ul > li > a {
@@ -1152,7 +1174,7 @@ ul, ol {
 	.main-menu ul ul li ul {
 		position: absolute;
 	    left: 109%;
-	    top: 0;
+	    top: -20px;
 	}
 	.main-menu li:hover > .sub-menu {
 	    opacity: 1 !important;
@@ -1205,7 +1227,7 @@ ul, ol {
 		padding: 0;
 		list-style: none;
 		background: #fff;
-		width: 200px;
+		width: 230px;
 		border: 1px solid #eaedf2;
 		height: 100%;
 		overflow-x: hidden;
@@ -1216,10 +1238,11 @@ ul, ol {
 	.main-menu ul li a {
 		border-bottom: 1px solid #eaedf2;
 		display: block;
-		padding: 7px 15px;
+		padding: 10px 15px;
 		color: #171347 !important;
 		font-size: 15px;
 		letter-spacing: 0.3px;
+		font-weight: 700;
 	}
 	.main-menu ul li a:hover {
 		color: #03c !important;
@@ -1243,14 +1266,14 @@ ul, ol {
 	}
 	.main-menu span {
 	    position: absolute;
-        right: -47px;
-        font-size: 45px;
-        top: 0px;
-        background: #fff;
-        padding: 11px 10px;
-        line-height: 18px;
-        cursor: pointer;
-        color: #171347;
+	    right: -52px;
+	    font-size: 45px;
+	    top: 0px;
+	    background: #fff;
+	    padding: 14px 13px;
+	    line-height: 18px;
+	    cursor: pointer;
+	    color: #171347;
 	} 
 	.main-menu span:before {
 		content: "\00d7";
@@ -1262,7 +1285,7 @@ ul, ol {
 	.main-menu ul .fa-angle-down {
 		position: absolute;
 		right: 15px;
-		top: 20px;
+		top: 23px;
 		font-size: 13px;
 		color: #718096 !important;
 		padding: 0;
@@ -1335,3 +1358,84 @@ ul#menu-blog-1 li i{
 	margin-left: auto;
 	margin-right: auto;
 } 
+
+/* Wp Block Letest Posts  */
+.wp-block-latest-posts.wp-block-latest-posts__list {
+	padding-left: 0;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list li {
+	padding: 15px 0;
+}
+
+/* Wp Block Tag Cloud  */
+.wp-block-tag-cloud a {
+    padding: 5px 16px;
+    background: #eee;
+    display: inline-block;
+    margin: 0 4px 6px 0px;
+    border-radius: 40px;
+    font-size: 14px !important;
+    text-transform: capitalize;
+    transition: ease-in-out all 0.2s;
+    letter-spacing: 0.3px;
+    color: #171347;
+}
+.wp-block-tag-cloud a:hover {
+	background: #03c;
+	color: #fff;
+}
+/* ==== Wp Block Search ==== */
+.wp-block-search {
+	margin-bottom: 15px;
+}
+.wp-block-search input:focus {
+	outline: 1px solid #80bdff !important;
+	outline: none !important;
+}
+/* ==== Block Category  Widgets ==== */
+.wp-block-latest-posts.wp-block-latest-posts__list + p,
+.wp-block-latest-posts.wp-block-latest-posts__list li a,
+.gallery-size-thumbnail + p, 
+.wp-block-search + p, 
+.wp-block-tag-cloud + p {
+	font-size: 18px;
+    font-weight: bold;
+    color: #171347 !important;
+}
+.wp-block-rss {
+	padding: 0;
+	list-style: none;
+}
+.wp-block-rss .wp-block-rss__item-title {
+	padding: 10px 0;
+	border-bottom: 1px solid #ebe9eb;
+}
+.wp-block-rss .wp-block-rss__item-title a {
+	color: #718096 !important;
+}
+.wp-block-latest-comments__comment-meta a:hover,
+.wp-block-latest-posts.wp-block-latest-posts__list li a:hover,
+.wp-block-archives.wp-block-archives-list li a:hover,
+.wp-block-rss .wp-block-rss__item-title a:hover {
+	color: #03c !important;
+}
+/* ==== Wp-block latest Comments ====*/
+.wp-block-latest-comments {
+	padding-left: 0;
+}
+.wp-block-latest-comments__comment-meta a {
+	color: #718096 !important;
+}
+/* ==== Wp-block Categories ====*/
+.wp-block-categories {
+	margin-bottom: 15px;
+}
+
+/* ==== wp-block-latest-posts ====*/
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 li {
+	width: 100% !important;
+}
+
+.wp-block-cover .wp-block-cover-text {
+	color: #c3c3c3 !important;
+}
