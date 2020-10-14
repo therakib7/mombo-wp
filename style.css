@@ -67,6 +67,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	## Top menu
 	## Footer menu
 
+# Wp Block Letest Posts 
+# Wp Block Tag Cloud
+# Wp Block Tag Cloud 
+# Wp Block Search 
+# Block Category  Widgets
+# Wp-block latest Comments
+# Wp-block Categories 
+# wp-block-latest-posts
+
 /* Temporary Css */
 .max-width-auto, .img-max-none img {
 	max-width: none !important;
@@ -156,7 +165,6 @@ table th a,
 .entry-content strong {
 	color: #171347 !important;
 }
-/* ==== Color End==== */
 /* ==== Border ==== */
 .woocommerce form.checkout_coupon, 
 .woocommerce-page table.cart td.actions .input-text,
@@ -1043,7 +1051,6 @@ ul, ol {
 /* ==== Comments Reviews ==== */
 #comment_form p, .comment-form-rating {
 	width: 100%;
-	/* padding: 0 15px; */
 }
 .comment-respond textarea:focus,
 .comment-respond #author:focus, 
@@ -1302,11 +1309,9 @@ ul, ol {
 	.main-menu ul .fa-angle-down {
 		position: absolute;
 		right: 15px;
-		top: 23px;
+		top: 18px;
 		font-size: 13px;
 		color: #171347 !important;
-		padding: 0;
-		line-height: 0;
 		cursor: pointer;
 	} 
 }
@@ -1383,15 +1388,14 @@ ul#menu-blog-1 li i{
 	margin-right: auto;
 } 
 
-/* Wp Block Letest Posts  */
+/* ==== Wp Block Letest Posts ==== */
 .wp-block-latest-posts.wp-block-latest-posts__list {
 	padding-left: 0;
 }
 .wp-block-latest-posts.wp-block-latest-posts__list li {
 	padding: 15px 0;
 }
-
-/* Wp Block Tag Cloud  */
+/* ==== Wp Block Tag Cloud ==== */
 .wp-block-tag-cloud a {
     padding: 5px 16px;
     background: #eee;
@@ -1454,12 +1458,10 @@ ul#menu-blog-1 li i{
 .wp-block-categories {
 	margin-bottom: 15px;
 }
-
 /* ==== wp-block-latest-posts ====*/
 .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 li {
 	width: 100% !important;
 }
-
 .wp-block-cover .wp-block-cover-text {
 	color: #c3c3c3 !important;
 }
