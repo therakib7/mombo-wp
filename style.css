@@ -218,11 +218,7 @@ pre,
 pre {
 	padding: 10px;
 }
-.card-body strong, 
-.entry-content strong {
-	/* font-size: 30px; */
-	margin-bottom: 0;
-}
+
 .wp-block-embed__wrapper .instagram-media {
 	max-width: 100% !important;
 }
@@ -335,7 +331,11 @@ textarea {
 }
 @media (max-width: 992px) {
 	.dark-bg .col-lg-8.text-center {
-		padding: 45px 0 30px !important;
+		padding: 45px 15px 30px !important;
+		font-size: 50px;
+	}
+	.dark-bg .col-lg-8.text-center h1 {
+		font-size: 50px;
 	}
 }
 /* ==== Widget ==== */
@@ -1071,11 +1071,11 @@ ul, ol {
 #comment_form textarea {
     height: 150px !important;
 }
-#comment_form {
-	padding-left: 15px;
+.woocommerce-Tabs-panel #comment_form {
+	padding-left: 15px; 
 }
-#comment_form input#submit {
-	margin-left: -15px !important;
+.woocommerce-Tabs-panel #comment_form input#submit {
+	margin-left: -15px !important; 
 }
 .woocommerce-form-login input {
 	padding: 10px;
