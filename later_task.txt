@@ -1,5 +1,7 @@
 Todo
 ========
+.price tag override in home nine price table
+Home Nine service seven icor background, color and border color dynamic
 home two youtube video popup not working for magnifypopup in custom js
 Before adding live demo on localhost image need to be compressed
 remove multiple loading font awesome
@@ -75,6 +77,8 @@ http://localhost/wordpress/2009/07/02/edge-case-many-categories/
 catgory right side gap 
 
 https://wordpress.org/plugins/elementor/
+
+.price add price as woocommerce not global
 
 Future Update
 =================

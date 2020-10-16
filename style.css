@@ -68,6 +68,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	## Footer menu
 
 /* Temporary Css */
+.price-table-03 .pt-head .price {
+	color: #171347 !important;
+}
+.blog-grid-overlay h5 {
+	color: #fff !important;
+}
+.img-float-right img {
+	float: right !important;
+}
 .max-width-auto, .img-max-none img {
 	max-width: none !important;
 }

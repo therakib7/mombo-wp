@@ -3,7 +3,7 @@
 /**
  * Title         : Aqua Resizer
  * Description   : Resizes WordPress images on the fly
- * Version       : 1.2.2
+ * Version       : 1.2.1
  * Author        : Syamil MJ
  * Author URI    : http://aquagraphite.com
  * License       : WTFPL - http://sam.zoy.org/wtfpl/
@@ -69,6 +69,8 @@ if(!class_exists('Aq_Resize')) {
                     throw new Aq_Exception('$url parameter is required');
                 if (!$width)
                     throw new Aq_Exception('$width parameter is required');
+                if (!$height)
+                    throw new Aq_Exception('$height parameter is required');
 
                 // Caipt'n, ready to hook.
                 if ( true === $upscale ) add_filter( 'image_resize_dimensions', array($this, 'aq_upscale'), 10, 6 );
@@ -118,7 +120,7 @@ if(!class_exists('Aq_Resize')) {
                 $dst_h = $dims[5];
 
                 // Return the original image only if it exactly fits the needed measures.
-                if ( ! $dims || ( ( ( null === $height && $orig_w == $width ) xor ( null === $width && $orig_h == $height ) ) xor ( $height == $orig_h && $width == $orig_w ) ) ) {
+                if ( ! $dims && ( ( ( null === $height && $orig_w == $width ) xor ( null === $width && $orig_h == $height ) ) xor ( $height == $orig_h && $width == $orig_w ) ) ) {
                     $img_url = $url;
                     $dst_w = $orig_w;
                     $dst_h = $orig_h;
@@ -220,9 +222,13 @@ if(!class_exists('Aq_Resize')) {
             return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
         }
     }
-} 
- 
-if( !function_exists('mombo_aq_resize') ) {
+}
+
+
+
+
+
+if(!function_exists('mombo_aq_resize')) {
 
     /**
      * This is just a tiny wrapper function for the class above so that there is no
@@ -240,3 +246,5 @@ if( !function_exists('mombo_aq_resize') ) {
         return $aq_resize->process( $url, $width, $height, $crop, $single, $upscale );
     }
 }
+
+
