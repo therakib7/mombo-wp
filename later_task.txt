@@ -1,5 +1,9 @@
 Todo
 ========
+https://wpastra.com/?bsf=4812 == page speed test section
+
+try to move some service widget in builder = some added directly for hover effect rotation
+demo box url by page id
 .price tag override in home nine price table
 Home Nine service seven icor background, color and border color dynamic
 home two youtube video popup not working for magnifypopup in custom js
@@ -80,6 +84,8 @@ https://wordpress.org/plugins/elementor/
 
 .price add price as woocommerce not global
 
+woocommerce icon move to corner
+
 Future Update
 =================
 Create all block with gutenburg
@@ -99,3 +105,8 @@ team section mobile img center
 
 
 https://elementor.com/features/page-builder/
+
+features
+===========
+Google Map 
+800+ google fonts
