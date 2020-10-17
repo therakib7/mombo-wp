@@ -1,6 +1,16 @@
 Todo
 ========
+Mega Menu In Features List
+Generate Pot File
+Social Icon in contact form
+remove some header type and make with builder 
+
+14 home pages and 30+ inner page
+Make Home page description image in envato
+
 https://wpastra.com/?bsf=4812 == page speed test section
+
+author info box margin bottom in single page
 
 try to move some service widget in builder = some added directly for hover effect rotation
 demo box url by page id
