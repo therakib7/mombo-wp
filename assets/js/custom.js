@@ -91,18 +91,18 @@
 	 * Mega Menu
 	/* ---------------------------------------------- */
 
-	THE.MegaMenu = function() {
+	/* THE.MegaMenu = function() {
 		var mDropdown = $(".px-nav-toggle") 
 		mDropdown.on("click", function() {
 	        $(this).parent().toggleClass("open-menu-parent");
 	        $(this).next('ul').toggleClass("open-menu");
 	        $(this).toggleClass("open");
 	    });
-	}
+	} */
 	/* ---------------------------------------------- /*
 		* accordion
 	/* ---------------------------------------------- */
-	THE.Accordion = function() {
+/* 	THE.Accordion = function() {
 		$('.accordion').each(function (i, elem) {
 	       	var $elem = $(this),
 	           $acpanel = $elem.find(".acco-group > .acco-des"),
@@ -123,7 +123,7 @@
 	            return false;
 	        });
 	    });
-	}
+	} */
 
 	/*--------------------
     * Counter JS
@@ -487,13 +487,13 @@
 		THE.CountTimer(),
 		THE.HeaderFixd(),
 		THE.OnePage(),
-		THE.Accordion(),
+		// THE.Accordion(),
 		THE.Counter(),
 		// THE.MenuClose(),
 		THE.Gallery(),
 		THE.SearchBox(),
 		THE.HeaderHeight(),
-		THE.MegaMenu(),
+		// THE.MegaMenu(),
 		THE.ProgressBar(),
 		THE.particles(),
 		THE.parallax(),
@@ -545,7 +545,7 @@
   }
    
   if ($('#job-list').length) { 
-      job_ajax('#job-list');
+    job_ajax('#job-list');
   }
 
 })(jQuery);

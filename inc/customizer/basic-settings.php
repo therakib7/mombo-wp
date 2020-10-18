@@ -687,7 +687,7 @@ function mombo_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'mombo_options[job_single_form_shortcode]', array(
             'capability' => 'edit_theme_options',
-            // 'sanitize_callback' => 'wp_filter_nohtml_kses',
+            'sanitize_callback' => 'mombo_sanitize_shortcode',
             'type'      =>  'theme_mod',
             'default'   => '',
         )
@@ -773,4 +773,8 @@ function mombo_sanitize_file( $file, $setting ) {
       
     //if file has a valid mime type return it, otherwise return default
     return ( $file_ext['ext'] ? $file : $setting->default );
+}
+
+function mombo_sanitize_shortcode( $shortcode ) {
+    return wp_kses_post( $shortcode );
 }

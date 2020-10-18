@@ -3,6 +3,9 @@ Todo
 
 Documentation menu
 ===================
+selective refresh for logo menu and right button
+color and typography settings
+team widget image center
 How to create mega menu
 how to create different menu in different page
 How to add mailchimp 
