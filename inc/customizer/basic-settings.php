@@ -251,7 +251,37 @@ function mombo_customize_register( $wp_customize ) {
                 'type'   => 'ios',
                 'section'  => 'mombo_general_settings', 
             ) 
-        ));     
+        ));   
+
+        $wp_customize->add_setting( 'mombo_options[menu_right_btn_txt]', array(
+            'default'     => '',
+            'transport'   => 'postMessage', 
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control(
+            'mombo_options[menu_right_btn_txt]', array(
+                'label' => esc_html__( 'Menu Right Button Text:', 'mombo' ),
+                'type' => 'text',
+                'section' => 'mombo_general_settings',
+            )
+        );
+
+        $wp_customize->add_setting( 'mombo_options[menu_right_btn_url]', array(
+            'default'     => '#',
+            'transport'   => 'postMessage', 
+            'sanitize_callback' => 'esc_url_raw',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control(
+            'mombo_options[menu_right_btn_url]', array(
+                'label' => esc_html__( 'Menu Right Button URL:', 'mombo' ),
+                'type' => 'text',
+                'section' => 'mombo_general_settings',
+            )
+        );
         
         $wp_customize->add_setting( 'mombo_options[underconstruction]', array(
             'default'     => false,

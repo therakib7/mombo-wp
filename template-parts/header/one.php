@@ -33,7 +33,7 @@ if ( get_post_meta( get_the_ID(), 'mombo_mb_header_part', true) == 'hide' || is_
                         <img src="<?php echo esc_url(  mombo_get_options( array('logo_sticky_menu', get_theme_file_uri('/assets/img/logo.svg')) ) ); ?>" class="dark-logo" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
                     </a>
                 </div> 
- 
+
                 <?php 
                     wp_nav_menu ( array(
                         'container_class' => 'main-menu',
@@ -45,6 +45,12 @@ if ( get_post_meta( get_the_ID(), 'mombo_mb_header_part', true) == 'hide' || is_
                 ?>  
 
                 <div class="extra-menu d-flex align-items-center"> 
+                    <?php if ( mombo_get_options( 'menu_right_btn_txt' ) ) { ?> 
+                        <div class="d-none d-md-block h-btn m-35px-l">
+                            <a class="m-btn m-btn-theme2nd m-btn-radius" href="<?php echo esc_url( mombo_get_options( 'menu_right_btn_url' ) ); ?>"><?php echo esc_html( mombo_get_options( 'menu_right_btn_txt' ) ); ?></a>
+                        </div> 
+                    <?php } ?> 
+
                     <button type="button" class="tc-toogle-menu d-lg-none">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -53,4 +59,4 @@ if ( get_post_meta( get_the_ID(), 'mombo_mb_header_part', true) == 'hide' || is_
         </div>
     </div>
 </header>
-<!-- Header End -->
+<!-- Header End --> 

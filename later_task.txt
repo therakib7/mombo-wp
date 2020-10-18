@@ -1,9 +1,16 @@
 Todo
 ========
+
+Documentation menu
+===================
+How to create mega menu
+how to create different menu in different page
+How to add mailchimp 
+
 https://www.youtube.com/watch?v=AVqliwiyMLg
 mailchimp
 
-Remove all revision
+Remove all revision before taking one click import data
 Apply custom image size from elementor
 Mega Menu In Features List
 Generate Pot File 
