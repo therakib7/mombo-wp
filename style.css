@@ -426,7 +426,7 @@ textarea {
 ul li .count {
 	position: absolute;
 	right: 0px;
-	padding: 10px 20px;
+	padding: 10px 20px !important;
 }
 .widget_archive label, 
 .widget_categories label {
@@ -615,13 +615,13 @@ ul li .count {
     font-size: 14px;
     border-radius: 3px;
 }
-.price {
+.product .price {
     display: block;
     font-weight: 700 !important;
     margin-bottom: .5em;
     font-size: 16px !important;
 }
-.price ins {
+.product .price ins {
 	text-decoration: none;
 }
 .products.columns-4 .add_to_cart_button {
@@ -634,7 +634,7 @@ ul li .count {
 	margin-top: 10px;
 }
 .product-type-variable .woocommerce-product-gallery--with-images .flex-control-nav li {
-	width: 33.33%;
+	width: 33.33% !important;
 } 
 .product-type-grouped .flex-control-thumbs li {
 	width: 	25% !important;
@@ -642,6 +642,9 @@ ul li .count {
 .quantity .qty {
     padding: 4px;
     border-radius: 3px;
+}
+.woocommerce-mini-cart-item.mini_cart_item .quantity {
+	font-weight: 700;
 }
 .woocommerce-grouped-product-list-item__quantity {
 	padding-top: 7px;
