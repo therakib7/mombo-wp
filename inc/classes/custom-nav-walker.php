@@ -270,7 +270,7 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
 		
 		if ( $item->mtype =='mega' && $item->m_page_id ) {  
 			if ( class_exists('\Elementor\Plugin') ) {
-				$output .= '<div class="techcandle-mega-menu">';
+				$output .= '<i class="fas fa-angle-down"></i><div class="techcandle-mega-menu">';
 				$output .= $hello = \Elementor\Plugin::$instance->frontend->get_builder_content( $item->m_page_id, true ); 
 				$output .= '</div>';
 			} 
