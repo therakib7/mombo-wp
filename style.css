@@ -77,6 +77,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # wp-block-latest-posts
 
 /* Temporary Css */
+.price-table-03 .pt-head .price {
+	color: #171347 !important;
+}
+.blog-grid-overlay h5 {
+	color: #fff !important;
+}
+.img-float-right img {
+	float: right !important;
+}
 .max-width-auto, .img-max-none img {
 	max-width: none !important;
 }
@@ -1131,21 +1140,31 @@ ul, ol {
 .header-nav.header-white.fixed-header .main-menu ul .fa-angle-down {
 	color: #171347;
 }
+
 @media (min-width: 992px) {
 	.main-menu {
 		flex-grow: 1;
 		z-index: 999; 
-		display: flex ;
+		display: flex;
 	}
 	.main-menu ul {
 		display: flex;
 		padding: 0;
 		list-style: none;
 		margin: auto;
-		position: relative;
+		/* position: relative; */
 	}
 	.main-menu ul li {
-		position: relative;
+		/* position: relative; */
+	}
+	.techcandle-mega-menu {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		opacity: 0;
+	}
+	.main-menu li:hover > .techcandle-mega-menu {
+	    opacity: 1 !important; 
 	}
 	.main-menu ul > li > a {
 	    font-size: 15px;
@@ -1154,7 +1173,7 @@ ul, ol {
 	    display: inline-block;
 	    color: rgba(255, 255, 255, 0.8);
 	}
-	 .main-menu ul > li:hover > a {
+	.main-menu ul > li:hover > a {
     	color: #fff;
 	}
 	.fixed-header .main-menu ul > li > a:hover {
