@@ -1,5 +1,7 @@
 Todo
 ========
+Remove all revision
+Apply custom image size from elementor
 Mega Menu In Features List
 Generate Pot File
 Social Icon in contact form
@@ -95,6 +97,8 @@ https://wordpress.org/plugins/elementor/
 .price add price as woocommerce not global
 
 woocommerce icon move to corner
+
+main menu select all style by class name not ul li
 
 Future Update
 =================
