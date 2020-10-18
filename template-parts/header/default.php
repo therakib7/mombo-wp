@@ -20,8 +20,19 @@ mombo_preloader();
  * @package Mombo
  * @since 1.0
  */ 
-if ( get_post_meta( get_the_ID(), 'mombo_mb_header_part', true) == 'hide' || is_singular( 'template' ) ) return; ?>
+if ( mombo_meta_options('header_part') == 'hide' || is_singular( 'template' ) ) return; 
 
+if ( mombo_meta_options('header_part') == 'custom' && mombo_meta_options('header_custom_template') ):  
+    $the_query = new WP_Query( 
+        array(
+            'p' => mombo_meta_options('header_custom_template'),   
+            'post_type' => 'template',
+        )
+    ); 
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        the_content();
+    endwhile; wp_reset_postdata();
+else: ?> 
 <!-- Header -->
 <header class="header-nav header-white">
     <div class="fixed-header-bar">
@@ -60,3 +71,4 @@ if ( get_post_meta( get_the_ID(), 'mombo_mb_header_part', true) == 'hide' || is_
     </div>
 </header>
 <!-- Header End --> 
+<?php endif; ?>

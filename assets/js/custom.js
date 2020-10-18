@@ -31,14 +31,14 @@
     /*--------------------
         * Menu Close
     ----------------------*/
-    THE.MenuClose = function(){
+   /*  THE.MenuClose = function(){
       $('.navbar-nav .nav-link').on('click', function() {
        var toggle = $('.navbar-toggler').is(':visible');
        if (toggle) {
          $('.navbar-collapse').collapse('hide');
        }
       });
-    }
+    } */
 
 
 	/* ---------------------------------------------- /*
@@ -489,7 +489,7 @@
 		THE.OnePage(),
 		THE.Accordion(),
 		THE.Counter(),
-		THE.MenuClose(),
+		// THE.MenuClose(),
 		THE.Gallery(),
 		THE.SearchBox(),
 		THE.HeaderHeight(),

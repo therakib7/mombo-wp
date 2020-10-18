@@ -235,7 +235,39 @@ function mombo_customize_register( $wp_customize ) {
                 'type'   => 'ios',
                 'section'  => 'mombo_general_settings', 
             ) 
-        ));            
+        ));         
+        
+        $wp_customize->add_setting( 'mombo_options[preloader_page_id]', array(
+            'default'     => 0,
+            'capability' => 'edit_theme_options',
+            'type' =>  'theme_mod',
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'mombo_sanitize_select',
+        ) );
+
+      
+        $args = array(
+            'posts_per_page' => -1,  
+            'post_type' => 'template',
+            'meta_key' => 'mombo_template_type',
+            'meta_value'  => 'preloader',
+            'meta_compare' => '==', 
+        );
+        $the_query = new WP_Query( $args ); 
+        $preloader_pages = [ 0 => esc_html__( 'Default', 'mombo' )];
+        while ( $the_query->have_posts() ) : $the_query->the_post(); 
+            $preloader_pages[get_the_ID()] = get_the_title();
+        endwhile; wp_reset_postdata(); 
+    
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+            'mombo_options[preloader_page_id]', 
+            array(
+                'label'                 => esc_html__( 'Preloader Template', 'mombo' ),
+                'type'                  => 'select',
+                'section'               => 'mombo_general_settings', 
+                'choices'               => $preloader_pages,
+            ) 
+        ) ); 
 
         $wp_customize->add_setting( 'mombo_options[scroll_top_btn]', array(
             'default'     => false,

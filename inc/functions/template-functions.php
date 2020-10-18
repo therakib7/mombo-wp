@@ -6,13 +6,24 @@
  */
 if ( ! function_exists( 'mombo_preloader' ) ) :
     function mombo_preloader() {  
-        if( mombo_get_options('preloader') ) { ?>
-        <!-- page loading -->
-        <div id="loading">
-            <div class="load-circle"><span class="one"></span></div>
-        </div>
-        <!-- end page loading -->
-        <?php }
+        if( mombo_get_options('preloader') ) { 
+            echo '<div id="loading">';
+            if ( mombo_get_options('preloader_page_id') ):  
+                $the_query = new WP_Query( 
+                    array(
+                        'p' => mombo_get_options('preloader_page_id'),   
+                        'post_type' => 'template',
+                    )
+                ); 
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                    the_content();
+                endwhile; wp_reset_postdata();
+            else: ?>  
+                <div class="load-circle"><span class="one"></span></div> 
+            <?php 
+            endif;
+            echo '</div>';
+        }
     }
 endif;
 
