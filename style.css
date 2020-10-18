@@ -435,7 +435,7 @@ textarea {
 ul li .count {
 	position: absolute;
 	right: 0px;
-	padding: 10px 20px;
+	padding: 10px 20px !important;
 }
 .widget_archive label, 
 .widget_categories label {
@@ -602,17 +602,14 @@ ul li .count {
 	line-height: 35px;
 }
 .product .onsale {
-	width: 45px;
-    height: 45px;
-    line-height: 40px !important;
-    left: 10px !important;
-    top: 10px !important;
-    z-index: 5 !important;
-    background-color: #03c !important;
-}
-.products.columns-2 .onsale,
-.products.columns-4 .onsale {
-	top: 15px !important;
+	width: 40px;
+	height: 40px;
+	line-height: 37px !important;
+	left: 0px !important;
+	top: 8px !important;
+	z-index: 5 !important;
+	background-color: #03c !important;
+	font-size: 13px !important;
 }
 .product .price {
 	margin-bottom: 0 !important;
@@ -624,13 +621,13 @@ ul li .count {
     font-size: 14px;
     border-radius: 3px;
 }
-.price {
+.product .price {
     display: block;
     font-weight: 700 !important;
     margin-bottom: .5em;
     font-size: 16px !important;
 }
-.price ins {
+.product .price ins {
 	text-decoration: none;
 }
 .products.columns-4 .add_to_cart_button {
@@ -643,7 +640,7 @@ ul li .count {
 	margin-top: 10px;
 }
 .product-type-variable .woocommerce-product-gallery--with-images .flex-control-nav li {
-	width: 33.33%;
+	width: 33.33% !important;
 } 
 .product-type-grouped .flex-control-thumbs li {
 	width: 	25% !important;
@@ -651,6 +648,9 @@ ul li .count {
 .quantity .qty {
     padding: 4px;
     border-radius: 3px;
+}
+.woocommerce-mini-cart-item.mini_cart_item .quantity {
+	font-weight: 700;
 }
 .woocommerce-grouped-product-list-item__quantity {
 	padding-top: 7px;
@@ -1144,49 +1144,36 @@ ul, ol {
 		z-index: 999; 
 		display: flex;
 	}
-	.main-menu ul {
+	.main-menu ul.menu {
 		display: flex;
 		padding: 0;
 		list-style: none;
 		margin: auto;
-		/* position: relative; */
 	}
-	.main-menu ul li {
-		/* position: relative; */
-	}
-	.techcandle-mega-menu {
-		position: absolute;
-		width: 100%;
-		left: 0;
-		opacity: 0;
-	}
-	.main-menu li:hover > .techcandle-mega-menu {
-	    opacity: 1 !important; 
-	}
-	.main-menu ul > li > a {
+	.main-menu ul.menu > li > a {
 	    font-size: 15px;
 	    font-weight: 600;
 	    padding: 24px 15px;
 	    display: inline-block;
 	    color: rgba(255, 255, 255, 0.8);
 	}
-	.main-menu ul > li:hover > a {
+	.main-menu ul.menu > li:hover > a {
     	color: #fff;
 	}
 	.fixed-header .main-menu ul > li > a:hover {
 	    color: #03c !important;
 	} 
-	.main-menu ul > li > i {
+	.main-menu ul.menu > li.menu-item > i {
 		position: relative;
 	    left: -5px;
 	    margin-right: 10px;
 	    font-size: 11px;
 	    color: rgba(255, 255, 255, 0.8);
 	}
-	.main-menu ul ul {
+	.main-menu ul.menu ul.sub-menu {
 		position: absolute;
 		top: 102%;
-		left: 0;
+		/* left: 32%; */
 		background: #ffffff;
 		box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
 		width: 200px;
@@ -1201,7 +1188,7 @@ ul, ol {
 		opacity: 0; 
 		visibility: hidden; 
 	}
-	.main-menu ul li ul li {
+	.main-menu ul.minu li ul.sub-menu li {
 		width: 100%;
 	}
 	.main-menu ul ul li a {
@@ -1211,15 +1198,31 @@ ul, ol {
 		font-size: 15px;
 		font-weight: 600;
 	}
-	.main-menu ul ul li a:hover {
+	.main-menu ul.menu ul.sub-menu li a:hover {
 		color: #03c !important;
 	}
-	.main-menu ul ul li ul {
-		position: absolute;
-	    left: 109%;
-	    top: -20px;
+	.main-menu ul.menu ul.sub-menu li ul {
+		position: absolute !important;
+	    left: 100% !important;
+	    top: -5px !important;
 	}
 	.main-menu li:hover > .sub-menu {
+	    opacity: 1 !important;
+	    visibility: visible !important;
+	}
+	.techcandle-mega-menu {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 102%;
+		opacity: 0; 
+		visibility: hidden;  
+		-moz-transition: ease all 0.55s;
+		-o-transition: ease all 0.55s;
+		-webkit-transition: ease all 0.55s;
+		transition: ease all 0.55s;
+	}
+	.main-menu li:hover .techcandle-mega-menu {
 	    opacity: 1 !important;
 	    visibility: visible !important;
 	}
@@ -1244,7 +1247,7 @@ ul, ol {
 .main-menu ul .sub-menu .fa-angle-right {
 	position: absolute;
 	left: 90%;
-	top: 14px;
+	top: 29px;
 	font-size: 13px;
 	color: #718096;
 }
@@ -1324,6 +1327,7 @@ ul, ol {
 	.main-menu ul.sub-menu .fa-angle-right {
 	    left: 88%;
 	    top: 12px;
+	     color: #171347;
 	}
 	.main-menu ul .fa-angle-down {
 		position: absolute;
