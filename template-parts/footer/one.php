@@ -11,7 +11,7 @@
  *
  * @since 1.0
  */
-if ( get_post_meta(get_the_ID(), 'mombo_mb_footer_part', true) == 'hide' ) return; ?>
+if ( get_post_meta(get_the_ID(), 'mombo_mb_footer_part', true) == 'hide' || is_singular( 'template' ) ) return; ?>
 
 <!-- Footer-->
 <footer class="gray-bg footer">
