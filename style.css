@@ -1155,13 +1155,13 @@ ul, ol {
 		/* position: relative; */
 	}
 	.main-menu ul li {
-		/* position: relative; */
+		position: relative; 
 	}
 	.techcandle-mega-menu {
 		position: absolute;
 		width: 100%;
 		left: 0;
-		opacity: 0;
+		/* opacity: 0; */
 	}
 	.main-menu li:hover > .techcandle-mega-menu {
 	    opacity: 1 !important; 
@@ -1327,6 +1327,7 @@ ul, ol {
 	.main-menu ul.sub-menu .fa-angle-right {
 	    left: 88%;
 	    top: 12px;
+	     color: #171347;
 	}
 	.main-menu ul .fa-angle-down {
 		position: absolute;
