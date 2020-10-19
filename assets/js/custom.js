@@ -428,7 +428,7 @@
       function resized() {
         var $windowWidth = $(window).width();
         if ( $windowWidth <= 991 ) { 
-          $(".main-menu").prepend("<span></span>"); 
+          $(".main-menu").prepend("<span class='te-menu-close'></span>"); 
           $(".tc-toogle-menu").click(function(){
             $(".main-menu").addClass("menu-show"); 
           });

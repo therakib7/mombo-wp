@@ -606,7 +606,7 @@ ul li .count {
 	height: 40px;
 	line-height: 37px !important;
 	left: 0px !important;
-	top: 8px !important;
+	top: 5px !important;
 	z-index: 5 !important;
 	background-color: #03c !important;
 	font-size: 13px !important;
@@ -1310,7 +1310,7 @@ ul, ol {
 	.menu-show {
 		left: 0% !important;
 	}
-	.main-menu span {
+	.main-menu .te-menu-close {
 	    position: absolute;
 	    right: -52px;
 	    font-size: 45px;
@@ -1321,7 +1321,7 @@ ul, ol {
 	    cursor: pointer;
 	    color: #171347;
 	} 
-	.main-menu span:before {
+	.main-menu .te-menu-close:before {
 		content: "\00d7";
 	} 
 	.main-menu ul.sub-menu .fa-angle-right {
