@@ -46,6 +46,16 @@ register_nav_menus(
     ) 
 );
 
+$menu_lists = [];
+$wp_nav_menus = wp_get_nav_menus();
+if ( $wp_nav_menus ) {
+    foreach( $wp_nav_menus as $menu ) {
+        $menu_lists[$menu->slug] = $menu->name;
+    } 
+    register_nav_menus( $menu_lists );
+}
+
+
 /**
  * Switch default core markup for search form, comment form, and comments to output valid HTML5.
  * @package Mombo

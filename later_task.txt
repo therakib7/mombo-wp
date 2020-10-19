@@ -1,10 +1,22 @@
 Todo
 ========
-Remove all revision
+
+Documentation menu
+===================
+selective refresh for logo menu and right button
+color and typography settings
+team widget image center
+How to create mega menu
+how to create different menu in different page
+How to add mailchimp 
+
+https://www.youtube.com/watch?v=AVqliwiyMLg
+mailchimp
+
+Remove all revision before taking one click import data
 Apply custom image size from elementor
 Mega Menu In Features List
-Generate Pot File
-Social Icon in contact form
+Generate Pot File 
 remove some header type and make with builder 
 
 14 home pages and 30+ inner page
@@ -14,21 +26,16 @@ https://wpastra.com/?bsf=4812 == page speed test section
 
 author info box margin bottom in single page
 
-try to move some service widget in builder = some added directly for hover effect rotation
-demo box url by page id
-.price tag override in home nine price table
-Home Nine service seven icor background, color and border color dynamic
-home two youtube video popup not working for magnifypopup in custom js
-Before adding live demo on localhost image need to be compressed
+try to move some service widget in builder = some added directly for hover effect rotation 
+.price tag override in home nine price table 
+home two youtube video popup not working for magnifypopup in custom js 
 remove multiple loading font awesome
-share and read more
-in single without plugin tag match with author
+share and read more in single without plugin tag match with author
 
 in page conent and comment match together
 
 custom post category not working like faq 
-
-try to create a gallery field from image in butterbean
+ 
 buttern bean default value not working in custom post type
 
 with support-topic make faq single, page header add as pagination header

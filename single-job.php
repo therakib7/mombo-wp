@@ -115,53 +115,21 @@ else: ?>
             <div class="container">
                 <div class="row section-title justify-content-center text-center md-m-25px-b m-45px-b">
                     <div class="col-lg-7">
-                        <label class="theme-bg-alt p-15px-lr p-5px-tb font-small border-radius-15 theme-color">Apply Now</label>
-                        <h3 class="h1 m-10px-b">Apply for this Job</h3>
-                        <p class="font-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
+                        <?php if ( mombo_get_options( 'job_single_form_title_top' ) ) { ?> 
+                        <label class="theme-bg-alt p-15px-lr p-5px-tb font-small border-radius-15 theme-color">
+                            <?php echo esc_html( mombo_get_options( 'job_single_form_title_top' ) ); ?>
+                        </label>
+                        <?php } ?> 
+
+                        <h3 class="h1 m-10px-b"><?php echo esc_html( mombo_get_options( 'job_single_form_title' ) ); ?></h3>
+                        <p class="font-2"><?php echo wp_kses_post( mombo_get_options( 'job_single_form_desc' ) ); ?></p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-11 col-lg-9">
                         <div class="card">
                             <div class="card-body">
-                                <form class="rd-mailform" enctype="multipart/form-data" data-form-output="form-output-global" data-form-type="contact" method="post" action="static/plugin/mail/bat/rd-mailform.php">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Full Name</label>
-                                                <input class="form-control" placeholder="Full Name" id="apply-name" type="text" name="name" data-constraints="@Required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Last Name</label>
-                                                <input class="form-control" placeholder="Last Name" id="apply-lastname" type="text" name="last name" data-constraints="@Required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Your Email</label>
-                                                <input class="form-control" placeholder="Your Email" id="apply-email" type="email" name="email" data-constraints="@Required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Profile</label>
-                                                <input class="form-control" placeholder="Linkedin username" id="apple-profile" type="text" name="profile" data-constraints="@Required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-control-label">In a Few Words</label>
-                                                <textarea class="form-control" rows="6" name="answer" placeholder="How'd you hear about Front?" id="apple-comment" name="message" data-constraints="@Required"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 text-center p-15px-t">
-                                            <button class="m-btn m-btn-radius m-btn-theme">Submit your application</button>
-                                            <div class="snackbars" id="form-output-global"></div>
-                                        </div>
-                                    </div>
-                                </form>
+                                <?php echo do_shortcode( mombo_get_options( 'job_single_form_shortcode' ) ); ?>
                             </div>
                         </div>
                     </div>

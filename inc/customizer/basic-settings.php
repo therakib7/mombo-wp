@@ -177,7 +177,7 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_background]', array(
-           'label'    => esc_html__( 'Footer Background Color: ', 'mombo' ),
+           'label'    => esc_html__( 'Footer Background Color', 'mombo' ),
            'section'  => 'colors',
         ) 
     ));
@@ -192,7 +192,7 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_color]', array(
-           'label'    => esc_html__( 'Footer Text Color: ', 'mombo' ),
+           'label'    => esc_html__( 'Footer Text Color', 'mombo' ),
            'section'  => 'colors',
         ) 
     ));    
@@ -207,7 +207,7 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_link_color]', array(
-           'label'    => esc_html__( 'Footer Link Color: ', 'mombo' ),
+           'label'    => esc_html__( 'Footer Link Color', 'mombo' ),
            'section'  => 'colors',
         ) 
     )); 
@@ -231,13 +231,43 @@ function mombo_customize_register( $wp_customize ) {
         $wp_customize->add_control( new Mombo_Toggle_Control( $wp_customize, 
             'mombo_options[preloader]', 
             array(
-                'label'  => esc_html__( 'Preloader:', 'mombo' ),
+                'label'  => esc_html__( 'Preloader', 'mombo' ),
                 'type'   => 'ios',
-                'section'  => 'mombo_general_settings',
-                'priority' => 10, 
-                
+                'section'  => 'mombo_general_settings', 
             ) 
-        ));            
+        ));         
+        
+        $wp_customize->add_setting( 'mombo_options[preloader_page_id]', array(
+            'default'     => 0,
+            'capability' => 'edit_theme_options',
+            'type' =>  'theme_mod',
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'mombo_sanitize_select',
+        ) );
+
+      
+        $args = array(
+            'posts_per_page' => -1,  
+            'post_type' => 'template',
+            'meta_key' => 'mombo_template_type',
+            'meta_value'  => 'preloader',
+            'meta_compare' => '==', 
+        );
+        $the_query = new WP_Query( $args ); 
+        $preloader_pages = [ 0 => esc_html__( 'Default', 'mombo' )];
+        while ( $the_query->have_posts() ) : $the_query->the_post(); 
+            $preloader_pages[get_the_ID()] = get_the_title();
+        endwhile; wp_reset_postdata(); 
+    
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+            'mombo_options[preloader_page_id]', 
+            array(
+                'label'                 => esc_html__( 'Preloader Template', 'mombo' ),
+                'type'                  => 'select',
+                'section'               => 'mombo_general_settings', 
+                'choices'               => $preloader_pages,
+            ) 
+        ) ); 
 
         $wp_customize->add_setting( 'mombo_options[scroll_top_btn]', array(
             'default'     => false,
@@ -249,31 +279,41 @@ function mombo_customize_register( $wp_customize ) {
         $wp_customize->add_control( new Mombo_Toggle_Control( $wp_customize, 
             'mombo_options[scroll_top_btn]', 
             array(
-                'label'  => esc_html__( 'Scroll Top:', 'mombo' ),
+                'label'  => esc_html__( 'Scroll Top', 'mombo' ),
                 'type'   => 'ios',
-                'section'  => 'mombo_general_settings',
-                'priority' => 10, 
-                
+                'section'  => 'mombo_general_settings', 
             ) 
-        ));        
+        ));   
 
-        $wp_customize->add_setting( 'mombo_options[sticky_contact_btn]', array(
-            'default'     => false,
+        $wp_customize->add_setting( 'mombo_options[menu_right_btn_txt]', array(
+            'default'     => '',
             'transport'   => 'postMessage', 
-            'sanitize_callback' => 'mombo_sanitize_checkbox',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
             'capability' => 'edit_theme_options',
         ));
 
-        $wp_customize->add_control( new Mombo_Toggle_Control( $wp_customize, 
-            'mombo_options[sticky_contact_btn]', 
-            array(
-                'label'  => esc_html__( 'Sticky Contact Button:', 'mombo' ),
-                'type'   => 'ios',
-                'section'  => 'mombo_general_settings',
-                'priority' => 10, 
-                
-            ) 
-        ));     
+        $wp_customize->add_control(
+            'mombo_options[menu_right_btn_txt]', array(
+                'label' => esc_html__( 'Menu Right Button Text:', 'mombo' ),
+                'type' => 'text',
+                'section' => 'mombo_general_settings',
+            )
+        );
+
+        $wp_customize->add_setting( 'mombo_options[menu_right_btn_url]', array(
+            'default'     => '#',
+            'transport'   => 'postMessage', 
+            'sanitize_callback' => 'esc_url_raw',
+            'capability' => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control(
+            'mombo_options[menu_right_btn_url]', array(
+                'label' => esc_html__( 'Menu Right Button URL:', 'mombo' ),
+                'type' => 'text',
+                'section' => 'mombo_general_settings',
+            )
+        );
         
         $wp_customize->add_setting( 'mombo_options[underconstruction]', array(
             'default'     => false,
@@ -285,10 +325,9 @@ function mombo_customize_register( $wp_customize ) {
         $wp_customize->add_control( new Mombo_Toggle_Control( $wp_customize, 
             'mombo_options[underconstruction]', 
             array(
-                'label'  => esc_html__( 'Underconstruction:', 'mombo' ),
+                'label'  => esc_html__( 'Underconstruction', 'mombo' ),
                 'type'   => 'ios',
-                'section'  => 'mombo_general_settings',
-                // 'priority' => 10, 
+                'section'  => 'mombo_general_settings', 
                 
             ) 
         )); 
@@ -315,7 +354,7 @@ function mombo_customize_register( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
             'mombo_options[underconstruction_page_id]', 
             array(
-                'label'                 => esc_html__( 'Underconstruction Page:', 'mombo' ),
+                'label'                 => esc_html__( 'Underconstruction Page', 'mombo' ),
                 'type'                  => 'select',
                 'section'               => 'mombo_general_settings', 
                 'choices'               => $underconstruction_pages,
@@ -332,43 +371,13 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control(
         'mombo_options[underconstruction_time_to]', array(
-            'label' => esc_html__( 'Underconstruction Time To:', 'mombo' ),
+            'label' => esc_html__( 'Underconstruction Time To', 'mombo' ),
             'type' => 'text',
             'section' => 'mombo_general_settings',
         )
-    );
+    ); 
 
-    $wp_customize->add_setting( 'mombo_options[menu_right_btn_txt]', array(
-        'default'     => 'Contact',
-        'transport'   => 'postMessage', 
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-        'capability' => 'edit_theme_options',
-    ));
-
-    $wp_customize->add_control(
-        'mombo_options[menu_right_btn_txt]', array(
-            'label' => esc_html__( 'Menu Right Button Text:', 'mombo' ),
-            'type' => 'text',
-            'section' => 'mombo_general_settings',
-        )
-    );
-
-    $wp_customize->add_setting( 'mombo_options[menu_right_btn_url]', array(
-        'default'     => '#',
-        'transport'   => 'postMessage', 
-        'sanitize_callback' => 'mombo_sanitize_url',
-        'capability' => 'edit_theme_options',
-    ));
-
-    $wp_customize->add_control(
-        'mombo_options[menu_right_btn_url]', array(
-            'label' => esc_html__( 'Menu Right Button URL:', 'mombo' ),
-            'type' => 'text',
-            'section' => 'mombo_general_settings',
-        )
-    );
-
-     /**
+    /**
      * Mombo WordPress Theme Blog Settings
      */  
     $wp_customize->add_panel(
@@ -397,9 +406,7 @@ function mombo_customize_register( $wp_customize ) {
                 'label'  => esc_html__( 'Post Style Masonry', 'mombo' ),
                 'description' => esc_html__( 'Post style grid or masonry', 'mombo' ),
                 'type'   => 'ios',
-                'section'  => 'mombo_blog_entries',
-                'priority' => 10, 
-                
+                'section'  => 'mombo_blog_entries', 
             ) 
         ));  
     }
@@ -415,9 +422,8 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control(
         'mombo_options[blog_title]', array(
-            'label' => esc_html__( 'Blog Title:', 'mombo' ),
-            'type' => 'text',
-            'priority' => 10,
+            'label' => esc_html__( 'Blog Title', 'mombo' ),
+            'type' => 'text', 
             'section' => 'mombo_blog_entries',
         )
     ); 
@@ -449,8 +455,7 @@ function mombo_customize_register( $wp_customize ) {
             new Mombo_Customize_Control_Radio_Image(
                 $wp_customize, 'mombo_options[blog_layout]', array(
                     'label'    => esc_html__( 'Blog Layout', 'mombo' ),
-                    'section'  => 'mombo_blog_entries',
-                    // 'priority' => 10,
+                    'section'  => 'mombo_blog_entries', 
                     'choices'  => $sidebar_choices,
                 )
             )
@@ -466,7 +471,7 @@ function mombo_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control( 'mombo_options[excerpt_length]', array(
-        'label' => esc_html__( 'Blog Post Excerpt Length: ', 'mombo' ),
+        'label' => esc_html__( 'Blog Post Excerpt Length', 'mombo' ),
         'description' => esc_html__( 'How many words want to show in post?', 'mombo' ),
         'section' => 'mombo_blog_entries',
         'type'        => 'number', 
@@ -509,8 +514,7 @@ function mombo_customize_register( $wp_customize ) {
             new Mombo_Customize_Control_Radio_Image(
                 $wp_customize, 'mombo_options[blog_single_layout]', array(
                     'label'    => esc_html__( 'Blog Single Layout', 'mombo' ),
-                    'section'  => 'mombo_blog_single',
-                    // 'priority' => 10,
+                    'section'  => 'mombo_blog_single', 
                     'choices'  => $sidebar_choices,
                 )
             )
@@ -527,9 +531,8 @@ function mombo_customize_register( $wp_customize ) {
     
         $wp_customize->add_control(
             'mombo_options[blog_single_title]', array(
-                'label' => esc_html__( 'Blog Single Title:', 'mombo' ),
-                'type' => 'text',
-                'priority' => 10,
+                'label' => esc_html__( 'Blog Single Title', 'mombo' ),
+                'type' => 'text', 
                 'section' => 'mombo_blog_single',
             )
         ); 
@@ -615,6 +618,88 @@ function mombo_customize_register( $wp_customize ) {
         ) ) );
     }
 
+    /**
+     * Mombo WordPress Theme Inner Page Settings
+     */  
+    $wp_customize->add_panel(
+        'mombo_inner_settings', array(
+            'priority' => 90,
+            'title'    => esc_html__( 'Inner Page Settings', 'mombo' ),
+        )
+    ); 
+
+    $wp_customize->add_section( 'mombo_job_single' , array(
+        'title'      => esc_html__( 'Job Single', 'mombo' ), 
+        'panel'    => 'mombo_inner_settings', 
+    )); 
+
+    $wp_customize->add_setting(
+        'mombo_options[job_single_form_title_top]', array(
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+            'type'      =>  'theme_mod',
+            'default'   => esc_html__( 'Apply Now', 'mombo' ),
+        )
+    );
+
+    $wp_customize->add_control(
+        'mombo_options[job_single_form_title_top]', array(
+            'label' => esc_html__( 'Form Title Top', 'mombo' ),
+            'type' => 'text', 
+            'section' => 'mombo_job_single',
+        )
+    ); 
+
+    $wp_customize->add_setting(
+        'mombo_options[job_single_form_title]', array(
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+            'type'      =>  'theme_mod',
+            'default'   => esc_html__( 'Apply for this Job', 'mombo' ),
+        )
+    );
+
+    $wp_customize->add_control(
+        'mombo_options[job_single_form_title]', array(
+            'label' => esc_html__( 'Form Title', 'mombo' ),
+            'type' => 'text', 
+            'section' => 'mombo_job_single',
+        )
+    ); 
+
+    $wp_customize->add_setting(
+        'mombo_options[job_single_form_desc]', array(
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+            'type'      =>  'theme_mod',
+            'default'   => esc_html__( 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.', 'mombo' ),
+        )
+    );
+
+    $wp_customize->add_control(
+        'mombo_options[job_single_form_desc]', array(
+            'label' => esc_html__( 'Form Description', 'mombo' ),
+            'type' => 'text', 
+            'section' => 'mombo_job_single',
+        )
+    ); 
+
+    $wp_customize->add_setting(
+        'mombo_options[job_single_form_shortcode]', array(
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'mombo_sanitize_shortcode',
+            'type'      =>  'theme_mod',
+            'default'   => '',
+        )
+    );
+
+    $wp_customize->add_control(
+        'mombo_options[job_single_form_shortcode]', array(
+            'label' => esc_html__( 'Form Shortcode', 'mombo' ),
+            'type' => 'text', 
+            'section' => 'mombo_job_single',
+        )
+    ); 
 
     /**
      * End Mombo WordPress Theme Footer Control Panel
@@ -658,7 +743,7 @@ function mombo_customize_register( $wp_customize ) {
 
     $wp_customize->add_control(
         'mombo_options[footer_copyright_info]', array(
-            'label' => esc_html__( 'Footer Copyright Text:', 'mombo' ),
+            'label' => esc_html__( 'Footer Copyright Text', 'mombo' ),
             'type' => 'text', 
             'section' => 'mombo_footer',
         )
@@ -688,4 +773,8 @@ function mombo_sanitize_file( $file, $setting ) {
       
     //if file has a valid mime type return it, otherwise return default
     return ( $file_ext['ext'] ? $file : $setting->default );
+}
+
+function mombo_sanitize_shortcode( $shortcode ) {
+    return wp_kses_post( $shortcode );
 }

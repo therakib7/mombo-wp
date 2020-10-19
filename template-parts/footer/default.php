@@ -11,8 +11,19 @@
  *
  * @since 1.0
  */
-if ( get_post_meta(get_the_ID(), 'mombo_mb_footer_part', true) == 'hide' || is_singular( 'template' ) ) return; ?>
+if ( mombo_meta_options('footer_part') == 'hide' || is_singular( 'template' ) ) return; 
 
+if ( mombo_meta_options('footer_part') == 'custom' && mombo_meta_options('footer_custom_template') ):  
+    $the_query = new WP_Query( 
+        array(
+            'p' => mombo_meta_options('footer_custom_template'),   
+            'post_type' => 'template',
+        )
+    ); 
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        the_content();
+    endwhile; wp_reset_postdata();
+else: ?>  
 <!-- Footer-->
 <footer class="gray-bg footer">
 	<div class="footer-top">
@@ -67,3 +78,4 @@ if ( get_post_meta(get_the_ID(), 'mombo_mb_footer_part', true) == 'hide' || is_s
 		</div>
 	</div>
 </footer>
+<?php endif; ?>
