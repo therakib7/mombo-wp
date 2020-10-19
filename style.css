@@ -606,7 +606,7 @@ ul li .count {
 	height: 40px;
 	line-height: 37px !important;
 	left: 0px !important;
-	top: 8px !important;
+	top: 5px !important;
 	z-index: 5 !important;
 	background-color: #03c !important;
 	font-size: 13px !important;
@@ -1337,6 +1337,13 @@ ul, ol {
 		color: #171347 !important;
 		cursor: pointer;
 	} 
+
+
+
+
+	.elementor-column.elementor-col-25, .elementor-column[data-col="25"] {
+		width: 100%;
+	}
 }
 
 .main-menu ul li ul li.menu-item-object-page.current_page_item > a {
