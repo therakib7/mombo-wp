@@ -1137,7 +1137,12 @@ ul, ol {
 .header-nav.header-white.fixed-header .main-menu ul .fa-angle-down {
 	color: #171347;
 }
-
+.container-large {
+	padding: 0 15px;
+}
+.container-large.container {
+	max-width: 1140px !important;
+}
 @media (min-width: 992px) {
 	.main-menu {
 		flex-grow: 1;
@@ -1148,7 +1153,27 @@ ul, ol {
 		display: flex;
 		padding: 0;
 		list-style: none;
-		margin: auto;
+		margin: auto; 
+	}
+	.main-menu.menu-align-right ul.menu {
+		margin-left: auto;
+		margin-right: -15px;
+		margin-bottom: 0px;
+	}
+	.menu-color-dark ul.menu > li.menu-item > a {
+		color: #171347;
+	}
+	.menu-color-dark ul.menu > li > i {
+		color: #171347 !important;
+	}
+	.menu-color-dark ul.menu > li:hover > a {
+		color: #03c !important;
+	}
+	.menu-color-dark ul.menu > li:hover > i {
+		color: #03c !important;
+	}
+	.menu-color-dark ul li.menu-item-object-page.current_page_item a {
+    	color: #03c !important;
 	}
 	.main-menu ul.menu > li > a {
 	    font-size: 15px;
@@ -1172,8 +1197,7 @@ ul, ol {
 	}
 	.main-menu ul.menu ul.sub-menu {
 		position: absolute;
-		top: 102%;
-		/* left: 32%; */
+		top: 100%;
 		background: #ffffff;
 		box-shadow: 0px 26px 21px 0px rgba(0, 0, 0, 0.1);
 		width: 200px;
@@ -1214,7 +1238,7 @@ ul, ol {
 		position: absolute;
 		width: 100%;
 		left: 0;
-		top: 102%;
+		top: 100%;
 		opacity: 0; 
 		visibility: hidden;  
 		-moz-transition: ease all 0.55s;
@@ -1273,15 +1297,21 @@ ul, ol {
 		padding: 0;
 		list-style: none;
 		background: #fff;
-		width: 230px;
+		width: 260px;
 		border: 1px solid #eaedf2;
 		height: 100%;
 		overflow-x: hidden;
 	}
+	.techcandle-mega-menu {
+		display: none;
+	}
 	.main-menu ul li:last-child {
 		border-bottom: 0;
 	}
-	.main-menu ul li a {
+	.main-menu ul.menu li.menu-item {
+		position: relative;
+	}
+	.main-menu ul.menu li.menu-item a {
 		border-bottom: 1px solid #eaedf2;
 		display: block;
 		padding: 10px 15px;
@@ -1326,13 +1356,13 @@ ul, ol {
 	} 
 	.main-menu ul.sub-menu .fa-angle-right {
 	    left: 88%;
-	    top: 12px;
-	     color: #171347;
+	    top: 15px;
+	    color: #171347;
 	}
 	.main-menu ul .fa-angle-down {
 		position: absolute;
-		right: 15px;
-		top: 18px;
+		right: 20px;
+		top: 16px;
 		font-size: 13px;
 		color: #171347 !important;
 		cursor: pointer;
@@ -1488,3 +1518,34 @@ ul#menu-blog-1 li i{
 .wp-block-cover .wp-block-cover-text {
 	color: #c3c3c3 !important;
 }
+
+
+/* ==== Footer Widget ==== */
+.footer-top .wp-block-archives.wp-block-archives-list li a, 
+.footer-top .widget_nav_menu ul > li > a, 
+.footer-top .widget_pages ul > li > a, 
+.footer-top .widget_archive ul > li > a, 
+.footer-top .widget_meta ul > li > a, 
+.footer-top .widget_categories ul > li > a {
+	padding: 10px 15px 10px 0;
+}
+.footer-top .woocommerce-widget-layered-nav ul li .count, 
+.footer-top ul li .count {
+	padding: 10px 15px !important;
+}
+.footer-top .tagcloud,
+.footer-top .textwidget,
+.footer-top .p-20px,
+.footer-top .widget_categories form {
+    padding: 0px;
+}
+.widget_archive select {
+	margin: 0;
+}
+.footer-top .widget_recent_entries ul li, 
+.footer-top .widget_rss ul li, 
+.footer-top .widget_recent_comments ul li {
+    padding: 10px 0px !important;
+}
+
+
