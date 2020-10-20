@@ -1252,16 +1252,16 @@ ul, ol {
 	    visibility: visible !important;
 	}
 } 
-.tc-toogle-menu {
+.tc-toggle-menu {
 	margin-left: 10px;
 	border-radius: 5px;
 	border: none;
 	background: none;
 }
-.tc-toogle-menu:focus {
+.tc-toggle-menu:focus {
 	outline: none !important;
 }
-.tc-toogle-menu i {
+.tc-toggle-menu i {
 	padding: 6px 8px;
     display: inline-block;
     border: 1px solid #eaedf2;
@@ -1342,7 +1342,7 @@ ul, ol {
 	.menu-show {
 		left: 0% !important;
 	}
-	.main-menu .te-menu-close {
+	.main-menu .tc-menu-close {
 	    position: absolute;
 	    right: -52px;
 	    font-size: 45px;
@@ -1353,7 +1353,7 @@ ul, ol {
 	    cursor: pointer;
 	    color: #171347;
 	} 
-	.main-menu .te-menu-close:before {
+	.main-menu .tc-menu-close:before {
 		content: "\00d7";
 	} 
 	.main-menu ul.sub-menu .fa-angle-right {

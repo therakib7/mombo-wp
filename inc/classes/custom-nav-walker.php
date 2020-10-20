@@ -144,7 +144,8 @@ class Mombo_Custom_Walker extends Walker_Nav_Menu {
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
-		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+		$mega_menu_class = ( $item->mtype =='mega' && $item->m_page_id ) ? ' techcandle-mega-id ': '';
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names . $mega_menu_class ) . '"' : '';
 
 		/**
 		 * Filters the ID applied to a menu item's list item element.

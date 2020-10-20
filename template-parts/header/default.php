@@ -64,7 +64,7 @@ else: ?>
                         </div> 
                     <?php } ?> 
 
-                    <button type="button" class="tc-toogle-menu d-lg-none">
+                    <button type="button" class="tc-toggle-menu d-lg-none">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>

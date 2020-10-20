@@ -26,7 +26,7 @@ Check monster widget in footer
 .list-type-02 li i color is green
 
 Added option for to choose default header and footer
-
+line height of heading tag 
 compress all css and js 
 header container in big screen
 
@@ -89,6 +89,13 @@ For Mail Chimp See Mombo
 https://wordpress.org/plugins/mailchimp-for-wp/
 
 Reza Note:
+
+heading tag line height
+
+reply comment margin bottom
+multiple categories in post single align
+.main-menu ul.menu li.menu-item a border bottom
+
 Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
