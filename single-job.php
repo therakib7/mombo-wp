@@ -22,7 +22,7 @@ else: ?>
     <main>
         <?php while( have_posts() ): the_post(); ?>
         <!-- Page Title -->
-        <section class="section bg-center bg-cover effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('header_img') ) ); ?>);">
+        <section class="section bg-center bg-cover effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('job_header_img') ) ); ?>);">
             <div class="mask theme-bg opacity-8"></div>
             <div class="container">
                 <div class="row justify-content-center p-30px-t">

@@ -555,7 +555,7 @@ function mombo_customize_register( $wp_customize ) {
             $wp_customize, 
             'mombo_options[header_img]', 
             array(
-                'label'      => __( 'Header Image', 'mombo' ),
+                'label'      => esc_html__( 'Header Image', 'mombo' ),
                 'section'    => 'mombo_page_header'                   
             )
         ) 
@@ -632,6 +632,24 @@ function mombo_customize_register( $wp_customize ) {
         'title'      => esc_html__( 'Job Single', 'mombo' ), 
         'panel'    => 'mombo_inner_settings', 
     )); 
+
+    $wp_customize->add_setting( 
+        'mombo_options[job_header_img]', 
+        array(
+            'sanitize_callback' => 'mombo_sanitize_file'
+        )
+    ); 
+      
+    $wp_customize->add_control( 
+        new WP_Customize_Upload_Control( 
+            $wp_customize, 
+            'mombo_options[job_header_img]', 
+            array(
+                'label'      => esc_html__( 'Job Header Image', 'mombo' ),
+                'section'    => 'mombo_job_single'                   
+            )
+        ) 
+    ); 
 
     $wp_customize->add_setting(
         'mombo_options[job_single_form_title_top]', array(

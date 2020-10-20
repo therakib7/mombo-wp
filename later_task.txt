@@ -25,6 +25,8 @@ Check monster widget in footer
 
 .list-type-02 li i color is green
 
+Added option for to choose default header and footer
+
 compress all css and js
 home six, twelve, fourteen header menu color and logo and menu position
 search box in faq and support page

@@ -55,7 +55,7 @@ else: ?>
                         $sidebar_columns_class = 'col-lg-4 md-m-15px-tb';
                     }
                 ?>
-                <div id="post-<?php the_ID(); ?>" <?php post_class($post_columns_class); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class($post_columns_class . ' post'); ?>>
                     <h3 class="h4"><?php the_title(); ?></h3>
                     <div class="nav p-25px-b">
                         <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?>

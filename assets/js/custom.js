@@ -26,20 +26,7 @@
     if ( preload ) {
       preload.style.display = "none"; 
     } 
-	}
-
-    /*--------------------
-        * Menu Close
-    ----------------------*/
-   /*  THE.MenuClose = function(){
-      $('.navbar-nav .nav-link').on('click', function() {
-       var toggle = $('.navbar-toggler').is(':visible');
-       if (toggle) {
-         $('.navbar-collapse').collapse('hide');
-       }
-      });
-    } */
-
+	} 
 
 	/* ---------------------------------------------- /*
 	 * Header Fixed
@@ -85,24 +72,12 @@
 	THE.HeaderHeight = function(){
 		var HHeight = $('.header-height .fixed-header-bar').height()
 	    $('.header-height').css("min-height", HHeight);	
-	}
-
-	/* ---------------------------------------------- /*
-	 * Mega Menu
-	/* ---------------------------------------------- */
-
-	/* THE.MegaMenu = function() {
-		var mDropdown = $(".px-nav-toggle") 
-		mDropdown.on("click", function() {
-	        $(this).parent().toggleClass("open-menu-parent");
-	        $(this).next('ul').toggleClass("open-menu");
-	        $(this).toggleClass("open");
-	    });
-	} */
+  } 
+  
 	/* ---------------------------------------------- /*
 		* accordion
 	/* ---------------------------------------------- */
-/* 	THE.Accordion = function() {
+	THE.Accordion = function() {
 		$('.accordion').each(function (i, elem) {
 	       	var $elem = $(this),
 	           $acpanel = $elem.find(".acco-group > .acco-des"),
@@ -123,7 +98,7 @@
 	            return false;
 	        });
 	    });
-	} */
+	}
 
 	/*--------------------
     * Counter JS
@@ -487,13 +462,11 @@
 		THE.CountTimer(),
 		THE.HeaderFixd(),
 		THE.OnePage(),
-		// THE.Accordion(),
-		THE.Counter(),
-		// THE.MenuClose(),
+		THE.Accordion(),
+		THE.Counter(), 
 		THE.Gallery(),
 		THE.SearchBox(),
-		THE.HeaderHeight(),
-		// THE.MegaMenu(),
+		THE.HeaderHeight(), 
 		THE.ProgressBar(),
 		THE.particles(),
 		THE.parallax(),
