@@ -26,6 +26,7 @@ if ( mombo_meta_options('footer_part') == 'custom' && mombo_meta_options('footer
 else: ?>  
 <!-- Footer-->
 <footer class="gray-bg footer">
+	<?php if ( is_active_sidebar( esc_html__( 'Sidebar Footer ', 'mombo' ) ) ) : ?>
 	<div class="footer-top">
 		<div class="container">
 			<div class="row">
@@ -45,17 +46,19 @@ else: ?>
 							} else {
 								$col_class = "col-sm-6 col-md-$col_class";
 							} 
-						endif; 
+						endif;  
 					?>
 						<div class="footer-sidebar-<?php echo esc_attr($i) ?> <?php echo esc_attr( $col_class ) ?> m-15px-tb">
 							<?php dynamic_sidebar( esc_html__( 'Sidebar Footer ', 'mombo' ) . $i ) ?>
 						</div>
-					<?php
+					<?php 
 					}
 				?>
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
+
 	<div class="footer-bottom footer-border-dark">
 		<div class="container">
 			<div class="row">

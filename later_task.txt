@@ -3,11 +3,38 @@ Todo
 
 Documentation menu
 ===================
+color class name
+m-btn-theme2nd hover
+m-btn-theme and hover
+a and hover
+theme-bg
+theme-bg-alt 
+theme2nd-bg
+theme2nd-bg-alt 
+theme-color
+theme2nd-color
+
+body color
+
+.owl-dots .owl-dot = border color is #03c
+.owl-dots .owl-dot.active = background color is #03c
+
+.price-table .pt-head .msg
+
+Check monster widget in footer
+
+.list-type-02 li i color is green
+
+compress all css and js
+home six, twelve, fourteen header menu color and logo and menu position
+search box in faq and support page
+  
 selective refresh for logo menu and right button
 color and typography settings
 team widget image center
 How to create mega menu
 how to create different menu in different page
+How to create one page menu
 How to add mailchimp 
 
 https://www.youtube.com/watch?v=AVqliwiyMLg
