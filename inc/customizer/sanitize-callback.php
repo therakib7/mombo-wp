@@ -264,6 +264,27 @@ function mombo_sanitize_advance_html( $input ) {
 }
 
 /**
+ * RGBA Hexa Both Color
+ *
+ * @since 1.0
+ */
+function victim_sanitize_rgba( $color ) {
+    if ( empty( $color ) || is_array( $color ) )
+        return 'rgba(0,0,0,0)';
+
+    // If string does not start with 'rgba', then treat as hex
+    // sanitize the hex color and finally convert hex to rgba
+    if ( false === strpos( $color, 'rgba' ) ) {
+        return sanitize_hex_color( $color );
+    }
+
+    // By now we know the string is formatted as an rgba color so we need to further sanitize it.
+    $color = str_replace( ' ', '', $color );
+    sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+    return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
+}
+
+/**
  * Image Sanitization Callback
  * @since Mombo 1.0
  * @see mombo_customize_register()
@@ -288,6 +309,16 @@ function mombo_sanitize_image( $image, $setting ) {
     $file = wp_check_filetype( $image, $mimes );
 	// If $image has a valid mime_type, return it; otherwise, return the default.
     return ( $file['ext'] ? $image : $setting->default );
+}
+
+/**
+ * Image Sanitization Shortocde
+ * @since Mombo 1.0  
+ *
+ * @return void
+ */
+function mombo_sanitize_shortcode( $shortcode ) {
+    return wp_kses_post( $shortcode );
 }
 
 /**

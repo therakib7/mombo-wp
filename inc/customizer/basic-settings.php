@@ -51,166 +51,107 @@ function mombo_customize_register( $wp_customize ) {
             'section' => 'title_tagline',
             'priority' => 20,
     ) ) );
+ 
+ 
+    if( class_exists('Mombo_Customize_Alpha_Color_Control') ) {
+        $wp_customize->add_setting( 'mombo_options[theme_color_primary]' , array(
+            'default'     => '#03c',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        )); 
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_primary]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Primary', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        );    
 
-    /* if( class_exists('Mombo_Customizer_Dimensions_Control') ) {
-         
-        $wp_customize->add_setting( 'mombo_options[logo_top_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number',
-            'default'               => 20,
-        ) );
-        $wp_customize->add_setting( 'mombo_options[logo_bottom_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number',
-            'default'               => 20,
-        ) );
+        $wp_customize->add_setting( 'mombo_options[theme_color_primary_hover]' , array(
+            'default'     => '#002080',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        )); 
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_primary_hover]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Primary Hover', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        );   
 
-        $wp_customize->add_setting( 'mombo_options[logo_tablet_top_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number_blank',
-            'default'               => 20,
-        ) );
-        $wp_customize->add_setting( 'mombo_options[logo_tablet_bottom_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number_blank',
-            'default'               => 20,
-        ) );
+        $wp_customize->add_setting( 'mombo_options[theme_color_primary_light]' , array(
+            'default'     => 'rgba(0, 51, 204, 0.1)',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        ));
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_primary_light]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Primary Light', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        ); 
 
-        $wp_customize->add_setting( 'mombo_options[logo_mobile_top_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number_blank',
-            'default'               => 20,
-        ) );
-        $wp_customize->add_setting( 'mombo_options[logo_mobile_bottom_padding]', array(
-            'transport'             => 'postMessage',
-            'sanitize_callback'     => 'mombo_sanitize_number_blank',
-            'default'               => 20,
-        ) );
+        $wp_customize->add_setting( 'mombo_options[theme_color_secondary]' , array(
+            'default'     => '#15db95',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        )); 
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_secondary]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Secondary', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        ); 
 
-        $wp_customize->add_control( new Mombo_Customizer_Dimensions_Control( $wp_customize, 'mombo_options[logo_padding]', array(
-            'label'                 => esc_html__( 'Logo Padding (px)', 'mombo' ),
-            'section'               => 'title_tagline',             
-            'settings'   => array(
-                'desktop_top'       => 'mombo_options[logo_top_padding]',
-                'desktop_bottom'    => 'mombo_options[logo_bottom_padding]',
-                'tablet_top'        => 'mombo_options[logo_tablet_top_padding]',
-                'tablet_bottom'     => 'mombo_options[logo_tablet_bottom_padding]',
-                'mobile_top'        => 'mombo_options[logo_mobile_top_padding]',
-                'mobile_bottom'     => 'mombo_options[logo_mobile_bottom_padding]',
-            ),
-            'priority'              => 20,
-            'input_attrs'           => array(
-                'min'   => 0,
-                'max'   => 100,
-                'step'  => 1,
-            ),
-        ) ) );
-    } */
+        $wp_customize->add_setting( 'mombo_options[theme_color_secondary_hover]' , array(
+            'default'     => '#0e9566',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        )); 
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_secondary_hover]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Secondary Hover', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        );  
 
-    $wp_customize->add_setting( 'mombo_options[theme_color]' , array(
-       'default'   => '#7540ee',
-       'capability' => 'edit_theme_options',
-       'sanitize_callback' => 'sanitize_hex_color',
-       'type'      =>  'theme_mod',
-       'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[theme_color]', array(
-           'label'    => esc_html__( 'Theme Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));    
-
-    $wp_customize->add_setting( 'mombo_options[menu_color]' , array(
-       'default'   => '#4a4a4a',
-       'capability' => 'edit_theme_options',
-       'sanitize_callback' => 'sanitize_hex_color',
-       'type'      =>  'theme_mod',
-       'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[menu_color]', array(
-           'label'    => esc_html__( 'Menu Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));      
-
-    $wp_customize->add_setting( 'mombo_options[dropdown_menu_bg]' , array(
-       'default'   => '#232323',
-       'capability' => 'edit_theme_options',
-       'sanitize_callback' => 'sanitize_hex_color',
-       'type'      =>  'theme_mod',
-       'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[dropdown_menu_bg]', array(
-           'label'    => esc_html__( 'Dropdown Menu Background', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));    
-
-    $wp_customize->add_setting( 'mombo_options[dropdown_menu_color]' , array(
-       'default'   => '#f7f7f7',
-       'capability' => 'edit_theme_options',
-       'sanitize_callback' => 'sanitize_hex_color',
-       'type'      =>  'theme_mod',
-       'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[dropdown_menu_color]', array(
-           'label'    => esc_html__( 'Dropdown Menu Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));
-
-    $wp_customize->add_setting( 'mombo_options[footer_background]' , array(
-        'default'     => '#7540ee',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'capability' => 'edit_theme_options',
-        'type'      =>  'theme_mod',
-        'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_background]', array(
-           'label'    => esc_html__( 'Footer Background Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));
-
-    $wp_customize->add_setting( 'mombo_options[footer_color]' , array(
-        'default'     => '#dedede',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'capability' => 'edit_theme_options',
-        'type'      =>  'theme_mod',
-        'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_color]', array(
-           'label'    => esc_html__( 'Footer Text Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    ));    
-
-    $wp_customize->add_setting( 'mombo_options[footer_link_color]' , array(
-        'default'     => '#ffffff',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'capability' => 'edit_theme_options',
-        'type'      =>  'theme_mod',
-        'transport'   => 'postMessage',
-    ));
-
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( $wp_customize, 'mombo_options[footer_link_color]', array(
-           'label'    => esc_html__( 'Footer Link Color', 'mombo' ),
-           'section'  => 'colors',
-        ) 
-    )); 
+        $wp_customize->add_setting( 'mombo_options[theme_color_secondary_light]' , array(
+            'default'     => 'rgba(21, 219, 149, 0.1)',
+            'sanitize_callback' => 'mombo_sanitize_rgba',
+            'capability' => 'edit_theme_options',
+        ));
+        $wp_customize->add_control(
+            new Mombo_Customize_Alpha_Color_Control(
+                $wp_customize,
+                'mombo_options[theme_color_secondary_light]',
+                array(
+                    'label'     => esc_html__( 'Theme Color Secondary Light', 'mombo' ),
+                    'section'   => 'colors', 
+                )
+            )
+        ); 
+ 
+ 
+    } 
 
     /**
      * Mombo WordPress Theme General Settings
@@ -546,7 +487,7 @@ function mombo_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'mombo_options[header_img]', 
         array(
-            'sanitize_callback' => 'mombo_sanitize_file'
+            'sanitize_callback' => 'mombo_sanitize_image'
         )
     ); 
       
@@ -636,7 +577,7 @@ function mombo_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'mombo_options[job_header_img]', 
         array(
-            'sanitize_callback' => 'mombo_sanitize_file'
+            'sanitize_callback' => 'mombo_sanitize_image'
         )
     ); 
       
@@ -777,22 +718,4 @@ function mombo_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'mombo_customize_register' );
 
-function mombo_sanitize_file( $file, $setting ) {
-          
-    //allowed file types
-    $mimes = array(
-        'jpg|jpeg|jpe' => 'image/jpeg',
-        'gif'          => 'image/gif',
-        'png'          => 'image/png'
-    );
-      
-    //check file type from file name
-    $file_ext = wp_check_filetype( $file, $mimes );
-      
-    //if file has a valid mime type return it, otherwise return default
-    return ( $file_ext['ext'] ? $file : $setting->default );
-}
-
-function mombo_sanitize_shortcode( $shortcode ) {
-    return wp_kses_post( $shortcode );
-}
+ 

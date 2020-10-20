@@ -57,10 +57,9 @@ class Mombo_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	 * gets initialized, then we could simply enqueue them here, but for completeness as a
 	 * stand alone class we'll register and enqueue them here.
 	 */
-	public function enqueue() {
-		wp_enqueue_script( 'mombo-alpha-color-picker', get_theme_file_uri( '/customizer/customizer-alpha-color-picker/js/alpha-color-picker.js' ), array( 'jquery', 'wp-color-picker' ),TL_ALLO_VERSION, true	);
-		wp_enqueue_style( 'mombo-alpha-color-picker', get_theme_file_uri( '/customizer/customizer-alpha-color-picker/css/alpha-color-picker.css' ), array( 'wp-color-picker' ),
-			TL_ALLO_VERSION	);
+	public function enqueue() { 
+		wp_enqueue_style( 'mombo-alpha-color-picker', get_theme_file_uri( '/inc/customizer/customizer-alpha-color-picker/css/alpha-color-picker.css' ), array( 'wp-color-picker' ), false );
+		wp_enqueue_script( 'mombo-alpha-color-picker', get_theme_file_uri( '/inc/customizer/customizer-alpha-color-picker/js/alpha-color-picker.js' ), array( 'jquery', 'wp-color-picker' ), false, true );
 	}
 	/**
 	 * Render the control.

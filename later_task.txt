@@ -28,7 +28,9 @@ Check monster widget in footer
 Added option for to choose default header and footer
 
 compress all css and js
-home six, twelve, fourteen header menu color and logo and menu position
+home six, twelve, fourteen header menu and menu position
+header container in big screen
+
 search box in faq and support page
   
 selective refresh for logo menu and right button
@@ -54,9 +56,7 @@ Make Home page description image in envato
 https://wpastra.com/?bsf=4812 == page speed test section
 
 author info box margin bottom in single page
-
-try to move some service widget in builder = some added directly for hover effect rotation 
-.price tag override in home nine price table 
+ 
 home two youtube video popup not working for magnifypopup in custom js 
 remove multiple loading font awesome
 share and read more in single without plugin tag match with author

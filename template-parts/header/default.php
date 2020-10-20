@@ -36,7 +36,7 @@ else: ?>
 <!-- Header -->
 <header class="header-nav header-white">
     <div class="fixed-header-bar">
-        <div class="container-large">
+        <div class="container-large ">
             <div class="navbar navbar-default navbar-expand-lg main-navbar">
                 <div class="navbar-brand">
                     <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>" class="logo">
@@ -45,8 +45,7 @@ else: ?>
                     </a>
                 </div> 
 
-                <?php 
-                // menu-align-right menu-color-dark
+                <?php  
                     wp_nav_menu ( array(
                         'container_class' => 'main-menu',
                         'container'=> 'div',
