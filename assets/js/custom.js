@@ -418,6 +418,12 @@
               $(this).find('ul.sub-menu').first().toggle();
               return false;
           }); 
+
+          var $mobiliMegamenu = $(".menu-item-1973");
+          $mobiliMegamenu.on("click", function(e) {
+            e.preventDefault();   
+              $(".techcandle-mega-menu").toggle();
+          });
         } 
       }
 
