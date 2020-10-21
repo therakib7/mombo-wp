@@ -209,11 +209,7 @@ pre,
 .justify-content-center h2 span:after {
 	content: ":";
     margin-right: 10px;
-}
-.type-post .media.gray-bg {
-	margin-bottom: 20px;
-	border-right: 3px;
-}
+} 
 .has-very-dark-gray-color {
 	border-left: 4px solid #171347;
 	padding: 10px 15px;
@@ -1371,9 +1367,8 @@ ul, ol {
 		font-size: 13px;
 		color: #171347 !important;
 		cursor: pointer;
-	} 
-	.elementor-column.elementor-col-25, 
-	.elementor-column[data-col="25"] {
+	}  
+	.main-menu .elementor-column {
 		width: 100% !important;
 	}
 }
