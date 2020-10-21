@@ -372,15 +372,18 @@ textarea {
 .widget ul {
 	margin: 0;
 	list-style: none;
+	padding: 0;
 }
 #menu-testing-menu {
 	padding: 0;
 }
-.widget ul ul.sub-menu {
+.widget ul ul {
 	margin: 0;
 	list-style: none;
 	border-top: 1px solid #eaedf2;
+	padding-left: 20px;
 }
+
 .wp-block-archives.wp-block-archives-list li,
 .widget ul li {
 	border-bottom: 1px solid #eaedf2;
@@ -603,7 +606,7 @@ ul li .count {
 	height: 40px;
 	line-height: 37px !important;
 	left: 0px !important;
-	top: 5px !important;
+	top: 8px !important;
 	z-index: 5 !important;
 	background-color: #03c !important;
 	font-size: 13px !important;
@@ -1056,11 +1059,6 @@ ul, ol {
 .comment-list .comment-body {
 	padding-left: 20px;
 }
-.comment-respond #author, 
-.comment-respond #email {
-	border-radius: 3px;
-	padding: 10px;
-}
 /* ==== Comments Reviews ==== */
 #comment_form p, .comment-form-rating {
 	width: 100%;
@@ -1074,6 +1072,14 @@ ul, ol {
 	padding: 0 !important;
 }
 /* ==== Comments Respond ==== */
+.comment-respond #author, 
+.comment-respond #email {
+	border-radius: 3px;
+	padding: 10px;
+}
+.comment-respond.card-body {
+	margin-top: 60px;
+}
 .comment-respond .comment-reply-title {
 	margin-bottom: 15px;
 }
