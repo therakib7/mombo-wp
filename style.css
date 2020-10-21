@@ -1307,13 +1307,16 @@ ul, ol {
 		display: none;
 		border-bottom: 1px solid #eaedf2;
 	}
+	.techcandle-mega-menu ul li a {
+		border-bottom: none !important;
+	}
 	.main-menu ul li:last-child {
 		border-bottom: 0;
 	}
 	.main-menu ul.menu li.menu-item {
 		position: relative;
 	}
-	.main-menu ul.menu li.menu-item a {
+	.main-menu ul#menu-blog li.menu-item a {
 		border-bottom: 1px solid #eaedf2;
 		display: block;
 		padding: 10px 15px;
