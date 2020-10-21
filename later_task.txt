@@ -26,9 +26,8 @@ Check monster widget in footer
 .list-type-02 li i color is green
 
 Added option for to choose default header and footer
-
-compress all css and js
-home six, twelve, fourteen header menu and menu position
+line height of heading tag 
+compress all css and js 
 header container in big screen
 
 search box in faq and support page
@@ -81,12 +80,7 @@ https://elementor.github.io/elementor-icons/
 condition elementor
 https://github.com/elementor/elementor/issues/4187
 
-Single post and other edit with elementor condition
-every custom post single show hide post meta condition
-
-Mombo Template like mombo template
-add class Mombo_Utility { from template-function in mombo
-Choose elementor template in mega menu
+ 
 255*306 crop size error
 
 Remove butter bean without post type so that remove elementor error
@@ -95,20 +89,20 @@ For Mail Chimp See Mombo
 https://wordpress.org/plugins/mailchimp-for-wp/
 
 Reza Note:
+
+heading tag line height
+
+reply comment margin bottom
+multiple categories in post single align
+.main-menu ul.menu li.menu-item a border bottom
+
 Fix all unit test issues
 Match woocommerce
 Nothing found post in faq category 
 woocommerce shorting and archive select background 
 common form field griding 
-
-menu active color and submenu
-Recent Posts widget hover color
-
-table content css
-
-curent menu active
-
-menu alignment will be left side 
+ r
+ 
  
 http://localhost/wordpress/2018/11/01/blocks-widgets/
 fix block widget in post and pages

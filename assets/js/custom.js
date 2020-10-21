@@ -403,8 +403,8 @@
       function resized() {
         var $windowWidth = $(window).width();
         if ( $windowWidth <= 991 ) { 
-          $(".main-menu").prepend("<span class='te-menu-close'></span>"); 
-          $(".tc-toogle-menu").click(function(){
+          $(".main-menu").prepend("<span class='tc-menu-close'></span>"); 
+          $(".tc-toggle-menu").click(function(){
             $(".main-menu").addClass("menu-show"); 
           });
 
@@ -419,10 +419,16 @@
               return false;
           }); 
 
-          var $mobiliMegamenu = $(".menu-item-1973");
+          var $mobiliMegamenu = $(".techcandle-mega-id");
           $mobiliMegamenu.on("click", function(e) {
             e.preventDefault();   
               $(".techcandle-mega-menu").toggle();
+          }); 
+
+          $(document).on('click', function(e) { 
+            if ( !$(e.target).closest( $(".main-menu") ).length && !$(e.target).closest( $(".tc-toggle-menu") ).length ) {
+              $(".main-menu").removeClass("menu-show");  
+            } 
           });
         } 
       }

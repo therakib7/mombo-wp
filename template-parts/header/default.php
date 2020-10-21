@@ -36,7 +36,8 @@ else: ?>
 <!-- Header -->
 <header class="header-nav header-white">
     <div class="fixed-header-bar">
-        <div class="container-large ">
+        <?php $container_size = ( mombo_get_options( 'container_size' ) == 'large' ) ? '' : 'container'; ?>
+        <div class="<?php echo esc_attr( $container_size ); ?> container-large">
             <div class="navbar navbar-default navbar-expand-lg main-navbar">
                 <div class="navbar-brand">
                     <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>" class="logo">
@@ -45,9 +46,10 @@ else: ?>
                     </a>
                 </div> 
 
-                <?php  
+                <?php    
+                    $menu_align_right = ( mombo_get_options( 'menu_align' ) == 'center' && mombo_get_options( 'menu_right_btn_txt' ) ) ? '' : ' menu-align-right'; 
                     wp_nav_menu ( array(
-                        'container_class' => 'main-menu',
+                        'container_class' => 'main-menu' . $menu_align_right,
                         'container'=> 'div',
                         'theme_location' => 'header-menu',  
                         'walker' => new Mombo_Custom_Walker() ,
@@ -62,7 +64,7 @@ else: ?>
                         </div> 
                     <?php } ?> 
 
-                    <button type="button" class="tc-toogle-menu d-lg-none">
+                    <button type="button" class="tc-toggle-menu d-lg-none">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
