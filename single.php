@@ -60,9 +60,12 @@ else: ?>
                     <div class="nav p-25px-b">
                         <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?>
                         </span>
-                        <span class="dark-color font-w-600 m-15px-l"><i class="fas fa-folder-open "></i>  
+                          
                         <?php 
-                            $categories = ( is_singular('faq') ) ? get_terms( array('taxonomy' => 'faq-category' ) ) : get_the_category(); 
+                            $categories = ( is_singular('faq') ) ? get_terms( array('taxonomy' => 'faq-category' ) ) : get_the_category();
+                            if ( $categories ) {
+                                echo '<span class="dark-color font-w-600 m-15px-l"><i class="fas fa-folder-open "></i> ';
+                            }
                             foreach( $categories as $category ) {
                                 echo '<a class="dark-color" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
                             } 
@@ -93,7 +96,7 @@ else: ?>
                         mombo_social_share_link( esc_html__('Share Post', 'mombo') ); 
                     } ?> 
 
-                    <div class="media gray-bg p-20px">
+                    <div class="media gray-bg p-20px m-30px-b">
                         <div class="avatar-80 border-radius-50">
                             <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
                         </div>
