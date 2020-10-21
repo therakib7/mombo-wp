@@ -237,6 +237,41 @@ function mombo_customize_register( $wp_customize ) {
             ) 
         ));   
 
+        $wp_customize->add_section( 'mombo_header_section' , array(
+            'title'      => esc_html__( 'Header', 'mombo' ), 
+            'panel'    => 'mombo_general_panel', 
+        )); 
+
+        $wp_customize->add_setting( 'mombo_options[header_template]', array(
+            'default'     => 0,
+            'capability' => 'edit_theme_options',
+            'type' =>  'theme_mod',
+            'transport'   => 'postMessage',
+            'sanitize_callback' => 'mombo_sanitize_select',
+        ) ); 
+        $args = array(
+            'posts_per_page' => -1,  
+            'post_type' => 'template',
+            'meta_key' => 'mombo_template_type',
+            'meta_value'  => 'header',
+            'meta_compare' => '==', 
+        );
+        $the_query = new WP_Query( $args ); 
+        $header_templates = [ 0 => esc_html__( 'Default', 'mombo' )];
+        while ( $the_query->have_posts() ) : $the_query->the_post(); 
+            $header_templates[get_the_ID()] = get_the_title();
+        endwhile; wp_reset_postdata(); 
+    
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+            'mombo_options[header_template]', 
+            array(
+                'label'                 => esc_html__( 'Header Template', 'mombo' ),
+                'type'                  => 'select',
+                'section'               => 'mombo_header_section', 
+                'choices'               => $header_templates,
+            ) 
+        ) ); 
+
         $wp_customize->add_section( 'mombo_menu_bar_section' , array(
             'title'      => esc_html__( 'Menu Bar', 'mombo' ), 
             'panel'    => 'mombo_general_panel', 
@@ -730,6 +765,36 @@ function mombo_customize_register( $wp_customize ) {
         'title'      => esc_html__( 'Footer Settings', 'mombo' ),
         'priority'   => 100,   
     ));
+
+    $wp_customize->add_setting( 'mombo_options[footer_template]', array(
+        'default'     => 0,
+        'capability' => 'edit_theme_options',
+        'type' =>  'theme_mod',
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'mombo_sanitize_select',
+    ) ); 
+    $args = array(
+        'posts_per_page' => -1,  
+        'post_type' => 'template',
+        'meta_key' => 'mombo_template_type',
+        'meta_value'  => 'footer',
+        'meta_compare' => '==', 
+    );
+    $the_query = new WP_Query( $args ); 
+    $footer_templates = [ 0 => esc_html__( 'Default', 'mombo' )];
+    while ( $the_query->have_posts() ) : $the_query->the_post(); 
+        $footer_templates[get_the_ID()] = get_the_title();
+    endwhile; wp_reset_postdata(); 
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 
+        'mombo_options[footer_template]', 
+        array(
+            'label'                 => esc_html__( 'Footer Template', 'mombo' ),
+            'type'                  => 'select',
+            'section'               => 'mombo_footer', 
+            'choices'               => $footer_templates,
+        ) 
+    ) ); 
 
     $wp_customize->add_setting( 'mombo_options[footer_widget_columns]', array(
         'default'     => 4,

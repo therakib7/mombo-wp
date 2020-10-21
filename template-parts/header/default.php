@@ -22,10 +22,11 @@ mombo_preloader();
  */ 
 if ( mombo_meta_options('header_part') == 'hide' || is_singular( 'template' ) ) return; 
 
-if ( mombo_meta_options('header_part') == 'custom' && mombo_meta_options('header_custom_template') ):  
+if ( mombo_meta_options('header_part') == 'custom' && mombo_meta_options('header_custom_template') || mombo_get_options('header_template') ):  
+	$page_id = ( mombo_meta_options('header_part') == 'custom' && mombo_meta_options('header_custom_template') ) ? mombo_meta_options('header_custom_template') : mombo_get_options('header_template');
     $the_query = new WP_Query( 
         array(
-            'p' => mombo_meta_options('header_custom_template'),   
+            'p' => $page_id,   
             'post_type' => 'template',
         )
     ); 
