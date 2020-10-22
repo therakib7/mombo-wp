@@ -445,7 +445,7 @@
     THE.scroll_top = function () {  
           var $bodyElement = $("body"),
               $window = $(window),
-              $scrollHtml = $("<a href='#top' id='scroll-top' class='topbutton btn-hide'><i class='fas fa-angle-up'></i></a>");
+              $scrollHtml = $("<a href='#top' id='scroll-top' class='top-button btn-hide'><i class='fas fa-angle-up'></i></a>");
 
               $bodyElement.append($scrollHtml);
 
