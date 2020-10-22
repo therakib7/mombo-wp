@@ -3,7 +3,8 @@ Todo
 
 Documentation menu
 ===================
-mombo categories widget link not working on blog 
+w3c validation and page speed
+scroll to top off on
 
 color class name
 m-btn-theme2nd hover
@@ -26,11 +27,9 @@ body color
 Check monster widget in footer
 
 .list-type-02 li i color is green
-
-Added option for to choose default header and footer
+ 
 line height of heading tag 
-compress all css and js 
-header container in big screen
+compress all css and js  
 
 search box in faq and support page
   
@@ -57,10 +56,8 @@ Make Home page description image in envato
 https://wpastra.com/?bsf=4812 == page speed test section
 
 author info box margin bottom in single page
- 
-home two youtube video popup not working for magnifypopup in custom js 
-remove multiple loading font awesome
-share and read more in single without plugin tag match with author
+  
+remove multiple loading font awesome 
 
 in page conent and comment match together
 
