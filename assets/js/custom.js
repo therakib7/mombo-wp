@@ -412,17 +412,19 @@
             $(".main-menu").removeClass("menu-show"); 
           }); 
           
-          var $mobileMenu = $(".main-menu ul li.menu-item-has-children");
-          $mobileMenu.on("click", function(e) {
-            e.preventDefault();   
-              $(this).find('ul.sub-menu').first().toggle();
-              return false;
-          }); 
+          $(".main-menu ul li.menu-item-has-children").on("click", function(e) {
+            e.preventDefault();    
+            e.stopImmediatePropagation();
 
-          var $mobiliMegamenu = $(".techcandle-mega-id");
-          $mobiliMegamenu.on("click", function(e) {
+            $(this).find('ul.sub-menu').first().toggle();
+            return false;
+          }); 
+ 
+          $(".techcandle-mega-id").on("click", function(e) {
             e.preventDefault();   
-              $(".techcandle-mega-menu").toggle();
+            e.stopImmediatePropagation();
+            
+            $(".techcandle-mega-menu").toggle();
           }); 
 
           $(document).on('click', function(e) { 

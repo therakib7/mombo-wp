@@ -133,7 +133,7 @@ function mombo_sanitize_advance_html( $input ) {
  *
  * @since 1.0
  */
-function victim_sanitize_rgba( $color ) {
+function mombo_sanitize_rgba( $color ) {
     if ( empty( $color ) || is_array( $color ) )
         return 'rgba(0,0,0,0)';
 

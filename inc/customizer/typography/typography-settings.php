@@ -671,7 +671,7 @@ if ( ! function_exists( 'mombofonts_inline_style' ) ) {
 		.widget_pages ul > li > a,
 		.widget_archive ul > li > a,
 		.widget_meta ul > li > a,
-		.widget_categories ul > li > a { color: '.$body_font_color.'; }';
+		.widget_categories ul > li > a { color: '.$body_font_color.' !important; }';
 		/**
 		 * Heading font family.
 		 * All Font Size
