@@ -18,7 +18,7 @@ $class = ( $mombo_col ) ? 'col-lg-4' : 'col-lg-6';
             <div class="b-meta">
                 <span class="date"><?php the_time( get_option( 'date_format' ) ); ?></span> 
             </div>
-            <h5><?php the_title(); ?></h5>
+            <h5 class="post-title"><?php the_title(); ?></h5>
             <?php the_excerpt(); ?>
             <div class="border-style top light m-20px-t"></div>
             <div class="media">

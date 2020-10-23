@@ -62,7 +62,7 @@ if ( $wp_nav_menus ) {
  * @since 1.0
  */
 add_theme_support( 'html5', array(
-    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' 
     ) 
 );
 

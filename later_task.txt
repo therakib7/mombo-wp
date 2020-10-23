@@ -1,10 +1,14 @@
 Todo
 ========
+New
+======
 
-Documentation menu
-===================
-w3c validation and page speed
-scroll to top off on
+ 
+Reza
+=====  
+read more alignment
+
+menu mobile color not showing
 
 color class name
 m-btn-theme2nd hover
@@ -36,17 +40,11 @@ search box in faq and support page
 selective refresh for logo menu and right button
 color and typography settings
 team widget image center
-How to create mega menu
-how to create different menu in different page
-How to create one page menu
-How to add mailchimp 
 
 https://www.youtube.com/watch?v=AVqliwiyMLg
 mailchimp
-
-Remove all revision before taking one click import data
-Apply custom image size from elementor
-Mega Menu In Features List
+ 
+Apply custom image size from elementor 
 Generate Pot File 
 remove some header type and make with builder 
 
@@ -54,8 +52,7 @@ remove some header type and make with builder
 Make Home page description image in envato
 
 https://wpastra.com/?bsf=4812 == page speed test section
-
-author info box margin bottom in single page
+ 
   
 remove multiple loading font awesome 
 
@@ -90,16 +87,10 @@ https://wordpress.org/plugins/mailchimp-for-wp/
 Reza Note:
 
 heading tag line height
-
-reply comment margin bottom
-multiple categories in post single align
-.main-menu ul.menu li.menu-item a border bottom
+   
 
 Fix all unit test issues
-Match woocommerce
-Nothing found post in faq category 
-woocommerce shorting and archive select background 
-common form field griding 
+Match woocommerce 
  r
  
  
@@ -113,21 +104,9 @@ http://localhost/wordpress/2013/01/11/markup-html-tags-and-formatting/.
 .card-body strong, .entry-content strong {
     font-size: 30px; 
     margin-bottom: 0;
-}
-http://localhost/wordpress/2012/01/04/template-password-protected/
-submit color
-http://localhost/wordpress/2010/02/05/post-format-quote/
-quote post style
-http://localhost/wordpress/2009/07/02/edge-case-many-categories/
-catgory right side gap 
+} 
 
-https://wordpress.org/plugins/elementor/
 
-.price add price as woocommerce not global
-
-woocommerce icon move to corner
-
-main menu select all style by class name not ul li
 
 Future Update
 =================

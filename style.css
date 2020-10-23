@@ -162,36 +162,7 @@ table td a:hover,
 .main-menu ul li ul li.menu-item-object-page.current_page_item > a {
 	color: #03c !important;
 }
-
-body,
-.wp-block-latest-comments__comment-meta a,
-.main-menu ul .sub-menu .fa-angle-right,
-.main-menu ul ul li a,
-.woocommerce-MyAccount-navigation ul li a,
-select,
-.post .nav .dark-color,
-.wp-block-rss .wp-block-rss__item-title a,
-.woocommerce-widget-layered-nav ul li a,
-.widget_product_categories ul li a,
-.main-menu ul ul li a,
-.select2-selection--single .select2-selection__rendered,
-.price,
-.widget_recent_entries ul li a,
-.widget_calendar nav a,
-.wp-block-calendar table td,
-.wp-block-calendar table td a,
-.widget_calendar tr td a,
-.wp-calendar-nav a,
-.widget_recent_comments ul a,
-.wp-block-archives.wp-block-archives-list li a,
-.widget_nav_menu ul > li > a,
-.widget_pages ul > li > a,
-.widget_archive ul > li > a,
-.widget_meta ul > li > a,
-.widget_categories ul > li > a {
-	color: #718096 !important;
-}
-
+ 
 .wp-block-button__link,
 .wp-block-search__button,
 .woocommerce button.button,
@@ -201,7 +172,7 @@ select,
 .woocommerce a.button,
 .white-color, 
 .blog-grid-overlay h5, 
-.post-page-numbers.current span.
+.post-page-numbers.current span,
 .main-menu ul li.menu-item-object-page.current_page_item a,
 .woocommerce-pagination ul li span,
 .main-menu ul > li > a, 
@@ -381,6 +352,9 @@ img {
 .post h3, h2 {
 	font-size: 28px;
 }
+.no-results.not-found .search-form {
+	padding: 0;
+} 
 .wp-block-archives.wp-block-archives-list {
 	padding: 0;
 	list-style: none;
@@ -465,6 +439,9 @@ textarea {
 }
 .widget {
     margin-bottom: 30px;
+}
+.widget ul {
+	margin-bottom: 0;
 }
 .widget .h5, h5 {
     font-size: 18px;
@@ -1576,21 +1553,24 @@ ul, ol {
   border-radius: 50%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #15db95;
+  border: 1px solid #03c;
   font-size: 20px;
-  color: #15db95;
+  color: #03c;
 }
 @media only screen and (max-width: 600px) {
   .top-button {
     right: 10px;
   }
 }
-.top-button:hover {
-	border: 1px solid #0e9566;
-	color: #0e9566;
+.top-button:hover { 
+	color: #002080;
 }
 .btn-hide {
   opacity: 0;
   -webkit-transform: translateY(40px);
   transform: translateY(40px);
+}
+
+#wpadminbar + .header-nav .fixed-header-bar {
+	top: 25px !important;
 }

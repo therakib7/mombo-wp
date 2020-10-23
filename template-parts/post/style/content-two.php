@@ -24,7 +24,7 @@ $class = ( $mombo_col ) ? 'col-md-6 col-lg-3' : 'col-md-6 col-lg-3';
             <div class="b-meta">
                 <span class="date"><?php the_time( get_option( 'date_format' ) ); ?></span> 
             </div>
-            <h5><a class="dark-color" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+            <h5 class="post-title"><a class="dark-color" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
             <?php the_excerpt(); ?>
             <div class="btn-grid">
                 <a class="m-btn m-btn-theme m-btn-radius m-btn-sm" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'mombo' )?></a>

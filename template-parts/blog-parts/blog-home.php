@@ -17,7 +17,7 @@
                     <?php if ( is_archive() ) {
                         mombo_archive_title( '<h2 class="white-color h1 m-20px-b">', '</h2>' ); 
                     } elseif ( is_search() ) { ?>
-                        <h2 class="white-color h1 m-20px-b"><span><?php esc_html_e( 'Search Results for : ', 'mombo' ) ?></span><?php echo get_search_query(); ?></h2>
+                        <h2 class="white-color h1 m-20px-b"><span><?php esc_html_e( 'Search Results for', 'mombo' ) ?></span><?php echo get_search_query(); ?></h2>
                     <?php } else { ?>
                         <h2 class="white-color h1 m-20px-b"><?php echo esc_html( mombo_get_options( array('blog_title', 'Latest Article')) ); ?></h2>
                         <ol class="breadcrumb white justify-content-center">

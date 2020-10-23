@@ -84,7 +84,7 @@ function momboSetCss( settings, to ){
             }
         );
     } else {
-        jQuery( settings.selectors ).css( settings.cssProperty, to + 'px' );
+        jQuery( settings.selectors ).css( settings.cssProperty, to + 'rem' );
     }
 }
 
@@ -101,7 +101,7 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
                 var arraySizes = {
@@ -113,67 +113,7 @@ wp.customize(
         );
     }
 );
-wp.customize(
-    'mombo_options[site_title_font_size]', function (value) {
-        'use strict';
-        value.bind(
-            function( to ) {
-                var settings = {
-                    cssProperty: 'font-size',
-                    propertyUnit: 'px',
-                    styleClass: 'body'
-                };
 
-                var arraySizes = {
-                    size: { selectors: '.site-title', values: [0] }
-                };
-
-                momboGetCss( arraySizes, settings, to );
-            }
-        );
-    }
-);
-
-wp.customize(
-    'mombo_options[menu_font_size]', function (value) {
-        'use strict';
-        value.bind(
-            function( to ) {
-                var settings = {
-                    cssProperty: 'font-size',
-                    propertyUnit: 'px',
-                    styleClass: 'body'
-                };
-
-                var arraySizes = {
-                    size: { selectors: '.navigation .mainmenu > li > a', values: [0] }
-                };
-
-                momboGetCss( arraySizes, settings, to );
-            }
-        );
-    }
-);
-wp.customize(
-    'mombo_options[post_blockquote_content]', function (value) {
-        'use strict';
-        value.bind(
-            function( to ) {
-                var settings = {
-                    cssProperty: 'font-size',
-                    propertyUnit: 'px',
-                    styleClass: 'body'
-                };
-
-                var arraySizes = {
-                    size: { selectors: 'blockquote', values: [0] }
-                };
-
-                momboGetCss( arraySizes, settings, to );
-            }
-        );
-    }
-);
 
 wp.customize(
     'mombo_options[post_title_content]', function (value) {
@@ -182,12 +122,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: '.post .entry-title', values: [0] }
+                    size: { selectors: '.post .post-title', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -202,12 +142,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h1', values: [0] }
+                    size: { selectors: '.entry-content h1', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -222,12 +162,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h2', values: [0] }
+                    size: { selectors: '.entry-content h2', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -242,12 +182,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h3', values: [0] }
+                    size: { selectors: '.entry-content h3', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -262,12 +202,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h4', values: [0] }
+                    size: { selectors: '.entry-content h4', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -282,12 +222,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h5', values: [0] }
+                    size: { selectors: '.entry-content h5', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }
@@ -302,12 +242,12 @@ wp.customize(
             function( to ) {
                 var settings = {
                     cssProperty: 'font-size',
-                    propertyUnit: 'px',
+                    propertyUnit: 'rem',
                     styleClass: 'body'
                 };
 
                 var arraySizes = {
-                    size: { selectors: 'h6', values: [0] }
+                    size: { selectors: '.entry-content h6', values: [0] }
                 };
                 momboGetCss( arraySizes, settings, to );
             }

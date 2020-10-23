@@ -443,32 +443,34 @@
     * Scroll Top
     -------------------------*/
     THE.scroll_top = function () {  
-          var $bodyElement = $("body"),
-              $window = $(window),
-              $scrollHtml = $("<a href='#top' id='scroll-top' class='top-button btn-hide'><i class='fas fa-angle-up'></i></a>");
+		if ( mombo.scroll_top_btn ) {
+			var $bodyElement = $("body"),
+			$window = $(window),
+			$scrollHtml = $("<a href='#top' id='scroll-top' class='top-button btn-hide'><i class='fas fa-angle-up'></i></a>");
 
-              $bodyElement.append($scrollHtml);
+			$bodyElement.append($scrollHtml);
 
-              var $scrolltop = $("#scroll-top");
-              $window.on("scroll", function() {
-              if ($(this).scrollTop() > $(this).height()) {
-                  $scrolltop
-                      .addClass("btn-show")
-                      .removeClass("btn-hide");
-              } else {
-                  $scrolltop
-                      .addClass("btn-hide")
-                      .removeClass("btn-show");
-              }
-          });
+			var $scrolltop = $("#scroll-top");
+			$window.on("scroll", function() {
+				if ($(this).scrollTop() > $(this).height()) {
+					$scrolltop
+						.addClass("btn-show")
+						.removeClass("btn-hide");
+				} else {
+					$scrolltop
+						.addClass("btn-hide")
+						.removeClass("btn-show");
+				}
+			});
 
-          var $selectorAnchor = $("a[href='#top']");
-          $selectorAnchor.on("click", function() {
-              $("html, body").animate({
-                  scrollTop: 0
-              }, "normal");
-              return false;
-          });
+			var $selectorAnchor = $("a[href='#top']");
+			$selectorAnchor.on("click", function() {
+				$("html, body").animate({
+					scrollTop: 0
+				}, "normal");
+				return false;
+			});
+		}
     }
     /* ---------------------------------------------
      Scroll top

@@ -22,7 +22,8 @@ wp_localize_script('mombo-custom', 'mombo', array (
         'ajaxurl' => admin_url( 'admin-ajax.php' ),  
         'directory_uri' => get_template_directory_uri(),
         'loading_text' => esc_html__( 'Loading...', 'mombo' ), 
-        'underconstruction_time_to' => mombo_get_options( array('underconstruction_time_to', '2021/10/11') ) 
+        'underconstruction_time_to' => mombo_get_options( array('underconstruction_time_to', '2021/10/11') ), 
+        'scroll_top_btn' => mombo_get_options( 'scroll_top_btn' ) 
     )
 );
 

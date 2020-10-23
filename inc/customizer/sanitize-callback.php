@@ -46,142 +46,7 @@ function mombo_sanitize_hex_color( $hex_color, $setting ) {
 
   return ( ! null( $hex_color ) ? $hex_color : $setting->default );
 }
-
-/**
- * Return Header Variations
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_header_varaitions( $input ) {
-    $valid = array(
-        'one'  => esc_html__( 'Header One', 'mombo' ),
-        'two'   => esc_html__( 'Header Two', 'mombo' ),
-        'three' => esc_html__( 'Header Three', 'mombo' ),
-        'four' => esc_html__( 'Header Four', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-
-    return 'one';
-}
-/**
- * Return Footer Widget Columns
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_footer_widget_callback( $input ) {
-    $valid = array(
-        '1'  => esc_html__( 'One', 'mombo' ),
-        '2'   => esc_html__( 'Two', 'mombo' ),
-        '3' => esc_html__( 'Three', 'mombo' ),
-        '4' => esc_html__( 'Four', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'four';
-}
-/**
- * Return Container Callback
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_container_callback( $input ) {
-    $valid = array(
-        'container'  => esc_html__( 'Default', 'mombo' ),
-        'container_full'   => esc_html__( 'Full Width', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'container_full';
-}
-/**
- * Return Blog Style
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_blog_style_callback( $input ) {
-    $valid = array(
-        'style_one'  => esc_html__( 'Style One', 'mombo' ),
-        'style_two'   => esc_html__( 'Style Two', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'style_one';
-}
-/**
- * Return Blog Sidebar
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_blog_sidebar_callback( $input ) {
-    $valid = array(
-        'left_side'  => esc_html__( 'Left Sidebar', 'mombo' ),
-        'right_side'   => esc_html__( 'Right Sidebar', 'mombo' ),
-        'no_side'   => esc_html__( 'No Sidebar', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'right_side';
-}
-
-/**
- * Return Woo Single Page Style
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_woo_single_style_callback( $input ) {
-    $valid = array(
-        'style_one'  => esc_html__( 'Style One', 'mombo' ),
-        'style_two'   => esc_html__( 'Style Two', 'mombo' ),
-        'style_three'   => esc_html__( 'Style Three', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'style_one';
-}
-/**
- * Return Woo Single Page Related Query
- * @since Mombo 1.0
- * @see mombo_customize_register()
- *
- * @return void
- */
-function mombo_woo_related_query_callback( $input ) {
-    $valid = array(
-        'category'  => esc_html__( 'Category', 'mombo' ),
-        'tag'   => esc_html__( 'Tags', 'mombo' ),
-        'author'   => esc_html__( 'Author', 'mombo' ),
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    }
-    return 'category';
-}
+  
 
 function mombo_on_of_radio_callback( $input ) {
     $valid = array(
@@ -456,7 +321,7 @@ function mombo_sanitize_text_or_array_field( $array_or_string ) {
  *
  * @since Mombo 1.0
  */
-function mombo_customizer_repeater_sanitize($input){
+/* function mombo_customizer_repeater_sanitize($input){
     $input_decoded = json_decode($input,true);
     if(!empty($input_decoded)) {
         foreach ($input_decoded as $boxk => $box ) {
@@ -477,7 +342,7 @@ function mombo_fource_balance_tag( $markup ) {
     $body = $dom->getElementsByTagName( 'body' )->item( 0 );
     $markup = str_replace( array( '<body>', '</body>' ), '', $dom->saveHTML( $body ) );
     return $markup;
-}
+} */
 
 /**
  * Number sanitization callback

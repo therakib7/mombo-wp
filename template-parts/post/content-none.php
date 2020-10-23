@@ -27,10 +27,7 @@
 					?>
 					</p>
 
-				<?php elseif ( is_search() ) : ?>
-					<p class="page-not-found-icon">
-		                <i class="fa fa-frown-o"></i>
-		            </p>
+				<?php elseif ( is_search() ) : ?> 
 					<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mombo' ); ?></p>
 					<?php get_search_form( ); ?>
 

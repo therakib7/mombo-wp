@@ -77,7 +77,7 @@ function mombo_typography_settings( $wp_customize ) {
 	        'sanitize_callback' => 'sanitize_hex_color',
 	        'type'      =>  'theme_mod',
 	        'transport'   => 'postMessage',
-	        'default' => '#666666',
+	        'default' => '#718096',
 	    )
 	);
 
@@ -94,7 +94,7 @@ function mombo_typography_settings( $wp_customize ) {
 	        'sanitize_callback' => 'sanitize_hex_color',
 	        'type'      =>  'theme_mod',
 	        'transport'   => 'postMessage',
-	        'default' => '#1d1d1f',
+	        'default' => '#171347',
 	    )
 	);
 
@@ -106,7 +106,7 @@ function mombo_typography_settings( $wp_customize ) {
 	    )
 	);
 
-	$wp_customize->add_setting( 'mombo_options[site_title_color]' , array(
+	/* $wp_customize->add_setting( 'mombo_options[site_title_color]' , array(
 	   'default'   => '#000000',
 	   'capability' => 'edit_theme_options',
 	   'sanitize_callback' => 'sanitize_hex_color',
@@ -119,9 +119,9 @@ function mombo_typography_settings( $wp_customize ) {
 	       'label'    => esc_html__( 'Site Title', 'mombo' ),
 	       'section'  => 'mombo_typography_color',
 	    ) 
-	));    
+	));     */
 
-	$wp_customize->add_setting( 'mombo_options[description_title_color]' , array(
+	/* $wp_customize->add_setting( 'mombo_options[description_title_color]' , array(
 	   'default'   => '#1d1d1f',
 	   'capability' => 'edit_theme_options',
 	   'sanitize_callback' => 'sanitize_hex_color',
@@ -134,7 +134,7 @@ function mombo_typography_settings( $wp_customize ) {
 	       'label'    => esc_html__( 'Site Description', 'mombo' ),
 	       'section'  => 'mombo_typography_color',
 	    ) 
-	));    
+	));    */ 
 
 
 	/**
@@ -153,7 +153,7 @@ function mombo_typography_settings( $wp_customize ) {
 			'mombo_options[headings_font]', array(
 				'type' => 'theme_mod',
 				'sanitize_callback' => 'sanitize_text_field',
-				'default' => 'Roboto',
+				'default' => 'Nunito Sans',
 			)
 		);
 		$wp_customize->add_control(
@@ -177,7 +177,7 @@ function mombo_typography_settings( $wp_customize ) {
 			'mombo_options[body_font]', array(
 				'type' => 'theme_mod',
 				'sanitize_callback' => 'sanitize_text_field',
-				'default' => 'Roboto',
+				'default' => 'Nunito Sans',
 			)
 		);
 
@@ -198,11 +198,11 @@ function mombo_typography_settings( $wp_customize ) {
 		 * This control allows the user to choose a font family for all elements in the body tag
 		 * --------------------------------
 		 */
-		$wp_customize->add_setting(
+		/* $wp_customize->add_setting(
 			'mombo_options[site_title_font]', array(
 				'type' => 'theme_mod',
 				'sanitize_callback' => 'sanitize_text_field',
-				'default' => 'Roboto',
+				'default' => 'Nunito Sans',
 			)
 		);
 
@@ -215,7 +215,7 @@ function mombo_typography_settings( $wp_customize ) {
 					'type'     => 'select',
 				)
 			)
-		);
+		); */
 	} // End if().
 
 	if ( class_exists( 'Mombo_Select_Multiple' ) ) {
@@ -273,7 +273,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[body_font_size]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 15,
+				'default'           => 1,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -305,7 +305,7 @@ function mombo_typography_settings( $wp_customize ) {
 		 * The values area between 0 and 60 px.
 		 * --------------------------------------------------------------------------
 		 */
-		$wp_customize->add_setting(
+		/* $wp_customize->add_setting(
 			'mombo_options[site_title_font_size]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
 				'default'           => 25,
@@ -328,7 +328,7 @@ function mombo_typography_settings( $wp_customize ) {
 					'sum_type'    => false,
 				)
 			)
-		);		
+		);	 */	
 
 		/**
 		 * --------------------------------------------------------------------------
@@ -340,7 +340,7 @@ function mombo_typography_settings( $wp_customize ) {
 		 * The values area between 0 and 60 px.
 		 * --------------------------------------------------------------------------
 		 */
-		$wp_customize->add_setting(
+		/* $wp_customize->add_setting(
 			'mombo_options[menu_font_size]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
 				'default'           => 14,
@@ -363,7 +363,7 @@ function mombo_typography_settings( $wp_customize ) {
 					'sum_type'    => false,
 				)
 			)
-		);
+		); */
 
 		/**
 		 * --------------------------------------------------------------------------
@@ -375,7 +375,7 @@ function mombo_typography_settings( $wp_customize ) {
 		 * The values area between 0 and +90 px.
 		 * --------------------------------------------------------------------------
 		 */
-		$wp_customize->add_setting(
+		/* $wp_customize->add_setting(
 			'mombo_options[post_blockquote_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
 				'default'           => 18,
@@ -398,7 +398,7 @@ function mombo_typography_settings( $wp_customize ) {
 					'sum_type'    => false,
 				)
 			)
-		);
+		); */
 
 		/**
 		 * --------------------------------------------------------------------------
@@ -413,7 +413,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[post_title_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 26,
+				'default'           => 1.25,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -450,7 +450,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_one_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 36,
+				'default'           => 2.2,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -483,7 +483,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_two_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 30,
+				'default'           => 2,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -516,7 +516,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_three_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 24,
+				'default'           => 1.9,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -549,7 +549,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_four_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 18,
+				'default'           => 1.5,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -574,7 +574,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_five_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 14,
+				'default'           => 1.7,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -599,7 +599,7 @@ function mombo_typography_settings( $wp_customize ) {
 		$wp_customize->add_setting(
 			'mombo_options[heading_six_content]', array(
 				'sanitize_callback' => 'mombo_sanitize_number_range',
-				'default'           => 12,
+				'default'           => 1.2,
 				'transport'         => 'postMessage',
 			)
 		);
@@ -632,54 +632,78 @@ if ( ! function_exists( 'mombofonts_inline_style' ) ) {
 	 * @since 1.0
 	 */
 
-	function sh_all_typo_header_scripts_css() {	
+	function tc_all_typo_header_scripts_css() {	
 		// Custom CSS
 		$custom_css = '';
 		/**
 		 * Body font family.
 		 */ 
 
-		$body_font = mombo_get_options( array('body_font', 'Roboto' ) );
-		$body_font_color = mombo_get_options( array('body_font_color', '#666666' ) );
+		$body_font = mombo_get_options( array('body_font', 'Nunito Sans' ) );
+		$body_font_color = mombo_get_options( array('body_font_color', '#718096' ) );
 
 		if ( ! empty( $body_font ) ) {
 			mombo_enqueue_google_font( $body_font );
-			$custom_css .= 'body {font-family: ' . $body_font . '; color: '.$body_font_color.'; }';
+			$custom_css .= 'body {font-family: ' . $body_font . '; }';
 		}
+		$custom_css .= 'body,
+		.wp-block-latest-comments__comment-meta a,
+		.main-menu ul .sub-menu .fa-angle-right,
+		.main-menu ul ul li a,
+		.woocommerce-MyAccount-navigation ul li a,
+		select,
+		.post .nav .dark-color,
+		.wp-block-rss .wp-block-rss__item-title a,
+		.woocommerce-widget-layered-nav ul li a,
+		.widget_product_categories ul li a,
+		.main-menu ul ul li a,
+		.select2-selection--single .select2-selection__rendered,
+		.price,
+		.widget_recent_entries ul li a,
+		.widget_calendar nav a,
+		.wp-block-calendar table td,
+		.wp-block-calendar table td a,
+		.widget_calendar tr td a,
+		.wp-calendar-nav a,
+		.widget_recent_comments ul a,
+		.wp-block-archives.wp-block-archives-list li a,
+		.widget_nav_menu ul > li > a,
+		.widget_pages ul > li > a,
+		.widget_archive ul > li > a,
+		.widget_meta ul > li > a,
+		.widget_categories ul > li > a { color: '.$body_font_color.'; }';
 		/**
 		 * Heading font family.
 		 * All Font Size
 		 */
-		$headings_font = mombo_get_options( array('headings_font', 'Roboto' ) );
+		$headings_font = mombo_get_options( array('headings_font', 'Nunito Sans' ) );
 
 		if ( ! empty( $headings_font ) ) {
 			mombo_enqueue_google_font( $headings_font );
-			$custom_css .= 'h1, h2, h3, h4, h5, h6 { font-family: ' . $headings_font . '; color: '. mombo_get_options( array('heading_font_color', '#1d1d1f' ) ) .';}';
+			$custom_css .= '.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { font-family: ' . $headings_font . '; color: '. mombo_get_options( array('heading_font_color', '#171347' ) ) .';}';
 
-			$custom_css .= 'body { font-size: ' . esc_attr( mombo_get_options( array('body_font_size', 15 ) ) ) .'px;}';
-			$custom_css .= '.navigation .mainmenu > li > a { font-size: ' . esc_attr( mombo_get_options( array('menu_font_size', 14 ) ) ) . 'px;}';
-			$custom_css .= 'blockquote { font-size: ' . esc_attr( mombo_get_options( array('post_blockquote_content', 18 ) ) ) . 'px;}';
-			$custom_css .= '.post .entry-title { font-size: ' . esc_attr( s( array('post_title_content', 26 ) ) ) . 'px;}';
-			$custom_css .= 'h1 { font-size: ' . esc_attr( mombo_get_options( array('heading_one_content', 36 ) ) ) . 'px;}';
-			$custom_css .= 'h2 { font-size: ' . esc_attr( mombo_get_options( array('heading_two_content', 30 ) ) ) . 'px;}';
-			$custom_css .= 'h3 { font-size: ' . esc_attr( mombo_get_options( array('heading_three_content', 24 ) ) ) . 'px;}';
-			$custom_css .= 'h4 { font-size: ' . esc_attr( mombo_get_options( array('heading_four_content', 18 ) ) ) . 'px;}';
-			$custom_css .= 'h5 { font-size: ' . esc_attr( mombo_get_options( array('heading_five_content', 14 ) ) ) . 'px;}';
-			$custom_css .= 'h6 { font-size: ' . esc_attr( mombo_get_options( array('heading_six_content', 12 ) ) ) . 'px;}';
+			$custom_css .= 'body { font-size: ' . esc_attr( mombo_get_options( array('body_font_size', 1 ) ) ) .'rem;}';  
+			$custom_css .= '.post .post-title { font-size: ' . esc_attr( mombo_get_options( array('post_title_content', 1.25 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h1 { font-size: ' . esc_attr( mombo_get_options( array('heading_one_content', 2.2 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h2 { font-size: ' . esc_attr( mombo_get_options( array('heading_two_content', 2 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h3 { font-size: ' . esc_attr( mombo_get_options( array('heading_three_content', 1.9 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h4 { font-size: ' . esc_attr( mombo_get_options( array('heading_four_content', 1.5 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h5 { font-size: ' . esc_attr( mombo_get_options( array('heading_five_content', 1.7 ) ) ) . 'rem;}';
+			$custom_css .= '.entry-content h6 { font-size: ' . esc_attr( mombo_get_options( array('heading_six_content', 1.2 ) ) ) . 'rem;}';
 		}
 
-		$site_title_font = mombo_get_options( array('site_title_font', 'Roboto' ) );
+		/* $site_title_font = mombo_get_options( array('site_title_font', 'Nunito Sans' ) );
 		$site_title_font_color = mombo_get_options( array('site_title_color', '#1d1d1f' ) );
-		$site_description_font_color = mombo_get_options( array('description_title_color', '#666666' ) );
+		$site_description_font_color = mombo_get_options( array('description_title_color', '#718096' ) );
 		if(!empty($site_title_font)) {
 			mombo_enqueue_google_font( $site_title_font );
 
 			$site_logo_font = mombo_get_options( array('site_title_font_size', 25 ) );
 			$custom_css .= '.site-branding-text .site-title { font-family: ' . $site_title_font . '; font-size: '. esc_attr( $site_logo_font ) .'px; color: '. $site_title_font_color .';}';
 			$custom_css .= '.site-branding-text .site-description { color: '. $site_description_font_color .';}';
-		}
+		} */
 
 		wp_add_inline_style( 'mombo-main-style', $custom_css );
 	}
-	// add_action( 'wp_enqueue_scripts', 'sh_all_typo_header_scripts_css', 300 ); // custom comment
+	add_action( 'wp_enqueue_scripts', 'tc_all_typo_header_scripts_css', 300 );
 }
