@@ -11098,7 +11098,7 @@ ul li .count {
 .woocommerce-message {
 	line-height: 35px;
 }
-.product .onsale {
+.product.product_cat-accessories .onsale {
 	width: 40px;
 	height: 40px;
 	line-height: 37px !important;
