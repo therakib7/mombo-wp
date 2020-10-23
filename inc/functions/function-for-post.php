@@ -21,17 +21,10 @@ function mombo_post_featured_image($width = 900, $height = 600, $crop = false, $
         } else {
             $image_alt = get_the_title();
         }
-        $img_meta = wp_prepare_attachment_for_js( get_post_thumbnail_id() );
-
-        if($img_meta['title'] !== "") {
-            $imgtitle = 'title=" '. $img_meta['title'] .' "';
-        } else {
-            $imgtitle = '';
-        }
         if( $featured_image == false ) {
-            the_post_thumbnail( 'full', array( 'alt' => esc_attr( $image_alt ), 'title' => esc_attr( $img_meta['title'] ) ));
+            the_post_thumbnail( 'full', array( 'alt' => esc_attr( $image_alt ) ));
         } else { ?>
-            <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" <?php echo wp_kses_post($imgtitle); ?> />
+            <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" />
         <?php }
     }
 }

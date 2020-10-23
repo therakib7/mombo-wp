@@ -31,9 +31,7 @@ Table of contents
 /* ------------------------
 *   General
 ------------------------*/
-body {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1rem;
+body { 
   color: #718096;
   font-weight: 500;
   line-height: 1.7;
@@ -42,12 +40,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-a {
-  color: #03c;
-}
-a:hover {
-  color: #0029a3;
+ 
+a:hover { 
   text-decoration: none;
 }
 
@@ -11530,7 +11524,7 @@ ul, ol {
 	padding: 10px;
 }
 .comment-respond.card-body {
-	margin-top: 60px;
+	margin-top: 30px;
 }
 .comment-respond .comment-reply-title {
 	margin-bottom: 15px;

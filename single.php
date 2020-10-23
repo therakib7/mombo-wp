@@ -96,7 +96,7 @@ else: ?>
                         mombo_social_share_link( esc_html__('Share Post', 'mombo') ); 
                     } ?> 
 
-                    <div class="media gray-bg p-20px m-30px-b">
+                    <div class="media gray-bg p-20px">
                         <div class="avatar-80 border-radius-50">
                             <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
                         </div>

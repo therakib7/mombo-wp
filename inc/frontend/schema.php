@@ -125,9 +125,8 @@ if(! class_exists( 'Mombo_Helpers' ) ) {
                 border-color: <?php echo esc_attr($theme_color_primary); ?> !important;
             } 
             .post .nav span.dark-color a:hover { 
-                color:  <?php echo esc_attr($theme_color_secondary); ?> !important;
-            } 
-
+                color:  <?php echo esc_attr($theme_color_primary); ?> !important;
+            }  
             .comment-reply .m-btn:hover, .woocommerce-pagination ul li a:hover, .wp-block-tag-cloud a:hover {
                 background: <?php echo esc_attr($theme_color_primary); ?> !important;
             }
