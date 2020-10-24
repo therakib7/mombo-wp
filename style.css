@@ -15,19 +15,3 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
-.wp-block-latest-posts.columns-5 li {
-	width: 100%;
-}
-.product.product_cat-music .woocommerce-LoopProduct-link .onsale,
-.product.product_cat-accessories .woocommerce-LoopProduct-link .onsale {
-	top: 6px !important;
-}
-.product.product_cat-clothing .onsale, 
-.product.product_cat-music .onsale,
-.product.product_cat-accessories .onsale {
-	top: 0 !important;
-}
-.post .nav.social-icon { 
-	display: inline-flex;
-}
