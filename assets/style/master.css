@@ -11167,6 +11167,7 @@ ul, ol {
 	    visibility: visible !important;
 	}
 	.techcandle-mega-menu {
+    border-top: 5px solid;
 		position: absolute;
 		width: 100%;
 		left: 0;
@@ -11227,8 +11228,9 @@ ul, ol {
 	}
  
 	.techcandle-mega-menu {
+    border-top: 5px solid;
 		display: none;
-		border-bottom: 1px solid #eaedf2;
+		border-bottom: 1px solid #eaedf2 !important;
 	}
 	.techcandle-mega-menu ul li a {
 		border-bottom: none !important;
@@ -11533,6 +11535,7 @@ ul, ol {
     color: #03c;
 }
 /* ==== Theme Color Primary Border ==== */
+.techcandle-mega-menu,
 .m-btn.m-btn-t-theme,
 .px-dropdown .px-dropdown-menu,
 .px-mega .px-mega-menu,
@@ -11893,3 +11896,4 @@ ul, ol {
         color: #171347 !important;
     }
 }
+
