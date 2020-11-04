@@ -11109,8 +11109,9 @@ ul, ol {
 		list-style: none;
 		margin: auto; 
 	}
+  .main-menu ul li.menu-item-object-page.current_page_item a,
 	.main-menu ul.menu > li.current-menu-item a  {
-		color: #fff;
+		color: #fff !important;
 	}
 	
 	.main-menu.menu-align-right ul.menu {
@@ -11123,14 +11124,14 @@ ul, ol {
 	    font-weight: 600;
 	    padding: 24px 15px;
 	    display: inline-block;
-	    color: rgba(255, 255, 255, 0.8);
+	    color: rgba(255, 255, 255, 0.8) !important;
 	}
 	.main-menu ul.menu > li.menu-item > i {
 		position: relative;
 	    left: -5px;
 	    margin-right: 10px;
 	    font-size: 11px;
-	    color: rgba(255, 255, 255, 0.8);
+	    color: rgba(255, 255, 255, 0.8) !important;
 	}
 	.main-menu ul.menu ul.sub-menu {
 		position: absolute;
@@ -11284,7 +11285,7 @@ ul, ol {
 	}
 	.main-menu ul .fa-angle-down {
 		position: absolute;
-		right: 20px;
+		right: 23px;
 		top: 16px;
 		font-size: 13px;
 		cursor: pointer;
