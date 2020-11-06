@@ -5235,6 +5235,7 @@ mark {
   background-color: #eee;
   color: #171347;
   border: 1px solid #eee;
+  padding: 5px;
 }
 .social-icon.gray a:hover {
   background-color: #171347;

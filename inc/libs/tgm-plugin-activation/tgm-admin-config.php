@@ -66,7 +66,13 @@ function mombo_register_required_plugins() {
 		),  
 		array(
 		    'name'      => esc_html__('Contact Form 7', 'mombo'),
-		    'slug'      => 'contact-form-7', 
+			'slug'      => 'contact-form-7', 
+			'required'  => true,
+		), 
+		array(
+		    'name'      => esc_html__('MC4WP: Mailchimp for WordPress', 'mombo'),
+			'slug'      => 'mailchimp-for-wp', 
+			'required'  => true,
 		), 
 		array(
 		    'name'      => esc_html__('One Click Demo Import', 'mombo'),
