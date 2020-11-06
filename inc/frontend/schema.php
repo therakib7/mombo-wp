@@ -244,7 +244,6 @@ if(! class_exists( 'Mombo_Helpers' ) ) {
             .white-color, 
             .blog-grid-overlay h5, 
             .post-page-numbers.current span,
-            .main-menu ul li.menu-item-object-page.current_page_item a,
             .woocommerce-pagination ul li span,
             .main-menu ul > li > a, 
             .widget_price_filter .price_slider_wrapper button,
