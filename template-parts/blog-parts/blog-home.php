@@ -32,7 +32,7 @@
     <!-- En Page Title --> 
     
     <!-- Section -->
-    <section class="section">
+    <div class="section">
         <div class="container">
             <div class="row">
                 <?php 
@@ -78,7 +78,7 @@
                 <?php } ?>
             </div>
         </div>
-    </section>
+    </div>
     <!-- End Section -->
 </main>
 <!-- main end -->

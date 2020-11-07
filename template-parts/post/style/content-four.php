@@ -9,7 +9,7 @@
  */
 
 $mombo_col = get_query_var( 'mombo_col' );
-$class = ( $mombo_col ) ? 'col-lg-4' : 'col-lg-6';
+$class = ( $mombo_col ) ? 'col-md-4' : 'col-md-6';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($class .' m-15px-tb'); ?>>
     <div class="hover-top transition blog-grid-overlay" style="background-image: url(<?php echo esc_url( mombo_get_image_crop_size_by_id( get_the_ID(), 348, 232, true) ); ?>); ">

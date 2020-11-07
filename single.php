@@ -22,16 +22,12 @@ else: ?>
 <main>
     <?php while ( have_posts() ) : the_post(); ?>
     <!-- Page Title -->
-    <section class="section bg-center bg-cover bg-fixed effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('header_img') ) ); ?>);">
+    <section class="section bg-center section-single bg-cover bg-fixed effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('header_img') ) ); ?>);">
         <div class="mask theme-bg opacity-9"></div>
         <div class="container">
             <div class="row justify-content-center p-30px-t">
                 <div class="col-lg-8 text-center"> 
-                    <h2 class="white-color h1 m-20px-b"><?php echo esc_html( mombo_get_options( array('blog_title', 'Read the blog story')) ); ?></h2>
-                    <ol class="breadcrumb white justify-content-center">
-                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home', 'mombo'); ?></a></li>
-                        <li class="active"><?php the_title(); ?></li>
-                    </ol>
+                    <h2 class="white-color h1 m-20px-b"><?php the_title(); ?></h2> 
                 </div>
             </div>
         </div>
@@ -55,8 +51,7 @@ else: ?>
                         $sidebar_columns_class = 'col-lg-4 md-m-15px-tb';
                     }
                 ?>
-                <div id="post-<?php the_ID(); ?>" <?php post_class($post_columns_class . ' post'); ?>>
-                    <h3 class="h4"><?php the_title(); ?></h3>
+                <div id="post-<?php the_ID(); ?>" <?php post_class($post_columns_class . ' post'); ?>> 
                     <div class="nav p-25px-b">
                         <span class="dark-color font-w-600"><i class="fas fa-calendar-alt "></i> <?php the_time( get_option( 'date_format' ) ); ?>
                         </span>

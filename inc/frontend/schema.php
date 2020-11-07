@@ -289,7 +289,152 @@ if(! class_exists( 'Mombo_Helpers' ) ) {
                 color: #171347 !important;
             }
 
-            
+            /* ==== Theme Bg Color Primary Hover, Active, Focus, After, Before ==== */
+            .video-btn.theme:after,
+            #loading,
+            .herbyCookieConsent .herbyBtn,
+            .navbar-toggler,
+            .owl-dots .owl-dot.active, 
+            .portfolio-filter-01 .filter li:after, 
+            .tab-style-1 .nav-item a:after,
+            .price-table-01 .pt-head:after, 
+            .tab-style-4 .nav .nav-item a:after,
+            .custom-control-input:checked ~ .custom-control-label:before,
+            .tab-style-5 .nav-tabs .nav-item > a.active,
+            .pagination .page-item.active .page-link,
+            .video-btn.theme, 
+            .m-btn.m-btn-theme,
+            .theme-bg,
+            .theme-after:after,
+            .theme-before:before, 
+            .social-icon.theme a,
+            .social-icon.theme2nd a:hover,
+            .m-btn.m-btn-theme-light.active, 
+            .m-btn.m-btn-theme-light:focus, 
+            .m-btn.m-btn-theme-light:hover,
+            .theme-hover-bg:hover,
+            .portfolio-box-02 .portfolio-desc .pb-tag a:hover,
+            .tag-cloud a:hover,
+            .pagination .page-item .page-link:hover,
+            .m-btn.m-btn-t-theme.active, 
+            .m-btn.m-btn-t-theme:focus, 
+            .m-btn.m-btn-t-theme:hover { 
+                background-color: <?php echo esc_attr($theme_color_primary); ?> !important;
+            }
+            /* ==== Theme Color Primary ==== */
+            .m-btn.m-btn-theme-light,
+            .m-btn.m-btn-t-theme,
+            .m-link-theme,
+            .m-btn.m-link.theme,
+            .video-btn.white span,
+            .theme-color,
+            .header-white .main-navbar .navbar-nav > li > a.active,
+            .header-dark .main-navbar .navbar-nav > li > a.active,
+            .header-white .main-navbar .navbar-nav > li:hover > a,
+            .header-dark .main-navbar .navbar-nav > li:hover > a,
+            .px-dropdown .px-dropdown-menu > li:hover > a,
+            .px-mega .mm-title,
+            .px-mega .mm-link li:hover > a,
+            .mm-in .mm-dorp-in > li > a:hover,
+            .mm-in .px-mega-menu .mm-title,
+            .mm-in .px-mega-menu .mm-link > li > a:hover,
+            .portfolio-filter-01 .filter li:hover,
+            .portfolio-filter-01 .filter li.active,
+            .portfolio-box-02 .gallery-link:hover,
+            .portfolio-box-02 .portfolio-desc .pb-tag a,
+            .tab-style-1 .nav-item a.active,
+            .tab-style-2 .nav .nav-item a.active,
+            .tab-style-2 .nav .nav-item a.active,
+            .tab-style-4 .nav .nav-item .icon,
+            .accordion-03 .acco-group .acco-heading span,
+            .accordion-04 .acco-group .acco-heading span,
+            .accordion-05 .acco-group.acco-active .acco-heading,
+            .accordion-06 .acco-group.acco-active .acco-heading,
+            .list-type-01.theme li i,
+            .list-type-02.theme li i {
+                color: <?php echo esc_attr($theme_color_primary); ?> !important;
+            }
+            /* ==== Theme Color Primary Border ==== */
+            .techcandle-mega-menu,
+            .m-btn.m-btn-t-theme,
+            .px-dropdown .px-dropdown-menu,
+            .px-mega .px-mega-menu,
+            .owl-dots .owl-dot,
+            .accordion-05 .acco-group .acco-des,
+            .comment-respond-form .form-control:focus,
+            .list-type-05 li:after,
+            .m-btn.m-btn-t-gray:focus, 
+            .m-btn.m-btn-t-gray:hover,
+            .border-color-theme, 
+            .card-frame:hover, 
+            .accordion-06 .acco-group.acco-active .acco-heading:after,
+            .tag-cloud a:hover,
+            .pagination .page-item .page-link:hover 
+            .pagination .page-item.active .page-link,
+            .custom-control-input:checked ~ .custom-control-label:before {
+                border-color: <?php echo esc_attr($theme_color_primary); ?> !important;
+            }
+
+            /* ==== Theme Color Secondary Bg Hover, Active, Focus, After, Before ==== */
+            .m-btn.m-btn-theme2nd-light.active, 
+            .m-btn.m-btn-theme2nd-light:focus,
+            .m-btn.m-btn-theme2nd-light:hover, 
+            .m-btn.m-btn-t-theme2nd.active, 
+            .m-btn.m-btn-t-theme2nd:focus,
+            .m-btn.m-btn-t-theme2nd:hover,
+            .theme2nd-bg,
+            .theme2nd-after:after,
+            .theme2nd-before:before,
+            .social-icon.theme a:hover,
+            .social-icon.theme2nd a,
+            .counter-col-02 .cc-icon:after,
+            .tab-style-2 .nav .nav-item a:after,
+            .tab-style-3 .nav a:after,
+            .price-table .pt-head .msg,
+            .price-table-01 .pt-head .msg,
+            .price-table-01.active .pt-head:after,
+            .blog-grid .b-meta .meta,
+            .list-type-03 li i,
+            .m-btn.m-btn-theme2nd {
+                background-color: <?php echo esc_attr($theme_color_secondary); ?> !important;
+            }
+
+            /* ==== Theme Color Secondary ==== */
+            .m-btn.m-btn-theme2nd-light,
+            .m-btn.m-btn-t-theme2nd,
+            .m-link-theme2nd,
+            .m-btn.m-link.theme2nd,
+            .theme2nd-color,
+            .tab-style-3 .nav a.active,
+            .list-type-02 li i {
+                color: <?php echo esc_attr($theme_color_secondary); ?> !important;
+            }
+            /* ==== Theme Border Color Secondary ==== */
+            .m-btn.m-btn-t-theme2nd,
+            .list-type-04 li:after,
+            .border-color-theme2nd {
+                border-color: <?php echo esc_attr($theme_color_secondary); ?> !important;
+            } 
+            /* ==== Theme Color Secondary Hover, Focus, Active ==== */
+            .m-btn.m-btn-theme2nd.active, 
+            .m-btn.m-btn-theme2nd:focus, 
+            .m-btn.m-btn-theme2nd:hover {
+                background: <?php echo esc_attr($theme_color_secondary_hover); ?> !important;
+            }
+            /* ==== Theme Color Secondary Light ==== */
+            .theme2nd-bg-alt {
+                background-color: <?php echo esc_attr($theme_color_secondary_light); ?> !important;
+            }
+            /* ==== Theme Color Primary Light ==== */
+            .theme-bg-alt {
+                background-color: <?php echo esc_attr($theme_color_primary_light); ?> !important;
+            }
+            /* ==== Theme Color Primary Hover, Focus, Active ==== */
+            .m-btn.m-btn-theme.active,
+            .m-btn.m-btn-theme:focus, 
+            .m-btn.m-btn-theme:hover {
+                background: <?php echo esc_attr($theme_color_primary_hover); ?> !important;
+            }
               
             <?php
         } // end mombo_color function
