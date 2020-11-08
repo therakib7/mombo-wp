@@ -22,7 +22,7 @@ else: ?>
     <main>
         <?php while( have_posts() ): the_post(); ?>
         <!-- Page Title -->
-        <section class="section bg-center bg-cover effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('job_header_img') ) ); ?>);">
+        <section class="section bg-center bg-cover effect-section" style="background-image: url(<?php echo esc_url(  mombo_get_options( array('job_header_img', '') ) ); ?>);">
             <div class="mask theme-bg opacity-8"></div>
             <div class="container">
                 <div class="row justify-content-center p-30px-t">
@@ -98,7 +98,7 @@ else: ?>
                         <div class="owl-carousel" data-center="true" data-items="2" data-nav-dots="true" data-space="30" data-autoplay="true">
                             <?php foreach ($galleries as $gallery) {   ?>
                             <div class="m-20px-b box-shadow">
-                                <img class="rounded" src="<?php echo esc_url(mombo_get_image_size_by_img_id($gallery, 540, 360, true)); ?>">
+                                <img class="rounded" src="<?php echo esc_url(mombo_get_image_size_by_img_id($gallery, 540, 360, true)); ?>" alt="">
                             </div>
                             <?php } ?>
                         </div>
